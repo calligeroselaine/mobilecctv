@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import { MapPin, BadgeCheck, ShieldCheck, Flag } from "lucide-react";
+import { PageHero } from "@/components/layout/PageHero";
+import { Section, SectionHeading } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+import { business } from "@/lib/business";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Mobile CCTV Solutions provide high-quality security management services Australia-wide, supplementing security guards, mobile patrols and fixed CCTV.",
+};
+
+const pillars = [
+  {
+    icon: MapPin,
+    title: "Australia-Wide Capability",
+    description:
+      "Mobile CCTV Solutions provide high-quality security management services Australia-wide, operating out of Sydney's Northern Beaches with Perth coming soon.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Extensive Experience",
+    description:
+      "We have extensive experience in managing security for a wide range of companies and organisations, small and large — from single-site businesses to metro and regional councils.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Cost-Effective, Compliance-Led Planning",
+    description:
+      "We understand that for most businesses, security is a side activity often not supported by dedicated resources — so our approach is to maximise your protection while minimising your expenditure. We are experts in security compliance and in identifying hazards and putting in place effective plans and solutions.",
+  },
+  {
+    icon: Flag,
+    title: "Australian-Owned",
+    description:
+      "Mobile CCTV Solutions is an Australian-owned company. We strongly believe in corporate responsibility, and that a truly visionary business is not just about being successful today but about investing in the future.",
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      <PageHero title="About Mobile CCTV Solutions" crumbs={[{ label: "About" }]} />
+
+      <Section tone="surface">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionHeading
+            title="Security Specialists, Not Just Equipment Hire"
+            align="center"
+          />
+          <p className="mt-4 text-lg text-steel-600">
+            Mobile CCTV Solutions can supplement your security guards,
+            mobile patrols and fixed CCTV camera requirements with our
+            mobile CCTV surveillance TrailerCams. We put people first,
+            understanding that real trust and integrity is essential in the
+            provision of security services — that philosophy underpins
+            everything we do.
+          </p>
+        </div>
+      </Section>
+
+      <Section tone="alt">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          {pillars.map(({ icon: Icon, title, description }) => (
+            <div key={title} className="rounded-xl border border-steel-200 bg-white p-6">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <Icon className="h-6 w-6" aria-hidden="true" />
+              </div>
+              <h2 className="text-h3 mt-4">{title}</h2>
+              <p className="mt-2 text-steel-600">{description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="surface">
+        <div className="mx-auto max-w-3xl">
+          <SectionHeading
+            eyebrow="Watch"
+            title="See How We Work"
+            align="center"
+          />
+          <div className="mt-8 overflow-hidden rounded-xl shadow-lg">
+            <div className="relative aspect-video w-full">
+              <iframe
+                src="https://player.vimeo.com/video/345582313?h=1358ee0f83&color&title=0&byline=0&portrait=0"
+                title="About Mobile CCTV Solutions"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="ink">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-h2">Licence &amp; Registration</h2>
+          <p className="mt-4 text-steel-200">
+            {business.legalName}
+            <br />
+            {business.licence}
+            <br />
+            ABN {business.abn}
+          </p>
+          <div className="mt-6">
+            <Button href="/contact" variant="inverse">
+              Request A Quote
+            </Button>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}

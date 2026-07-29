@@ -1,41 +1,73 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { marked } from "marked";
+
 /**
- * Blog post data, sourced verbatim from the Stage 1 audit of the live site.
- * Only the fields needed for teaser cards live here; full post bodies are
- * built in the Blog stage.
+ * Blog posts are authored as Markdown files in /content/blog, migrated
+ * verbatim from the Stage 1 audit of the live site (no fabricated posts).
+ * No CMS was found in Stage 1 audit — the site ran WordPress, but this
+ * rebuild is static, so local Markdown is the maintainable equivalent.
  */
+
+const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 export type BlogPost = {
   slug: string;
-  date: string;
   title: string;
+  date: string;
+  order: number;
   excerpt: string;
+  reviewNote?: string;
+  contentHtml: string;
 };
 
-/** Ordered as the live site's blog index displays them (most recent first). */
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "securing-the-granny-smith-festival",
-    date: "1 November",
-    title: "Securing the Granny Smith Festival with Mobile CCTV Solutions",
-    excerpt:
-      "Mobile CCTV Solutions was proud to support the recent Granny Smith Festival in Ryde, providing high-tech, flexible security to keep the event safe and enjoyable for all.",
-  },
-  {
-    slug: "safeguarding-our-communities",
-    date: "5 May",
-    title: "Safeguarding Our Communities Whilst Protecting Our Youth",
-    excerpt:
-      "Councils around Australia are turning to our pole camera technology and security trailers to protect neighbourhoods and deter antisocial behaviour.",
-  },
-  {
-    slug: "safeguarding-tradition-ramadan-festival",
-    date: "29 April",
-    title:
-      "Safeguarding Tradition – The Crucial Role of Mobile CCTV Solutions at Sydney's Largest Ramadan Festival",
-    excerpt:
-      "For the fifth consecutive year, a South West Sydney Council entrusted Mobile CCTV Solutions as the security provider for the Lakemba Nights Ramadan Festival.",
-  },
-];
+export type BlogPostSummary = Omit<BlogPost, "contentHtml">;
 
-/** Home page shows the 3 most recent; the Blog stage will use the full set. */
-export const recentBlogPosts = blogPosts.slice(0, 3);
+function readAllSlugs(): string[] {
+  return fs
+    .readdirSync(BLOG_DIR)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(/\.md$/, ""));
+}
+
+export function getAllPosts(): BlogPostSummary[] {
+  return readAllSlugs()
+    .map((slug) => {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, `${slug}.md`), "utf8");
+      const { data } = matter(raw);
+      return {
+        slug,
+        title: data.title as string,
+        date: data.date as string,
+        order: data.order as number,
+        excerpt: data.excerpt as string,
+        reviewNote: data.reviewNote as string | undefined,
+      };
+    })
+    .sort((a, b) => a.order - b.order);
+}
+
+export function getPostBySlug(slug: string): BlogPost | null {
+  const filePath = path.join(BLOG_DIR, `${slug}.md`);
+  if (!fs.existsSync(filePath)) return null;
+
+  const raw = fs.readFileSync(filePath, "utf8");
+  const { data, content } = matter(raw);
+  const contentHtml = marked.parse(content, { async: false }) as string;
+
+  return {
+    slug,
+    title: data.title as string,
+    date: data.date as string,
+    order: data.order as number,
+    excerpt: data.excerpt as string,
+    reviewNote: data.reviewNote as string | undefined,
+    contentHtml,
+  };
+}
+
+/** Home page shows the 3 most recent (lowest `order`). */
+export function getRecentPosts(count = 3): BlogPostSummary[] {
+  return getAllPosts().slice(0, count);
+}

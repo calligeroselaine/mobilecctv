@@ -2,9 +2,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { recentBlogPosts } from "@/lib/blog";
+import { getRecentPosts } from "@/lib/blog";
 
 export function RecentBlog() {
+  const recentBlogPosts = getRecentPosts(3);
+
   return (
     <Section tone="surface">
       <div className="flex flex-wrap items-end justify-between gap-4">

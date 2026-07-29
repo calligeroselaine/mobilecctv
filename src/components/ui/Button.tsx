@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 type ButtonVariant = "primary" | "secondary" | "inverse";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors";
+  "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-brand text-white hover:bg-brand-dark",

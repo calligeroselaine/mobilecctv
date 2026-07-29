@@ -31,8 +31,8 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-6">
+        <nav className="hidden lg:block">
+          <ul className="flex items-center gap-5 xl:gap-6">
             {primaryNav.map((link) => (
               <li key={link.href}>
                 <Link
@@ -46,7 +46,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={business.support.href}
             target="_blank"

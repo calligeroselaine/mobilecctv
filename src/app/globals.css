@@ -39,6 +39,9 @@
   --color-brand: #2563eb;
   --color-brand-dark: #1d4ed8;
   --color-brand-soft: #eff4ff;
+  /* Lighter accent for text on dark backgrounds — #2563eb only hits 3.4:1
+     on --color-ink, which fails WCAG AA for text this size. This hits 9.8:1. */
+  --color-brand-light: #93c5fd;
 
   --color-warning: #92400e;
   --color-warning-bg: #fef3c7;
@@ -49,4 +52,15 @@ body {
   background: var(--color-surface);
   color: var(--color-ink);
   font-family: var(--font-sans);
+}
+
+/* Guaranteed keyboard focus indicator site-wide (WCAG 2.4.7). Components
+   may still add their own focus-visible styles for a closer-fitting ring. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
 }

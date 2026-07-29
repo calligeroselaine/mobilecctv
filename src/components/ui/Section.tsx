@@ -35,6 +35,9 @@ type SectionHeadingProps = {
   title: string;
   align?: "left" | "center";
   className?: string;
+  /** Set true on dark-background sections (tone="ink"/"brand") — swaps the
+   * eyebrow to a lighter blue so it still meets WCAG AA contrast. */
+  onDark?: boolean;
 };
 
 /** Consistent eyebrow + H2 heading pattern, used across every section. */
@@ -43,11 +46,16 @@ export function SectionHeading({
   title,
   align = "left",
   className = "",
+  onDark = false,
 }: SectionHeadingProps) {
   return (
     <div className={`${align === "center" ? "text-center" : ""} ${className}`}>
       {eyebrow && (
-        <p className="text-eyebrow font-bold uppercase text-brand">
+        <p
+          className={`text-eyebrow font-bold uppercase ${
+            onDark ? "text-brand-light" : "text-brand"
+          }`}
+        >
           {eyebrow}
         </p>
       )}

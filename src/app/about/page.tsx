@@ -3,6 +3,7 @@ import { MapPin, BadgeCheck, ShieldCheck, Flag } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
@@ -81,16 +82,13 @@ export default function AboutPage() {
             title="See How We Work"
             align="center"
           />
-          <div className="mt-8 overflow-hidden rounded-xl shadow-lg">
-            <div className="relative aspect-video w-full">
-              <iframe
-                src="https://player.vimeo.com/video/345582313?h=1358ee0f83&color&title=0&byline=0&portrait=0"
-                title="About Mobile CCTV Solutions"
-                className="absolute inset-0 h-full w-full"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+          <div className="mt-8">
+            <VideoEmbed
+              vimeoId="345582313"
+              vimeoHash="1358ee0f83"
+              title="About Mobile CCTV Solutions"
+              posterSrc="/images/office-security-via-entrance.jpg"
+            />
           </div>
         </div>
       </Section>

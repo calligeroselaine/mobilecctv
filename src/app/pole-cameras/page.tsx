@@ -138,7 +138,7 @@ export default function PoleCamerasPage() {
           capabilities.
         </p>
         <div className="mt-8 flex justify-center">
-          <Button href="/docs/MobileCCTV_MobiPoleCam.pdf">
+          <Button href="/docs/MobileCCTV_MobiPoleCam.pdf" download>
             Download Brochure
           </Button>
         </div>

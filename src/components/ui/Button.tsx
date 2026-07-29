@@ -23,6 +23,9 @@ type ButtonAsLink = CommonProps & {
   href: string;
   onClick?: never;
   type?: never;
+  /** Force a real file download (e.g. brochures) — opens in a new tab
+   * with a download attribute instead of client-side navigation. */
+  download?: boolean;
 };
 
 type ButtonAsButton = CommonProps & {
@@ -40,13 +43,14 @@ export function Button(props: ButtonProps) {
 
   if ("href" in props && props.href) {
     const isExternal = /^https?:\/\//.test(props.href);
-    if (isExternal) {
+    if (isExternal || props.download) {
       return (
         <a
           href={props.href}
           className={classes}
           target="_blank"
           rel="noopener noreferrer"
+          download={props.download || undefined}
         >
           {children}
         </a>

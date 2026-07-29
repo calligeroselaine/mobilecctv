@@ -134,7 +134,7 @@ export default function TrailersPage() {
           ))}
         </ul>
         <div className="mt-8 flex flex-col items-center gap-3">
-          <Button href="/docs/Mobile-CCTV-Solution-Brochure.pdf">
+          <Button href="/docs/Mobile-CCTV-Solution-Brochure.pdf" download>
             Download Brochure
           </Button>
           <ReviewFlag note="This brochure PDF is explicitly named 'Low-Res' on the old site. Please supply a high-res source file." />

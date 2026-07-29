@@ -71,3 +71,17 @@ export function getPostBySlug(slug: string): BlogPost | null {
 export function getRecentPosts(count = 3): BlogPostSummary[] {
   return getAllPosts().slice(0, count);
 }
+
+/** Adjacent posts by `order`, for the article template's prev/next nav. */
+export function getAdjacentPosts(slug: string): {
+  previous: BlogPostSummary | null;
+  next: BlogPostSummary | null;
+} {
+  const posts = getAllPosts();
+  const index = posts.findIndex((post) => post.slug === slug);
+  if (index === -1) return { previous: null, next: null };
+  return {
+    previous: index > 0 ? posts[index - 1] : null,
+    next: index < posts.length - 1 ? posts[index + 1] : null,
+  };
+}

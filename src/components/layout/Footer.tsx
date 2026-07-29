@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import { business, primaryNav, productNav, legalNav } from "@/lib/business";
 import { Container } from "@/components/layout/Container";
@@ -97,9 +98,11 @@ export function Footer() {
                 href={business.support.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white"
+                title="Remote support session for existing customers (opens TeamViewer in a new tab)"
+                className="inline-flex items-center gap-1 hover:text-white"
               >
                 Remote Support (TeamViewer)
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             </li>
           </ul>

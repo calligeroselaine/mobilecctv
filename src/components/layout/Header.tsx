@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { business, primaryNav } from "@/lib/business";
 import { Button } from "@/components/ui/Button";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -51,9 +52,11 @@ export function Header() {
             href={business.support.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-brand hover:text-brand-dark"
+            title="Remote support session for existing customers (opens TeamViewer in a new tab)"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:text-brand-dark"
           >
             {business.support.label}
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
           <Button href="/contact">Request A Quote</Button>
         </div>

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAdjacentPosts, getAllPosts, getPostBySlug } from "@/lib/blog";
 import { business } from "@/lib/business";
 
 type Params = { slug: string };
@@ -38,6 +38,8 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const { previous, next } = getAdjacentPosts(slug);
 
   const blogPostingJsonLd = {
     "@context": "https://schema.org",
@@ -71,7 +73,47 @@ export default async function BlogPostPage({
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-steel-200 pt-8">
+          {(previous || next) && (
+            <nav
+              aria-label="More posts"
+              className="mt-10 grid grid-cols-1 gap-4 border-t border-steel-200 pt-8 sm:grid-cols-2"
+            >
+              {previous ? (
+                <Link
+                  href={`/blog/${previous.slug}`}
+                  className="group rounded-lg border border-steel-200 p-4 hover:border-brand"
+                >
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+                    <ArrowLeft className="h-4 w-4" />
+                    Previous
+                  </span>
+                  <p className="mt-1 font-semibold text-ink group-hover:text-brand">
+                    {previous.title}
+                  </p>
+                </Link>
+              ) : (
+                <span />
+              )}
+              {next ? (
+                <Link
+                  href={`/blog/${next.slug}`}
+                  className="group rounded-lg border border-steel-200 p-4 text-right hover:border-brand"
+                >
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+                    Next
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                  <p className="mt-1 font-semibold text-ink group-hover:text-brand">
+                    {next.title}
+                  </p>
+                </Link>
+              ) : (
+                <span />
+              )}
+            </nav>
+          )}
+
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-steel-200 pt-8">
             <Link
               href="/blog"
               className="inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"

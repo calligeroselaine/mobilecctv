@@ -6,6 +6,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -148,6 +149,21 @@ export default function TrailersPage() {
             Download Brochure
           </Button>
           <ReviewFlag note="This brochure PDF is explicitly named 'Low-Res' on the old site. Please supply a high-res source file." />
+        </div>
+      </Section>
+
+      <Section tone="alt">
+        <SectionHeading
+          eyebrow="Watch"
+          title="Mobile CCTV Trailer Walkthrough"
+          align="center"
+        />
+        <div className="mx-auto mt-8 max-w-2xl">
+          <VideoEmbed
+            youtubeId="S-Ehp6-3p1Q"
+            title="Mobile CCTV Trailer by Mobile CCTV Solutions"
+            posterSrc="/images/mine-cam-cctv.jpg"
+          />
         </div>
       </Section>
 

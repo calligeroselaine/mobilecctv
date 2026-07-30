@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { VideoEmbed } from "@/components/ui/VideoEmbed";
 
 export function Hero() {
   return (
@@ -27,16 +27,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
-          <Image
-            src="/images/onsite-trailer-2018.jpg"
-            alt="Mobile CCTV security trailer deployed on site, with camera mast raised"
-            fill
-            priority
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <VideoEmbed
+          youtubeId="kSxTWknToEY"
+          title="Mobile CCTV Trailer overview"
+          posterSrc="/images/onsite-trailer-2018.jpg"
+        />
       </Container>
     </section>
   );

@@ -53,6 +53,26 @@ export default function AboutPage() {
       <PageHero title="About Mobile CCTV Solutions" crumbs={[{ label: "About" }]} />
 
       <Section tone="surface">
+        <div className="mx-auto max-w-3xl">
+          <SectionHeading
+            eyebrow="On Site"
+            title="Our Team At Work"
+            align="center"
+          />
+          <div className="relative mt-8 aspect-[3/2] w-full overflow-hidden rounded-xl shadow-lg">
+            <Image
+              src="/images/team-on-site.jpg"
+              alt="Mobile CCTV Solutions team members on site with a deployed trailer"
+              fill
+              sizes="(min-width: 768px) 672px, 100vw"
+              priority
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </Section>
+
+      <Section tone="alt">
         <div className="mx-auto max-w-3xl text-center">
           <SectionHeading
             title="Security Specialists, Not Just Equipment Hire"
@@ -69,7 +89,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section tone="alt">
+      <Section tone="surface">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {pillars.map(({ icon: Icon, title, description }) => (
             <div key={title} className="rounded-xl border border-steel-200 bg-white p-6">
@@ -80,25 +100,6 @@ export default function AboutPage() {
               <p className="mt-2 text-steel-600">{description}</p>
             </div>
           ))}
-        </div>
-      </Section>
-
-      <Section tone="surface">
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading
-            eyebrow="On Site"
-            title="Our Team At Work"
-            align="center"
-          />
-          <div className="relative mt-8 aspect-[3/2] w-full overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src="/images/team-on-site.jpg"
-              alt="Mobile CCTV Solutions team members on site with a deployed trailer"
-              fill
-              sizes="(min-width: 768px) 672px, 100vw"
-              className="object-cover"
-            />
-          </div>
         </div>
       </Section>
 

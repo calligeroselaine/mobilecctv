@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { business, primaryNav, quoteMailto } from "@/lib/business";
+import { business, primaryNav } from "@/lib/business";
 import { Button } from "@/components/ui/Button";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { Container } from "@/components/layout/Container";
@@ -59,7 +59,7 @@ export function Header() {
             {business.support.label}
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
-          <Button href={quoteMailto}>Request A Quote</Button>
+          <Button href="/contact">Request A Quote</Button>
         </div>
 
         <MobileNav links={primaryNav} />

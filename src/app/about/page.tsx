@@ -4,7 +4,7 @@ import { MapPin, BadgeCheck, ShieldCheck, Flag } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { business, quoteMailto } from "@/lib/business";
+import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -114,7 +114,7 @@ export default function AboutPage() {
             ABN {business.abn}
           </p>
           <div className="mt-6">
-            <Button href={quoteMailto} variant="inverse">
+            <Button href="/contact" variant="inverse">
               Request A Quote
             </Button>
           </div>

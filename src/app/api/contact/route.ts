@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 import { business } from "@/lib/business";
 
 /**
  * Contact/quote form submission endpoint.
  *
- * IMPORTANT — this does not yet send real emails. No email provider is
- * configured for this project. Until RESEND_API_KEY and CONTACT_TO_EMAIL
- * are set (see README.md § "Contact form setup"), every valid submission
- * gets a clear 501 error back — never a fake "success". Once those two
- * env vars are set, this route sends real emails via the Resend HTTP API
- * with no further code changes required.
+ * IMPORTANT — this does not yet send real emails. No SMTP account is
+ * configured for this project. Until SMTP_USER, SMTP_PASS and
+ * CONTACT_TO_EMAIL are set (see README.md § "Contact form setup"), every
+ * valid submission gets a clear 501 error back — never a fake "success".
+ * Once those env vars are set, this route sends real emails via SMTP
+ * (defaults to Gmail's SMTP server) with no further code changes required.
  */
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -76,12 +77,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Please fix the errors below.", fieldErrors }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
   const toEmail = process.env.CONTACT_TO_EMAIL || business.email;
 
-  if (!apiKey) {
+  if (!smtpUser || !smtpPass) {
     console.warn(
-      "[/api/contact] RESEND_API_KEY is not set — see README.md 'Contact form setup'. Submission was NOT sent:",
+      "[/api/contact] SMTP_USER / SMTP_PASS not set — see README.md 'Contact form setup'. Submission was NOT sent:",
       { name: body.name, email: body.email }
     );
     return NextResponse.json(
@@ -112,33 +114,24 @@ export async function POST(request: Request) {
   ].filter(Boolean);
 
   try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: `${business.name} Website <onboarding@resend.dev>`,
-        to: [toEmail],
-        reply_to: body.email,
-        subject: `New enquiry from ${body.name}${body.company ? ` (${body.company})` : ""}`,
-        text: lines.join("\n"),
-      }),
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: process.env.SMTP_SECURE !== "false", // true for port 465
+      auth: { user: smtpUser, pass: smtpPass },
     });
 
-    if (!res.ok) {
-      const errText = await res.text();
-      console.error("[/api/contact] Resend API error:", res.status, errText);
-      return NextResponse.json(
-        { error: "Something went wrong sending your enquiry. Please try again or call us directly." },
-        { status: 502 }
-      );
-    }
+    await transporter.sendMail({
+      from: `${business.name} Website <${smtpUser}>`,
+      to: toEmail,
+      replyTo: body.email,
+      subject: `New enquiry from ${body.name}${body.company ? ` (${body.company})` : ""}`,
+      text: lines.join("\n"),
+    });
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[/api/contact] Unexpected error:", err);
+    console.error("[/api/contact] SMTP send error:", err);
     return NextResponse.json(
       { error: "Something went wrong sending your enquiry. Please try again or call us directly." },
       { status: 502 }

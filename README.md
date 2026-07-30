@@ -17,28 +17,35 @@ Open [http://localhost:3000](http://localhost:3000).
 The enquiry/quote form (`src/components/contact/ContactForm.tsx`, submitting
 to `src/app/api/contact/route.ts`) is fully built and functional — validation,
 accessibility, spam prevention and loading/error/success states all work —
-**but no email provider is connected yet.** Until you set the two environment
+**but no SMTP account is connected yet.** Until you set the environment
 variables below, every valid submission gets a clear error message back
 ("the enquiry form isn't fully set up yet, please call/email us directly")
 instead of a fake success. This is intentional: we do not want visitors to
 think their enquiry was received when nobody actually gets it.
 
-To connect it:
+Sending is done via [Nodemailer](https://nodemailer.com) over SMTP, defaulting
+to Gmail's SMTP server — so it can send using a normal Gmail account with no
+third-party email service required.
 
-1. Create a free account at [resend.com](https://resend.com) (or swap the
-   fetch call in `src/app/api/contact/route.ts` for whichever email
-   provider/CRM you'd rather use — Postmark, SendGrid, a Zapier webhook,
-   your CRM's inbound API, etc. The route is a single, small function, not
-   tied to Resend specifically).
-2. Verify a sending domain in Resend (or use their `onboarding@resend.dev`
-   test address for a quick check).
+To connect it using a Gmail account:
+
+1. Turn on 2-Step Verification on the Gmail account you want to send from, at
+   [myaccount.google.com/security](https://myaccount.google.com/security) (App
+   Passwords require it).
+2. Generate an App Password at
+   [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+   — choose any name (e.g. "Mobile CCTV website"), and copy the 16-character
+   password it gives you.
 3. Copy `.env.example` to `.env.local` and fill in:
-   - `RESEND_API_KEY` — from your Resend dashboard.
-   - `CONTACT_TO_EMAIL` — the inbox that should receive enquiries (defaults
-     to `sales@mobilecctvsolutions.com.au` if left blank).
+   - `SMTP_USER` — the full Gmail address you're sending from.
+   - `SMTP_PASS` — the App Password from step 2 (not your normal Google
+     password).
+   - `CONTACT_TO_EMAIL` — the inbox that should receive enquiries.
+   - `SMTP_HOST` / `SMTP_PORT` / `SMTP_SECURE` can be left as-is for Gmail; only
+     change these if sending through a different provider.
 4. Restart the dev server / redeploy. No code changes needed.
 
-Once those two variables are set in production (Vercel → Project Settings →
+Once those variables are set in production (Vercel → Project Settings →
 Environment Variables, or your host's equivalent), real enquiries will be
 emailed through immediately.
 

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { InstagramIcon } from "@/components/ui/SocialIcons";
 import { instagramPosts } from "@/lib/instagram";
 import { business } from "@/lib/business";
@@ -32,10 +31,7 @@ export function InstagramHighlights() {
           </a>
         ))}
       </div>
-      <div className="mt-6 flex justify-center">
-        <ReviewFlag note="The old site's homepage showed 16 Instagram posts, but 10 of them were already broken there too — hotlinked to expired Instagram CDN URLs. Only these 6 (cached on your own server) still had usable images. A live-syncing feed showing everything currently on your Instagram would need a Meta/Instagram Graph API connection — happy to wire that up if you want it." />
-      </div>
-      <div className="mt-6 flex justify-center">
+      <div className="mt-8 flex justify-center">
         <Button href={business.social.instagram} variant="secondary">
           <InstagramIcon className="h-4 w-4" />
           Follow On Instagram

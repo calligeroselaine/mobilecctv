@@ -2,7 +2,8 @@
 
 import { FormEvent, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
-import { Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Loader2, CheckCircle2 } from "lucide-react";
+import { business } from "@/lib/business";
 
 type Variant = "full" | "compact";
 
@@ -68,8 +69,7 @@ type ContactFormProps = {
 export function ContactForm({ variant = "full" }: ContactFormProps) {
   const [state, setState] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [serverError, setServerError] = useState<string | null>(null);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
   const honeypotRef = useRef<HTMLInputElement>(null);
   const formStartedAt = useRef<number | null>(null);
   const formId = useId();
@@ -88,41 +88,49 @@ export function ContactForm({ variant = "full" }: ContactFormProps) {
     }
   }
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fieldErrors = validate(state, variant);
     setErrors(fieldErrors);
     if (Object.keys(fieldErrors).length > 0) return;
 
-    setStatus("submitting");
-    setServerError(null);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...state,
-          honeypot: honeypotRef.current?.value ?? "",
-          formStartedAt: formStartedAt.current,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setServerError(data.error ?? "Something went wrong. Please try again.");
-        setStatus("error");
-        return;
-      }
-
+    // Honeypot / time-trap: if either trips, silently pretend it worked —
+    // standard anti-bot practice, doesn't affect a genuine visitor.
+    const isBot =
+      Boolean(honeypotRef.current?.value) ||
+      (formStartedAt.current !== null && Date.now() - formStartedAt.current < 1500);
+    if (isBot) {
       setStatus("success");
-    } catch {
-      setServerError(
-        "Something went wrong sending your enquiry. Please check your connection and try again."
-      );
-      setStatus("error");
+      return;
     }
+
+    setStatus("submitting");
+
+    // STOPGAP: no email backend is connected yet (see README "Contact
+    // form setup"), so this opens the visitor's own email client with
+    // the enquiry pre-filled instead of silently failing. Once
+    // RESEND_API_KEY is set, this should go back to POSTing to
+    // /api/contact so it actually lands in an inbox without the visitor
+    // needing to hit send themselves.
+    const lines = [
+      `Name: ${state.name}`,
+      state.company && `Company: ${state.company}`,
+      `Email: ${state.email}`,
+      state.phone && `Phone: ${state.phone}`,
+      state.location && `Location / project area: ${state.location}`,
+      state.solution && `Solution required: ${state.solution}`,
+      state.engagement && `Hire / purchase: ${state.engagement}`,
+      state.timing && `Approximate timing: ${state.timing}`,
+      "",
+      "Message:",
+      state.message,
+    ].filter(Boolean);
+
+    const subject = `Quote Request from ${state.name}${state.company ? ` (${state.company})` : ""}`;
+    const mailtoUrl = `mailto:${business.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+
+    window.location.href = mailtoUrl;
+    setStatus("success");
   }
 
   if (status === "success") {
@@ -133,13 +141,21 @@ export function ContactForm({ variant = "full" }: ContactFormProps) {
         className="flex flex-col items-center gap-3 rounded-lg border border-green-200 bg-green-50 px-6 py-10 text-center"
       >
         <CheckCircle2 className="h-10 w-10 text-green-600" aria-hidden="true" />
-        <p className="text-h3 text-green-800">Thanks — we&rsquo;ve got your enquiry</p>
+        <p className="text-h3 text-green-800">Almost there — check your email app</p>
         <p className="max-w-md text-steel-600">
-          We&rsquo;ll be in touch shortly. If it&rsquo;s urgent, call us on{" "}
+          We&rsquo;ve opened a new email to us with your details filled in —
+          just hit send. If nothing opened, call us on{" "}
           <a href="tel:1300996910" className="font-semibold text-brand hover:text-brand-dark">
             1300 99 69 10
-          </a>
-          .
+          </a>{" "}
+          or email{" "}
+          <a
+            href={`mailto:${business.email}`}
+            className="font-semibold text-brand hover:text-brand-dark"
+          >
+            {business.email}
+          </a>{" "}
+          directly.
         </p>
       </div>
     );
@@ -319,16 +335,6 @@ export function ContactForm({ variant = "full" }: ContactFormProps) {
           </p>
         )}
       </div>
-
-      {status === "error" && serverError && (
-        <div
-          role="alert"
-          className="flex items-start gap-2.5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 sm:col-span-2"
-        >
-          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-          <span>{serverError}</span>
-        </div>
-      )}
 
       <button
         type="submit"

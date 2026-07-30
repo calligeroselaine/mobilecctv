@@ -4,7 +4,6 @@ import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { business } from "@/lib/business";
@@ -144,11 +143,10 @@ export default function TrailersPage() {
             </li>
           ))}
         </ul>
-        <div className="mt-8 flex flex-col items-center gap-3">
+        <div className="mt-8 flex justify-center">
           <Button href="/docs/Mobile-CCTV-Solution-Brochure.pdf" download>
             Download Brochure
           </Button>
-          <ReviewFlag note="This brochure PDF is explicitly named 'Low-Res' on the old site. Please supply a high-res source file." />
         </div>
       </Section>
 

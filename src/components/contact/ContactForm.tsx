@@ -314,7 +314,7 @@ export function ContactForm({ variant = "full" }: ContactFormProps) {
           </span>
         </label>
         {errors.privacyAccepted && (
-          <p id={`${formId}-privacy-error`} className="text-sm text-red-600">
+          <p id={`${formId}-privacy-error`} role="alert" className="text-sm text-red-600">
             {errors.privacyAccepted}
           </p>
         )}
@@ -360,7 +360,7 @@ function Field({ id, label, error, className = "", children }: FieldProps) {
       </label>
       {children}
       {error && (
-        <p id={`${id}-error`} className="text-sm text-red-600">
+        <p id={`${id}-error`} role="alert" className="text-sm text-red-600">
           {error}
         </p>
       )}

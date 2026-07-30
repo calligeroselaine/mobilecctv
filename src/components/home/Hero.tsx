@@ -14,9 +14,10 @@ export function Hero() {
             Mobile CCTV Trailers &amp; Pole Cameras
           </h1>
           <p className="mt-4 max-w-lg text-lg text-steel-600">
-            Cost-effective, 100% solar-powered surveillance that protects
-            your business, event or site — engineered and operated by an
-            Australian-owned, licensed security specialist.
+            Cost-effective, solar-powered CCTV trailers and mobile security
+            cameras for sale or hire across Australia — protecting
+            construction sites, events and remote locations, engineered and
+            operated by an Australian-owned, licensed security specialist.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/contact">Request A Quote</Button>

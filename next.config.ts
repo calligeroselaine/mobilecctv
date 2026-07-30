@@ -7,6 +7,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Canonical domain is https://www.mobilecctvsolutions.com.au — send
+      // the bare apex domain to www so the two never serve as duplicate
+      // content. (HTTP → HTTPS is handled at the hosting layer, e.g.
+      // Vercel's automatic TLS redirect — there's no "plain HTTP" to
+      // redirect from inside the Next.js app itself.)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "mobilecctvsolutions.com.au" }],
+        destination: "https://www.mobilecctvsolutions.com.au/:path*",
+        permanent: true,
+      },
+
       // Renamed pages
       { source: "/about-mobile-cctv-solutions", destination: "/about", permanent: true },
       { source: "/trailer-camera", destination: "/mobile-cctv-trailers", permanent: true },

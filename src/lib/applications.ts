@@ -12,6 +12,9 @@ export type Application = {
   imageAlt: string;
   /** Real blog post slug to link to as evidence, where one exists. */
   relatedPostSlug?: string;
+  /** The product page best suited to this use case. */
+  relatedProductPath: "/mobile-cctv-trailers" | "/pole-cameras";
+  relatedProductLabel: string;
 };
 
 export const applications: Application[] = [
@@ -23,6 +26,8 @@ export const applications: Application[] = [
     image: "/images/construction-site.jpg",
     imageAlt: "Construction site protected by a Mobile CCTV Solutions trailer",
     relatedPostSlug: "protecting-utility-sites-from-copper-theft",
+    relatedProductPath: "/mobile-cctv-trailers",
+    relatedProductLabel: "Mobile CCTV Trailers",
   },
   {
     slug: "events",
@@ -32,6 +37,8 @@ export const applications: Application[] = [
     image: "/images/pole-camera-event-security.jpg",
     imageAlt: "Mobi Pole Cam providing event security coverage",
     relatedPostSlug: "securing-the-granny-smith-festival-with-mobile-cctv-solutions",
+    relatedProductPath: "/mobile-cctv-trailers",
+    relatedProductLabel: "Mobile CCTV Trailers",
   },
   {
     slug: "councils",
@@ -41,6 +48,8 @@ export const applications: Application[] = [
     image: "/images/office-security-via-entrance.jpg",
     imageAlt: "Mobile CCTV Solutions site security monitoring a public entrance",
     relatedPostSlug: "safeguarding-our-communities",
+    relatedProductPath: "/pole-cameras",
+    relatedProductLabel: "Pole Cameras",
   },
   {
     slug: "mining",
@@ -49,6 +58,8 @@ export const applications: Application[] = [
       "Standalone solar surveillance for sites with no power or network infrastructure, built to run unattended for months at a time.",
     image: "/images/mine-cam-cctv.jpg",
     imageAlt: "Mobile CCTV trailer camera deployed on a mine site",
+    relatedProductPath: "/pole-cameras",
+    relatedProductLabel: "Pole Cameras",
   },
   {
     slug: "utilities",
@@ -58,6 +69,8 @@ export const applications: Application[] = [
     image: "/images/cctv-solar-panels.jpg",
     imageAlt: "Solar panels powering a Mobile CCTV Solutions unit at an unmanned site",
     relatedPostSlug: "protecting-utility-sites-from-copper-theft",
+    relatedProductPath: "/pole-cameras",
+    relatedProductLabel: "Pole Cameras",
   },
   {
     slug: "disaster-recovery",
@@ -67,5 +80,7 @@ export const applications: Application[] = [
     image: "/images/onsite-trailer-2018.jpg",
     imageAlt: "Mobile CCTV Solutions trailer deployed on site",
     relatedPostSlug: "immediate-security-and-live-monitoring-for-flood-affected-areas",
+    relatedProductPath: "/mobile-cctv-trailers",
+    relatedProductLabel: "Mobile CCTV Trailers",
   },
 ];

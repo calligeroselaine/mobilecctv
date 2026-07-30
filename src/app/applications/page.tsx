@@ -5,26 +5,47 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/components/ui/JsonLd";
 import { applications } from "@/lib/applications";
+import { buildMetadata } from "@/lib/metadata";
+import { business } from "@/lib/business";
 
-export const metadata: Metadata = {
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Mobile CCTV surveillance for temporary and remote sites",
+  provider: { "@type": "LocalBusiness", name: business.name },
+  areaServed: "AU",
+  description:
+    "Mobile CCTV trailer and pole camera deployment for construction sites, events, councils, mining, utilities and disaster recovery — for sale or hire.",
+};
+
+export const metadata: Metadata = buildMetadata({
   title: "Applications & Industries",
   description:
-    "Mobile CCTV Solutions trailers and pole cameras in action across construction, events, councils, mining, utilities and disaster recovery.",
-};
+    "Temporary and remote site security applications for construction sites, events, councils, mining, utilities and disaster recovery — real deployments across Australia.",
+  path: "/applications",
+  image: {
+    src: "/images/companies-we-work-with-banner.jpg",
+    width: 1920,
+    height: 900,
+    alt: "Logos of councils and companies who work with Mobile CCTV Solutions",
+  },
+});
 
 export default function ApplicationsPage() {
   return (
     <>
+      <JsonLd data={serviceJsonLd} />
       <PageHero
         eyebrow="Applications"
         title="Trusted Across Construction, Events, Councils & More"
-        description="From building sites to festivals, unmanned utility plant to flood recovery — our trailers and pole cameras are built for sites that don't have permanent coverage."
+        description="Temporary and remote site security applications — from building sites to festivals, unmanned utility plant to flood recovery — built for sites that don't have permanent coverage."
         crumbs={[{ label: "Applications" }]}
       />
 
       {applications.map((app, index) => (
-        <Section key={app.slug} tone={index % 2 === 0 ? "surface" : "alt"}>
+        <Section key={app.slug} id={app.slug} tone={index % 2 === 0 ? "surface" : "alt"}>
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
             <div className={index % 2 === 1 ? "md:order-2" : undefined}>
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
@@ -40,15 +61,24 @@ export default function ApplicationsPage() {
             <div className={index % 2 === 1 ? "md:order-1" : undefined}>
               <h2 className="text-h2">{app.title}</h2>
               <p className="mt-4 text-steel-600">{app.description}</p>
-              {app.relatedPostSlug && (
+              <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                 <Link
-                  href={`/blog/${app.relatedPostSlug}`}
-                  className="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
+                  href={app.relatedProductPath}
+                  className="inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
                 >
-                  Read the story
+                  View {app.relatedProductLabel}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              )}
+                {app.relatedPostSlug && (
+                  <Link
+                    href={`/blog/${app.relatedPostSlug}`}
+                    className="inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
+                  >
+                    Read The Story
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </Section>

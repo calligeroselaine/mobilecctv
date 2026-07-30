@@ -9,6 +9,7 @@ import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { getAdjacentPosts, getAllPosts, getPostBySlug } from "@/lib/blog";
 import { business } from "@/lib/business";
+import { buildMetadata } from "@/lib/metadata";
 
 type Params = { slug: string };
 
@@ -24,10 +25,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  return {
+  return buildMetadata({
     title: post.title,
     description: post.excerpt,
-  };
+    path: `/blog/${post.slug}`,
+  });
 }
 
 export default async function BlogPostPage({
@@ -72,6 +74,19 @@ export default async function BlogPostPage({
             className="[&_p]:mb-4 [&_p]:text-steel-600 [&_p]:leading-relaxed [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2 [&_li]:text-steel-600 [&_strong]:font-semibold [&_strong]:text-ink"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
+
+          {post.relatedPage && post.relatedLabel && (
+            <div className="mt-8 rounded-lg border border-steel-200 bg-surface-alt p-5">
+              <p className="text-sm text-steel-600">Related solution</p>
+              <Link
+                href={post.relatedPage}
+                className="mt-1 inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
+              >
+                {post.relatedLabel}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          )}
 
           {(previous || next) && (
             <nav

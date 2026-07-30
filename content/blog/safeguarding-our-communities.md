@@ -2,6 +2,8 @@
 title: "Safeguarding Our Communities Whilst Protecting Our Youth"
 date: "5 May"
 order: 2
+relatedPage: "/applications#councils"
+relatedLabel: "Councils & Public Safety"
 excerpt: "Councils around Australia are turning to our pole camera technology and security trailers to protect neighbourhoods and deter antisocial behaviour."
 ---
 

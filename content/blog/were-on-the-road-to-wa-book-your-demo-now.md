@@ -2,6 +2,8 @@
 title: "We're on the Road to WA – Book Your Demo Now"
 date: "22 June"
 order: 8
+relatedPage: "/mobile-cctv-trailers"
+relatedLabel: "Mobile CCTV Trailers"
 excerpt: "We're taking appointments now for a 30-minute demo of our security trailers in the Perth area."
 ---
 

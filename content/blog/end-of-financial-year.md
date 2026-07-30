@@ -2,6 +2,8 @@
 title: "End of Financial Year – Instant Tax Write-Off"
 date: "31 May"
 order: 6
+relatedPage: "/mobile-cctv-trailers"
+relatedLabel: "Mobile CCTV Trailers"
 excerpt: "Many of our customers are taking advantage of the Government's Instant Tax Write-Off, allowing businesses to write off equipment costs up to $150,000."
 reviewNote: "Original post had a typo (\"Manly of ours customers\") — corrected here. The $150,000 threshold and 12-week build time are time-sensitive figures from the old site; please confirm they're still current before this goes live."
 ---

@@ -7,12 +7,20 @@ import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { business } from "@/lib/business";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "CCTV Mobi Pole Camera",
+export const metadata: Metadata = buildMetadata({
+  title: "Pole-Mounted CCTV Cameras",
   description:
-    "Deliver CCTV surveillance to any location with our Mobi Pole Camera. Exclusive to Mobile CCTV Solutions cloud-based recording. For hire or purchase.",
-};
+    "Solar-powered, pole-mounted remote surveillance cameras for sites without power or network infrastructure — cloud recording, for sale or hire across Australia.",
+  path: "/pole-cameras",
+  image: {
+    src: "/images/solar-cctv-pole-cam.jpg",
+    width: 1000,
+    height: 1333,
+    alt: "Mobi Pole Cam solar-powered surveillance unit",
+  },
+});
 
 const specs = [
   "Efficient 75W monocrystalline silicon solar panel",
@@ -50,10 +58,10 @@ export default function PoleCamerasPage() {
           <div>
             <SectionHeading title="Deliver Surveillance To Any Location With The Mobi Pole Cam" />
             <p className="mt-4 text-steel-600">
-              Our remote-view-enabled, standalone solar surveillance
-              solutions are perfect in areas without network or power
-              infrastructure. This can include trouble-spot monitoring, in
-              almost any area.
+              Our pole-mounted CCTV cameras are remote-view-enabled,
+              standalone solar surveillance systems built for CCTV in
+              remote locations without network or power infrastructure.
+              This can include trouble-spot monitoring, in almost any area.
             </p>
             <p className="mt-4 text-steel-600">
               Uses include permanent sites such as parks, farms and

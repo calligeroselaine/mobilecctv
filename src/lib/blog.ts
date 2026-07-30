@@ -19,6 +19,9 @@ export type BlogPost = {
   order: number;
   excerpt: string;
   reviewNote?: string;
+  /** Internal link to the most relevant product/application page. */
+  relatedPage?: string;
+  relatedLabel?: string;
   contentHtml: string;
 };
 
@@ -31,19 +34,25 @@ function readAllSlugs(): string[] {
     .map((file) => file.replace(/\.md$/, ""));
 }
 
+function summaryFromData(slug: string, data: Record<string, unknown>): BlogPostSummary {
+  return {
+    slug,
+    title: data.title as string,
+    date: data.date as string,
+    order: data.order as number,
+    excerpt: data.excerpt as string,
+    reviewNote: data.reviewNote as string | undefined,
+    relatedPage: data.relatedPage as string | undefined,
+    relatedLabel: data.relatedLabel as string | undefined,
+  };
+}
+
 export function getAllPosts(): BlogPostSummary[] {
   return readAllSlugs()
     .map((slug) => {
       const raw = fs.readFileSync(path.join(BLOG_DIR, `${slug}.md`), "utf8");
       const { data } = matter(raw);
-      return {
-        slug,
-        title: data.title as string,
-        date: data.date as string,
-        order: data.order as number,
-        excerpt: data.excerpt as string,
-        reviewNote: data.reviewNote as string | undefined,
-      };
+      return summaryFromData(slug, data);
     })
     .sort((a, b) => a.order - b.order);
 }
@@ -57,12 +66,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const contentHtml = marked.parse(content, { async: false }) as string;
 
   return {
-    slug,
-    title: data.title as string,
-    date: data.date as string,
-    order: data.order as number,
-    excerpt: data.excerpt as string,
-    reviewNote: data.reviewNote as string | undefined,
+    ...summaryFromData(slug, data),
     contentHtml,
   };
 }

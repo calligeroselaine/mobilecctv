@@ -2,6 +2,8 @@
 title: "Securing the Granny Smith Festival with Mobile CCTV Solutions"
 date: "1 November"
 order: 1
+relatedPage: "/applications#events"
+relatedLabel: "Event & Festival Security"
 excerpt: "Mobile CCTV Solutions was proud to support the recent Granny Smith Festival in Ryde, providing high-tech, flexible security to keep the event safe and enjoyable for all."
 ---
 

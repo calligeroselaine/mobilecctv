@@ -2,6 +2,8 @@
 title: "Protecting Utility Sites from Copper Theft"
 date: "12 September"
 order: 9
+relatedPage: "/applications#utilities"
+relatedLabel: "Utilities & Infrastructure"
 excerpt: "We're building new CCTV trailers to help a utility supplier respond to break-ins and copper theft at their sites."
 reviewNote: "This post had no title on the original site (it displayed blank). We've given it a title based on its content — please confirm this is the intended headline."
 ---

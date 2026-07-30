@@ -2,6 +2,8 @@
 title: "Safeguarding Tradition – The Crucial Role of Mobile CCTV Solutions at Sydney's Largest Ramadan Festival"
 date: "29 April"
 order: 3
+relatedPage: "/applications#events"
+relatedLabel: "Event & Festival Security"
 excerpt: "For the fifth consecutive year, a South West Sydney Council entrusted Mobile CCTV Solutions as the chosen security provider for the Lakemba Nights Ramadan Festival."
 reviewNote: "This post's title/meta tag was mismatched with its content on the old site (the browser tab showed a different post's title). Corrected here — flagging so the client is aware of the fix."
 ---

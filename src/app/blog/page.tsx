@@ -4,12 +4,14 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { getAllPosts } from "@/lib/blog";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Blog",
+export const metadata: Metadata = buildMetadata({
+  title: "Blog & Insights",
   description:
-    "News and case studies from Mobile CCTV Solutions — event security, council partnerships, construction site protection and more.",
-};
+    "Real mobile CCTV deployments from Mobile CCTV Solutions — event security, council partnerships, construction site protection and disaster recovery.",
+  path: "/blog",
+});
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();

@@ -3,12 +3,14 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { business } from "@/lib/business";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = buildMetadata({
+  title: "Contact & Get A Quote",
   description:
-    "Get in touch with Mobile CCTV Solutions. Call 1300 99 69 10 or send us an enquiry for trailer camera and pole cam sales or hire.",
-};
+    "Request a quote or deployment for a mobile CCTV trailer or pole camera. Call 1300 99 69 10 or send an enquiry — Australia-wide, sale or hire.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

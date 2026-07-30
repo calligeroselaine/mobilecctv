@@ -7,12 +7,20 @@ import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { business } from "@/lib/business";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Mobile CCTV Trailer Camera",
+export const metadata: Metadata = buildMetadata({
+  title: "Mobile CCTV Trailers & Trailer Hire",
   description:
-    "We are Australia-wide security specialists, providing sales and rentals of Mobile CCTV Trailer Cameras. Contact us 24/7 on 1300 996 910.",
-};
+    "Solar-powered mobile CCTV trailers for sale or hire across Australia. Ideal for construction site CCTV and temporary site security — deployed in minutes, monitored remotely.",
+  path: "/mobile-cctv-trailers",
+  image: {
+    src: "/images/mobile-cctv-trailers.jpg",
+    width: 1106,
+    height: 626,
+    alt: "Mobile CCTV trailer with solar panels and camera mast",
+  },
+});
 
 const features = [
   "360° camera view — independent day/night lenses",
@@ -49,9 +57,11 @@ export default function TrailersPage() {
           <div>
             <SectionHeading title="Mobile CCTV Solutions Trailer Camera" />
             <p className="mt-4 text-steel-600">
-              Mobile CCTV Solutions trailer cameras are a cost-effective and
-              affordable solution designed to protect your valuable business
-              assets.
+              Mobile CCTV Solutions trailer cameras are a cost-effective,
+              solar-powered CCTV trailer solution — available for mobile
+              CCTV trailer hire or purchase Australia-wide — designed to
+              protect your valuable business assets, including construction
+              site CCTV coverage and temporary site security.
             </p>
             <p className="mt-4 text-steel-600">
               Our trailers can both complement and replace traditional

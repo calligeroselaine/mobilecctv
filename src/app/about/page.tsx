@@ -5,12 +5,20 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { business } from "@/lib/business";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Mobile CCTV Solutions provide high-quality security management services Australia-wide, supplementing security guards, mobile patrols and fixed CCTV.",
-};
+    "Mobile CCTV Solutions is an Australian-owned, licensed security specialist providing mobile CCTV trailers and pole cameras Australia-wide.",
+  path: "/about",
+  image: {
+    src: "/images/office-security-via-entrance.jpg",
+    width: 1000,
+    height: 665,
+    alt: "Mobile CCTV Solutions site security in operation",
+  },
+});
 
 const pillars = [
   {
@@ -68,7 +76,7 @@ export default function AboutPage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
-              <h2 className="text-h3 mt-4">{title}</h2>
+              <h3 className="text-h3 mt-4">{title}</h3>
               <p className="mt-2 text-steel-600">{description}</p>
             </div>
           ))}

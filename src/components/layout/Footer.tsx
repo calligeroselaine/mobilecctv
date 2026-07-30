@@ -17,6 +17,7 @@ export function Footer() {
             alt={business.name}
             width={1427}
             height={416}
+            sizes="150px"
             className="h-8 w-auto brightness-0 invert"
           />
           <p className="mt-4 text-sm">

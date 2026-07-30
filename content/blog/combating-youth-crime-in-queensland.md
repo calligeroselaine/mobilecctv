@@ -2,6 +2,7 @@
 title: "Combating Youth Crime in Queensland – The Role of Mobile CCTV Solutions"
 date: "27 March"
 order: 4
+image: "/images/blog/youth-crime-qld.jpg"
 relatedPage: "/applications#councils"
 relatedLabel: "Councils & Public Safety"
 excerpt: "Mobile CCTV solutions have emerged as a promising tool for crime prevention, effectively deterring youth crime and enhancing public safety on Queensland streets."

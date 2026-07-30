@@ -2,6 +2,7 @@
 title: "Protecting Utility Sites from Copper Theft"
 date: "12 September"
 order: 9
+image: "/images/blog/copper-theft-utility.jpg"
 relatedPage: "/applications#utilities"
 relatedLabel: "Utilities & Infrastructure"
 excerpt: "We're building new CCTV trailers to help a utility supplier respond to break-ins and copper theft at their sites."

@@ -2,6 +2,7 @@
 title: "Immediate Security and Live Monitoring for Flood-Affected Areas"
 date: "9 March"
 order: 7
+image: "/images/blog/flood-affected-areas.jpg"
 relatedPage: "/applications#disaster-recovery"
 relatedLabel: "Disaster Recovery"
 excerpt: "Local Councils are using our Mobile CCTV trailers to aid disaster recovery and prevent looting of vulnerable properties and businesses."

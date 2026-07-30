@@ -18,6 +18,7 @@ export type BlogPost = {
   date: string;
   order: number;
   excerpt: string;
+  image: string;
   reviewNote?: string;
   /** Internal link to the most relevant product/application page. */
   relatedPage?: string;
@@ -41,6 +42,7 @@ function summaryFromData(slug: string, data: Record<string, unknown>): BlogPostS
     date: data.date as string,
     order: data.order as number,
     excerpt: data.excerpt as string,
+    image: data.image as string,
     reviewNote: data.reviewNote as string | undefined,
     relatedPage: data.relatedPage as string | undefined,
     relatedLabel: data.relatedLabel as string | undefined,

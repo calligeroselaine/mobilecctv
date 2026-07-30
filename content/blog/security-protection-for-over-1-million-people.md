@@ -2,6 +2,7 @@
 title: "Security Protection for Over 1 Million People"
 date: "31 May"
 order: 5
+image: "/images/blog/security-1-million.png"
 relatedPage: "/applications#events"
 relatedLabel: "Event & Festival Security"
 excerpt: "Over a million people turned out to one of Sydney's biggest cultural celebrations — Ramadan Nights Lakemba — and Mobile CCTV Solutions was there."

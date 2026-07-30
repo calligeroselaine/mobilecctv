@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -17,23 +18,34 @@ export function RecentBlog() {
       </div>
       <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
         {recentBlogPosts.map((post) => (
-          <article key={post.slug}>
-            <p className="text-eyebrow font-bold uppercase text-brand">
-              {post.date}
-            </p>
-            <h3 className="text-h3 mt-2">
-              <Link href={`/blog/${post.slug}`} className="hover:text-brand">
-                {post.title}
-              </Link>
-            </h3>
-            <p className="mt-2 text-steel-600">{post.excerpt}</p>
-            <Link
-              href={`/blog/${post.slug}`}
-              className="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
-            >
-              Read More
-              <ArrowRight className="h-4 w-4" />
+          <article key={post.slug} className="overflow-hidden rounded-xl border border-steel-200">
+            <Link href={`/blog/${post.slug}`} className="relative block aspect-video w-full">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover"
+              />
             </Link>
+            <div className="p-5">
+              <p className="text-eyebrow font-bold uppercase text-brand">
+                {post.date}
+              </p>
+              <h3 className="text-h3 mt-2">
+                <Link href={`/blog/${post.slug}`} className="hover:text-brand">
+                  {post.title}
+                </Link>
+              </h3>
+              <p className="mt-2 text-steel-600">{post.excerpt}</p>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand hover:text-brand-dark"
+              >
+                Read More
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </article>
         ))}
       </div>

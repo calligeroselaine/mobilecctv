@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -29,6 +30,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     path: `/blog/${post.slug}`,
+    image: { src: post.image, width: 1200, height: 675, alt: post.title },
   });
 }
 
@@ -48,6 +50,7 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
+    image: `${business.siteUrl}${post.image}`,
     author: { "@type": "Organization", name: business.name },
     publisher: { "@type": "Organization", name: business.name },
     mainEntityOfPage: `${business.siteUrl}/blog/${post.slug}`,
@@ -64,6 +67,17 @@ export default async function BlogPostPage({
 
       <Section tone="surface">
         <div className="mx-auto max-w-2xl">
+          <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(min-width: 768px) 672px, 100vw"
+              priority
+              className="object-cover"
+            />
+          </div>
+
           {post.reviewNote && (
             <div className="mb-8">
               <ReviewFlag note={post.reviewNote} />

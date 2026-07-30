@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MapPin, BadgeCheck, ShieldCheck, Flag } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -86,16 +86,17 @@ export default function AboutPage() {
       <Section tone="surface">
         <div className="mx-auto max-w-3xl">
           <SectionHeading
-            eyebrow="Watch"
-            title="See How We Work"
+            eyebrow="On Site"
+            title="Our Team At Work"
             align="center"
           />
-          <div className="mt-8">
-            <VideoEmbed
-              vimeoId="345582313"
-              vimeoHash="1358ee0f83"
-              title="About Mobile CCTV Solutions"
-              posterSrc="/images/office-security-via-entrance.jpg"
+          <div className="relative mt-8 aspect-[3/2] w-full overflow-hidden rounded-xl shadow-lg">
+            <Image
+              src="/images/team-on-site.jpg"
+              alt="Mobile CCTV Solutions team members on site with a deployed trailer"
+              fill
+              sizes="(min-width: 768px) 672px, 100vw"
+              className="object-cover"
             />
           </div>
         </div>

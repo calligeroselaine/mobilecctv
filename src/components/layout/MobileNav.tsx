@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, ExternalLink } from "lucide-react";
-import { NavLink, business } from "@/lib/business";
+import { NavLink, business, quoteMailto } from "@/lib/business";
 import { Button } from "@/components/ui/Button";
 
 type MobileNavProps = {
@@ -94,7 +94,7 @@ export function MobileNav({ links }: MobileNavProps) {
               {business.support.label}
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
-            <Button href="/contact" className="w-full">
+            <Button href={quoteMailto} className="w-full">
               Request A Quote
             </Button>
           </div>

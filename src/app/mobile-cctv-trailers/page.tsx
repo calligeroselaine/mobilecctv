@@ -6,7 +6,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
-import { business } from "@/lib/business";
+import { business, quoteMailto } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -175,7 +175,7 @@ export default function TrailersPage() {
           static guard.
         </p>
         <div className="mt-6">
-          <Button href="/contact" variant="inverse">
+          <Button href={quoteMailto} variant="inverse">
             Request A Quote
           </Button>
         </div>

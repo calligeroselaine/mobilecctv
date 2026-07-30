@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { applications } from "@/lib/applications";
 import { buildMetadata } from "@/lib/metadata";
-import { business } from "@/lib/business";
+import { business, quoteMailto } from "@/lib/business";
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
@@ -91,7 +91,7 @@ export default function ApplicationsPage() {
           camera, or a mix of both.
         </p>
         <div className="mt-6">
-          <Button href="/contact" variant="inverse">
+          <Button href={quoteMailto} variant="inverse">
             Request A Quote
           </Button>
         </div>

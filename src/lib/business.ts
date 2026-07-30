@@ -36,6 +36,14 @@ export const business = {
   siteUrl: "https://www.mobilecctvsolutions.com.au",
 } as const;
 
+/**
+ * Temporary stopgap for "Request A Quote" CTAs while the contact form's
+ * email backend isn't connected yet (see README "Contact form setup").
+ * Once RESEND_API_KEY is set, these buttons should go back to routing to
+ * /contact instead of opening a mailto: link directly.
+ */
+export const quoteMailto = `mailto:${business.email}?subject=${encodeURIComponent("Quote Request")}`;
+
 export type NavLink = {
   label: string;
   href: string;

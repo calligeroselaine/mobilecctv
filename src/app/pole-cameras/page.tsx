@@ -6,7 +6,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { business } from "@/lib/business";
+import { business, quoteMailto } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -176,7 +176,7 @@ export default function PoleCamerasPage() {
               cameras can&rsquo;t reach.
             </p>
             <div className="mt-6">
-              <Button href="/contact">Request A Quote</Button>
+              <Button href={quoteMailto}>Request A Quote</Button>
             </div>
           </div>
         </div>

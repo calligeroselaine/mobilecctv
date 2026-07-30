@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
+import { quoteMailto } from "@/lib/business";
 
 export function Hero() {
   return (
@@ -20,7 +21,7 @@ export function Hero() {
             operated by an Australian-owned, licensed security specialist.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact">Request A Quote</Button>
+            <Button href={quoteMailto}>Request A Quote</Button>
             <Button href="/mobile-cctv-trailers" variant="secondary">
               View Our Trailers
             </Button>

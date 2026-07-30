@@ -43,6 +43,19 @@ export function Button(props: ButtonProps) {
 
   if ("href" in props && props.href) {
     const isExternal = /^https?:\/\//.test(props.href);
+    const isProtocolLink = /^(mailto|tel):/.test(props.href);
+
+    if (isProtocolLink) {
+      // mailto:/tel: aren't app routes — Next's <Link> isn't meant for
+      // them, and they shouldn't open a new (blank) tab like external
+      // https:// links do.
+      return (
+        <a href={props.href} className={classes}>
+          {children}
+        </a>
+      );
+    }
+
     if (isExternal || props.download) {
       return (
         <a

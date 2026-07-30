@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero";
+import { QuickLookVideo } from "@/components/home/QuickLookVideo";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { ProductOverview } from "@/components/home/ProductOverview";
 import { KeyBenefits } from "@/components/home/KeyBenefits";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <QuickLookVideo />
       <TrustStrip />
       <ProductOverview />
       <KeyBenefits />

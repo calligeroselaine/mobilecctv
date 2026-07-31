@@ -17,7 +17,7 @@ export function QuoteRequest() {
       </div>
 
       <div className="mx-auto mt-8 max-w-2xl">
-        <ContactForm variant="compact" />
+        <ContactForm variant="full" />
       </div>
     </Section>
   );

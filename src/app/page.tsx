@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero";
+import { SystemsInAction } from "@/components/home/SystemsInAction";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { InstagramHighlights } from "@/components/home/InstagramHighlights";
 import { ProductOverview } from "@/components/home/ProductOverview";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <SystemsInAction />
       <TrustStrip />
       <InstagramHighlights />
       <ProductOverview />

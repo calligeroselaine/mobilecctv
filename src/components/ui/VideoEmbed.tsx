@@ -8,6 +8,8 @@ type VideoEmbedProps = {
   /** Optional poster image shown before the viewer clicks play. Defaults
    * to the provider's own thumbnail for YouTube if omitted. */
   posterSrc?: string;
+  /** Override the wrapper's rounding/shadow — defaults to "rounded-xl shadow-lg". */
+  frameClassName?: string;
 } & (
   | { vimeoId: string; vimeoHash: string; youtubeId?: never }
   | { youtubeId: string; vimeoId?: never; vimeoHash?: never }
@@ -22,6 +24,7 @@ type VideoEmbedProps = {
 export function VideoEmbed(props: VideoEmbedProps) {
   const { title } = props;
   const [playing, setPlaying] = useState(false);
+  const frameClassName = props.frameClassName ?? "rounded-xl shadow-lg";
 
   const posterSrc =
     props.posterSrc ??
@@ -36,7 +39,7 @@ export function VideoEmbed(props: VideoEmbedProps) {
         : `https://player.vimeo.com/video/${props.vimeoId}?h=${props.vimeoHash}&autoplay=1&color&title=0&byline=0&portrait=0`;
 
     return (
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-lg">
+      <div className={`relative aspect-video w-full overflow-hidden ${frameClassName}`}>
         <iframe
           src={src}
           title={title}
@@ -54,7 +57,7 @@ export function VideoEmbed(props: VideoEmbedProps) {
       type="button"
       onClick={() => setPlaying(true)}
       aria-label={`Play video: ${title}`}
-      className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl bg-ink shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      className={`group relative flex aspect-video w-full items-center justify-center overflow-hidden bg-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${frameClassName}`}
       style={
         posterSrc
           ? { backgroundImage: `url(${posterSrc})`, backgroundSize: "cover", backgroundPosition: "center" }

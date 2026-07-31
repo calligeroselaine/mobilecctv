@@ -28,8 +28,8 @@ export function Header() {
             width={1427}
             height={416}
             priority
-            sizes="150px"
-            className="h-9 w-auto"
+            sizes="300px"
+            className="h-[72px] w-auto"
           />
         </Link>
 

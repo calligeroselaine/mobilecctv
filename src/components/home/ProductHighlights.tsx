@@ -53,11 +53,11 @@ export function ProductHighlights() {
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl md:order-1">
             <Image
-              src="/images/pole-camera.png"
-              alt="Mobi Pole Cam solar-powered surveillance unit"
+              src="/images/pole-camera-security.png"
+              alt="Mobi Pole Cam solar-powered surveillance unit deployed on a pole"
               fill
               sizes="(min-width: 768px) 45vw, 100vw"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <div className="md:order-2">
@@ -98,8 +98,8 @@ export function ProductHighlights() {
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
             <Image
-              src="/images/hero-fullbleed-poster.jpg"
-              alt="Mobile CCTV Solutions trailer deployed on a residential lawn"
+              src="/images/onsite-trailer-2018.jpg"
+              alt="Mobile CCTV Solutions trailer deployed on a construction site"
               fill
               sizes="(min-width: 768px) 45vw, 100vw"
               className="object-cover"

@@ -50,11 +50,8 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <p className="text-eyebrow font-bold uppercase text-brand-light">
-              Deliver surveillance to any location with
-            </p>
-            <h1 className="text-h1 md:text-display mt-2 text-white">
-              Mobile CCTV Trailers &amp; Pole Cameras
+            <h1 className="text-h1 md:text-display text-white">
+              Protect what matters.
             </h1>
             <p className="mt-4 max-w-lg text-lg text-white/90">
               Cost-effective, solar-powered CCTV trailers and mobile security

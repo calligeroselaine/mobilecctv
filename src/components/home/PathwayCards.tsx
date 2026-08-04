@@ -22,16 +22,18 @@ export function PathwayCards() {
                 href={pathway.href}
                 className="group relative flex flex-col overflow-hidden rounded-xl border border-steel-200 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image
-                    src={pathway.image}
-                    alt={pathway.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="relative aspect-[4/3] w-full">
+                  <div className="absolute inset-0 overflow-hidden">
+                    <Image
+                      src={pathway.image}
+                      alt={pathway.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                   <span
-                    className={`absolute bottom-0 left-1/2 flex h-14 w-14 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full text-white shadow-lg ring-4 ring-white ${pathway.accent.badge}`}
+                    className={`absolute bottom-0 left-1/2 z-10 flex h-14 w-14 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full text-white shadow-lg ring-4 ring-white ${pathway.accent.badge}`}
                     aria-hidden="true"
                   >
                     <Icon className="h-6 w-6" />

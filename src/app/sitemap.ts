@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { business } from "@/lib/business";
 import { getAllPosts } from "@/lib/blog";
+import { solutions } from "@/lib/solutions";
 
 /**
  * All public, indexable pages. Deliberately excludes: the removed /login/
@@ -13,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${business.siteUrl}/mobile-cctv-trailers`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${business.siteUrl}/pole-cameras`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${business.siteUrl}/applications`, changeFrequency: "monthly", priority: 0.8 },
+    ...solutions.map((solution) => ({
+      url: `${business.siteUrl}${solution.path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
     { url: `${business.siteUrl}/about`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${business.siteUrl}/blog`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${business.siteUrl}/contact`, changeFrequency: "yearly", priority: 0.5 },

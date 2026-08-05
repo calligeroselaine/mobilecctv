@@ -1,20 +1,16 @@
-import { HardHat, Building2, PartyPopper, type LucideIcon } from "lucide-react";
+import { Truck, Antenna, PartyPopper, type LucideIcon } from "lucide-react";
 
 /**
  * The three homepage "pathway" cards — the client's decision-tree entry
- * points, each linking to a dedicated /solutions/* landing page. Copy is
- * verbatim from the client's brief, not paraphrased.
+ * points. Corrected per client feedback to be product/service-led
+ * (Trailers, Pole Cameras, Temporary Events CCTV) rather than
+ * audience-led. Trailers and Pole Cameras link straight to their real
+ * product pages; Events reuses the existing dedicated solutions page.
  */
 export type Pathway = {
-  slug: "construction-sites" | "vacant-properties" | "events-temporary-sites";
+  slug: "mobile-cctv-trailers" | "pole-cameras" | "temporary-cctv-for-events";
   href: string;
   icon: LucideIcon;
-  /** Tailwind classes for this card's accent (icon badge + CTA). */
-  accent: {
-    badge: string;
-    eyebrow: string;
-    button: string;
-  };
   eyebrow: string;
   heading: string;
   description: string;
@@ -25,52 +21,37 @@ export type Pathway = {
 
 export const pathways: Pathway[] = [
   {
-    slug: "construction-sites",
-    href: "/solutions/construction-sites",
-    icon: HardHat,
-    accent: {
-      badge: "bg-brand",
-      eyebrow: "text-brand",
-      button: "bg-brand hover:bg-brand-dark",
-    },
-    eyebrow: "I Need To Protect",
-    heading: "Construction Sites",
+    slug: "mobile-cctv-trailers",
+    href: "/mobile-cctv-trailers",
+    icon: Truck,
+    eyebrow: "Explore",
+    heading: "Mobile CCTV Trailers",
     description:
-      "Deter theft, vandalism and site downtime with rapidly deployed CCTV solutions.",
-    buttonLabel: "Explore Construction Solutions",
+      "Solar-powered, towable surveillance trailers with 360° camera coverage and remote live access — deployed in minutes, no mains power required.",
+    buttonLabel: "Explore Trailers",
     image: "/images/construction-site.jpg",
     imageAlt: "Mobile CCTV Solutions trailer deployed on a construction site with a crane behind it",
   },
   {
-    slug: "vacant-properties",
-    href: "/solutions/vacant-properties",
-    icon: Building2,
-    accent: {
-      badge: "bg-emerald-600",
-      eyebrow: "text-emerald-700",
-      button: "bg-emerald-600 hover:bg-emerald-700",
-    },
-    eyebrow: "I Need To Protect",
-    heading: "Vacant Properties",
+    slug: "pole-cameras",
+    href: "/pole-cameras",
+    icon: Antenna,
+    eyebrow: "Explore",
+    heading: "Pole Cameras",
     description:
-      "Keep vacant and unoccupied properties secure with reliable 24/7 monitoring.",
-    buttonLabel: "Explore Property Solutions",
-    image: "/images/solar-cctv-pole-cam.jpg",
-    imageAlt: "Mobi Pole Cam solar-powered surveillance unit deployed on a quiet street",
+      "Standalone solar pole cameras for sites without power or network infrastructure — fixed or 4x-zoom PTZ, with 7–30 day cloud recording.",
+    buttonLabel: "Explore Pole Cameras",
+    image: "/images/pole-camera-security.png",
+    imageAlt: "Mobi Pole Cam solar-powered surveillance unit deployed on a pole",
   },
   {
-    slug: "events-temporary-sites",
+    slug: "temporary-cctv-for-events",
     href: "/solutions/events-temporary-sites",
     icon: PartyPopper,
-    accent: {
-      badge: "bg-amber-600",
-      eyebrow: "text-amber-700",
-      button: "bg-amber-600 hover:bg-amber-700",
-    },
-    eyebrow: "I Need To Protect",
-    heading: "Events & Temporary Sites",
+    eyebrow: "Explore",
+    heading: "Temporary CCTV For Events",
     description:
-      "Flexible surveillance for events, festivals and short-term security requirements.",
+      "Flexible surveillance for events, festivals and short-term security requirements — coverage for events of any size, deployed and removed on your schedule.",
     buttonLabel: "Explore Event Solutions",
     image: "/images/pole-camera-event-security.jpg",
     imageAlt: "Mobi Pole Cam providing event security coverage",

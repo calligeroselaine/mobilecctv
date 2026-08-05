@@ -46,6 +46,10 @@
   --color-warning: #92400e;
   --color-warning-bg: #fef3c7;
   --color-warning-border: #fcd34d;
+
+  /* Pale yellow tertiary accent — used sparingly as a highlight touch
+     (e.g. the homepage pathway cards), never as a primary UI colour. */
+  --color-highlight: #fde68a;
 }
 
 html {

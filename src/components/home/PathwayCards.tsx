@@ -8,6 +8,9 @@ import { pathways } from "@/lib/pathways";
  * The three decision-tree entry points, shown directly below the hero.
  * Each card is a single link (not a nested button) so the whole card is
  * clickable, per the client's "make each card feel clickable" brief.
+ * Uses the site's existing blue/grey/white/black palette throughout —
+ * the pale yellow "highlight" token only appears as a subtle hover
+ * accent, never as a primary card colour.
  */
 export function PathwayCards() {
   return (
@@ -22,6 +25,11 @@ export function PathwayCards() {
                 href={pathway.href}
                 className="group relative flex flex-col overflow-hidden rounded-xl border border-steel-200 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
+                <span
+                  className="absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 bg-highlight transition-transform duration-300 group-hover:scale-x-100"
+                  aria-hidden="true"
+                />
+
                 <div className="relative aspect-[4/3] w-full">
                   <div className="absolute inset-0 overflow-hidden">
                     <Image
@@ -33,7 +41,7 @@ export function PathwayCards() {
                     />
                   </div>
                   <span
-                    className={`absolute bottom-0 left-1/2 z-10 flex h-14 w-14 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full text-white shadow-lg ring-4 ring-white ${pathway.accent.badge}`}
+                    className="absolute bottom-0 left-1/2 z-10 flex h-14 w-14 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-brand text-white shadow-lg ring-4 ring-white"
                     aria-hidden="true"
                   >
                     <Icon className="h-6 w-6" />
@@ -41,14 +49,12 @@ export function PathwayCards() {
                 </div>
 
                 <div className="flex flex-1 flex-col px-6 pb-6 pt-10 text-center">
-                  <p className={`text-eyebrow font-bold uppercase ${pathway.accent.eyebrow}`}>
+                  <p className="text-eyebrow font-bold uppercase text-brand">
                     {pathway.eyebrow}
                   </p>
                   <h3 className="text-h3 mt-2">{pathway.heading}</h3>
                   <p className="mt-2 flex-1 text-steel-600">{pathway.description}</p>
-                  <span
-                    className={`mt-5 inline-flex items-center justify-center gap-1.5 self-center rounded-md px-5 py-2.5 text-sm font-semibold text-white transition-colors ${pathway.accent.button}`}
-                  >
+                  <span className="mt-5 inline-flex items-center justify-center gap-1.5 self-center rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-brand-dark">
                     {pathway.buttonLabel}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </span>

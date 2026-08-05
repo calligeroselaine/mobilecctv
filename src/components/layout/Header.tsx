@@ -20,7 +20,7 @@ export function Header() {
         </Container>
       </div>
 
-      <Container className="flex items-center justify-between gap-4 border-b border-steel-200 py-3">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4 border-b border-steel-200 px-6 py-3">
         <Link href="/" className="shrink-0">
           <Image
             src="/images/logo.png"
@@ -34,14 +34,14 @@ export function Header() {
         </Link>
 
         <nav className="hidden lg:block">
-          <ul className="flex items-center gap-5 xl:gap-6">
+          <ul className="flex items-center gap-4 xl:gap-5">
             {primaryNav
               .filter((link) => link.label !== "Contact")
               .map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-semibold text-ink hover:text-brand"
+                    className="whitespace-nowrap text-sm font-semibold text-ink hover:text-brand"
                   >
                     {link.label}
                   </Link>
@@ -56,7 +56,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             title="Remote support session for existing customers (opens TeamViewer in a new tab)"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-brand hover:text-brand-dark"
+            className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-brand hover:text-brand-dark"
           >
             {business.support.label}
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -66,7 +66,7 @@ export function Header() {
         </div>
 
         <MobileNav links={primaryNav} />
-      </Container>
+      </div>
     </header>
   );
 }

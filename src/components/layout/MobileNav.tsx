@@ -68,17 +68,19 @@ export function MobileNav({ links }: MobileNavProps) {
       {open && (
         <div className="absolute inset-x-0 top-full z-40 border-t border-steel-200 bg-white shadow-lg">
           <nav className="flex flex-col px-6 py-4">
-            {links.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                ref={index === 0 ? firstLinkRef : undefined}
-                onClick={() => setOpen(false)}
-                className="border-b border-steel-200 py-3 text-base font-semibold text-ink last:border-0"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links
+              .filter((link) => link.label !== "Contact")
+              .map((link, index) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  ref={index === 0 ? firstLinkRef : undefined}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-steel-200 py-3 text-base font-semibold text-ink last:border-0"
+                >
+                  {link.label}
+                </Link>
+              ))}
           </nav>
           <div className="flex flex-col gap-3 px-6 pb-6">
             <a href={business.phone.href} className="text-base font-semibold text-brand">
@@ -94,6 +96,9 @@ export function MobileNav({ links }: MobileNavProps) {
               {business.support.label}
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
+            <Button href="/contact" className="w-full">
+              Contact
+            </Button>
             <Button href="/contact" className="w-full">
               Request A Quote
             </Button>

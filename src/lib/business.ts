@@ -45,9 +45,8 @@ export type NavLink = {
 export const primaryNav: NavLink[] = [
   { label: "Mobile CCTV Trailers", href: "/mobile-cctv-trailers" },
   { label: "Pole Cameras", href: "/pole-cameras" },
-  { label: "Applications", href: "/applications" },
+  { label: "Temporary CCTV for Events", href: "/applications" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 

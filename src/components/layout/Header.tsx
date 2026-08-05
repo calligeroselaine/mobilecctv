@@ -35,16 +35,18 @@ export function Header() {
 
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-5 xl:gap-6">
-            {primaryNav.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm font-semibold text-ink hover:text-brand"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {primaryNav
+              .filter((link) => link.label !== "Contact")
+              .map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-semibold text-ink hover:text-brand"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </nav>
 
@@ -59,6 +61,7 @@ export function Header() {
             {business.support.label}
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
+          <Button href="/contact">Contact</Button>
           <Button href="/contact">Request A Quote</Button>
         </div>
 

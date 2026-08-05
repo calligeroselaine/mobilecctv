@@ -8,6 +8,7 @@ import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
+import { contactHref } from "@/lib/contactHref";
 
 export const metadata: Metadata = buildMetadata({
   title: "Pole-Mounted CCTV Cameras",
@@ -51,7 +52,19 @@ export default function PoleCamerasPage() {
         eyebrow="Deliver surveillance to any location with the"
         title="Mobi Pole Cam"
         crumbs={[{ label: "Pole Cameras" }]}
-      />
+      >
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button href={contactHref({ engagement: "Purchase", solution: "Pole Camera" })}>
+            Purchase Enquiry
+          </Button>
+          <Button
+            href={contactHref({ engagement: "Hire", solution: "Pole Camera" })}
+            variant="secondary"
+          >
+            Hire Enquiry
+          </Button>
+        </div>
+      </PageHero>
 
       <Section tone="surface">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
@@ -175,8 +188,16 @@ export default function PoleCamerasPage() {
               surveillance security system, built for the sites your fixed
               cameras can&rsquo;t reach.
             </p>
-            <div className="mt-6">
-              <Button href="/contact">Request A Quote</Button>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href={contactHref({ engagement: "Purchase", solution: "Pole Camera" })}>
+                Purchase Enquiry
+              </Button>
+              <Button
+                href={contactHref({ engagement: "Hire", solution: "Pole Camera" })}
+                variant="secondary"
+              >
+                Hire Enquiry
+              </Button>
             </div>
           </div>
         </div>

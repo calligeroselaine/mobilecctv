@@ -41,7 +41,17 @@ export function SolutionPageTemplate({ solution }: SolutionPageTemplateProps) {
         title={solution.heroTitle}
         description={solution.heroDescription}
         crumbs={[{ label: "Solutions" }, { label: solution.navLabel }]}
-      />
+      >
+        {solution.heroCta && solution.heroCta.length > 0 && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {solution.heroCta.map((cta, index) => (
+              <Button key={cta.label} href={cta.href} variant={index === 0 ? "primary" : "secondary"}>
+                {cta.label}
+              </Button>
+            ))}
+          </div>
+        )}
+      </PageHero>
 
       <Section tone="surface">
         <SectionHeading eyebrow="The Challenge" title="What You're Up Against" />
@@ -151,7 +161,7 @@ export function SolutionPageTemplate({ solution }: SolutionPageTemplateProps) {
         <h2 className="text-h2">{solution.finalCtaHeading}</h2>
         <p className="mx-auto mt-3 max-w-xl text-white/90">{solution.finalCtaDescription}</p>
         <div className="mt-6">
-          <Button href="/contact" variant="inverse">
+          <Button href={solution.finalCtaHref ?? "/contact"} variant="inverse">
             {solution.finalCtaButtonLabel}
           </Button>
         </div>

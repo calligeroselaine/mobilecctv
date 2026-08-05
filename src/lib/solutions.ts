@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/components/ui/Faq";
+import { contactHref } from "@/lib/contactHref";
 
 export type SolutionProduct = {
   title: string;
@@ -24,6 +25,8 @@ export type Solution = {
   heroTitle: string;
   heroDescription: string;
   heroImage: { src: string; alt: string };
+  /** Optional CTA button(s) rendered in the hero banner itself, above the fold. */
+  heroCta?: { label: string; href: string }[];
   problems: SolutionProblem[];
   products: SolutionProduct[];
   /** References `title` in `@/lib/benefits` — keeps the copy in one place. */
@@ -33,6 +36,8 @@ export type Solution = {
   finalCtaHeading: string;
   finalCtaDescription: string;
   finalCtaButtonLabel: string;
+  /** Defaults to "/contact" if omitted. */
+  finalCtaHref?: string;
   /** Shown on-page when a section relies on adjacent rather than direct evidence. */
   reviewNote?: string;
 };
@@ -229,6 +234,8 @@ export const solutions: Solution[] = [
       src: "/images/pole-camera-event-security.jpg",
       alt: "Mobi Pole Cam providing event security coverage",
     },
+    // No sale/purchase option for event security — hire only.
+    heroCta: [{ label: "Hire Enquiry", href: contactHref({ engagement: "Hire" }) }],
     problems: [
       {
         title: "Crowd Safety At Scale",
@@ -302,7 +309,8 @@ export const solutions: Solution[] = [
     finalCtaHeading: "Planning An Event Or Temporary Site?",
     finalCtaDescription:
       "Tell us about your event and we'll recommend the right coverage — trailer, pole camera, or a mix of both.",
-    finalCtaButtonLabel: "Speak With Our Team",
+    finalCtaButtonLabel: "Hire Enquiry",
+    finalCtaHref: contactHref({ engagement: "Hire" }),
   },
 ];
 

@@ -1,10 +1,14 @@
 "use client";
 
-import { FormEvent, useEffect, useId, useRef, useState } from "react";
+import { FormEvent, Suspense, useEffect, useId, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 
 type Variant = "full" | "compact";
+
+const ENGAGEMENT_VALUES = ["Hire", "Purchase"];
+const SOLUTION_VALUES = ["Mobile CCTV Trailer", "Pole Camera", "Both / a mix"];
 
 type FormState = {
   name: string;
@@ -65,8 +69,30 @@ type ContactFormProps = {
   variant?: Variant;
 };
 
-export function ContactForm({ variant = "full" }: ContactFormProps) {
-  const [state, setState] = useState<FormState>(initialState);
+/**
+ * Public entry point — wraps the actual form in Suspense because it reads
+ * useSearchParams() (to pre-select "Hire"/"Purchase" and the product from
+ * a Purchase/Hire Enquiry CTA link), which Next.js requires for any page
+ * that's statically rendered.
+ */
+export function ContactForm(props: ContactFormProps) {
+  return (
+    <Suspense fallback={<ContactFormFallback variant={props.variant ?? "full"} />}>
+      <ContactFormInner {...props} />
+    </Suspense>
+  );
+}
+
+function ContactFormInner({ variant = "full" }: ContactFormProps) {
+  const searchParams = useSearchParams();
+  const engagementParam = searchParams.get("engagement");
+  const solutionParam = searchParams.get("solution");
+
+  const [state, setState] = useState<FormState>(() => ({
+    ...initialState,
+    engagement: ENGAGEMENT_VALUES.includes(engagementParam ?? "") ? engagementParam! : "",
+    solution: SOLUTION_VALUES.includes(solutionParam ?? "") ? solutionParam! : "",
+  }));
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [serverError, setServerError] = useState<string | null>(null);
@@ -366,6 +392,20 @@ function Field({ id, label, error, className = "", children }: FieldProps) {
           {error}
         </p>
       )}
+    </div>
+  );
+}
+
+/** Matches the real form's approximate height so nothing shifts once it mounts. */
+function ContactFormFallback({ variant }: { variant: Variant }) {
+  const rows = variant === "full" ? 5 : 3;
+  return (
+    <div className="grid animate-pulse grid-cols-1 gap-4 sm:grid-cols-2" aria-hidden="true">
+      {Array.from({ length: rows * 2 }).map((_, i) => (
+        <div key={i} className="h-11 rounded-md bg-steel-200/60" />
+      ))}
+      <div className="h-32 rounded-md bg-steel-200/60 sm:col-span-2" />
+      <div className="h-11 w-40 rounded-md bg-steel-200/60" />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
+import { contactHref } from "@/lib/contactHref";
 
 export const metadata: Metadata = buildMetadata({
   title: "Mobile CCTV Trailers & Trailer Hire",
@@ -50,7 +51,19 @@ export default function TrailersPage() {
         eyebrow="Deliver surveillance to any location with"
         title="Mobile CCTV Trailer Camera"
         crumbs={[{ label: "Mobile CCTV Trailers" }]}
-      />
+      >
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button href={contactHref({ engagement: "Purchase", solution: "Mobile CCTV Trailer" })}>
+            Purchase Enquiry
+          </Button>
+          <Button
+            href={contactHref({ engagement: "Hire", solution: "Mobile CCTV Trailer" })}
+            variant="secondary"
+          >
+            Hire Enquiry
+          </Button>
+        </div>
+      </PageHero>
 
       <Section tone="surface">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
@@ -174,9 +187,18 @@ export default function TrailersPage() {
           no locked-in contracts, at around 25% of the cost of a 24-hour
           static guard.
         </p>
-        <div className="mt-6">
-          <Button href="/contact" variant="inverse">
-            Request A Quote
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Button
+            href={contactHref({ engagement: "Purchase", solution: "Mobile CCTV Trailer" })}
+            variant="inverse"
+          >
+            Purchase Enquiry
+          </Button>
+          <Button
+            href={contactHref({ engagement: "Hire", solution: "Mobile CCTV Trailer" })}
+            variant="inverse"
+          >
+            Hire Enquiry
           </Button>
         </div>
       </Section>

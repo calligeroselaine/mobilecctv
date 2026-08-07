@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/Hero";
 import { PathwayCards } from "@/components/home/PathwayCards";
 import { SystemsInAction } from "@/components/home/SystemsInAction";
 import { TrustStrip } from "@/components/home/TrustStrip";
-import { InstagramHighlights } from "@/components/home/InstagramHighlights";
 import { KeyBenefits } from "@/components/home/KeyBenefits";
 import { Applications } from "@/components/home/Applications";
 import { HowItWorks } from "@/components/home/HowItWorks";
@@ -17,7 +16,6 @@ export default function Home() {
       <PathwayCards />
       <SystemsInAction />
       <TrustStrip />
-      <InstagramHighlights />
       <KeyBenefits />
       <Applications />
       <HowItWorks />

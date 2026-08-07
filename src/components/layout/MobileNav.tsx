@@ -53,7 +53,7 @@ export function MobileNav({ links }: MobileNavProps) {
   }, [open]);
 
   return (
-    <div className="xl:hidden">
+    <div className="min-[1100px]:hidden">
       <button
         ref={toggleRef}
         type="button"

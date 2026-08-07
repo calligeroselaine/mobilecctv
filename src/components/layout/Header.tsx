@@ -20,7 +20,7 @@ export function Header() {
         </Container>
       </div>
 
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4 border-b border-steel-200 px-6 py-3">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-3 border-b border-steel-200 px-4 py-3 lg:px-6">
         <Link href="/" className="shrink-0">
           <Image
             src="/images/logo.png"
@@ -33,8 +33,8 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden xl:block">
-          <ul className="flex items-center gap-4 xl:gap-5">
+        <nav className="hidden min-[1100px]:block">
+          <ul className="flex items-center gap-2 xl:gap-5">
             {primaryNav
               .filter((link) => link.label !== "Contact")
               .map((link) => (
@@ -50,19 +50,19 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-2 min-[1100px]:flex xl:gap-3">
           <a
             href={business.support.href}
             target="_blank"
             rel="noopener noreferrer"
             title="Remote support session for existing customers (opens TeamViewer in a new tab)"
-            className="inline-flex items-center gap-1 whitespace-nowrap text-base font-semibold text-brand hover:text-brand-dark"
+            className="hidden items-center gap-1 whitespace-nowrap text-base font-semibold text-brand hover:text-brand-dark xl:inline-flex"
           >
             {business.support.label}
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
-          <Button href="/contact" className="!text-base">Contact</Button>
-          <Button href="/contact" className="!text-base">Request A Quote</Button>
+          <Button href="/contact" className="!px-4 !text-base">Contact</Button>
+          <Button href="/contact" className="!px-4 !text-base">Request A Quote</Button>
         </div>
 
         <MobileNav links={primaryNav} />

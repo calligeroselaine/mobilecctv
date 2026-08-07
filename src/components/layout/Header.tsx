@@ -33,7 +33,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden lg:block">
+        <nav className="hidden xl:block">
           <ul className="flex items-center gap-4 xl:gap-5">
             {primaryNav
               .filter((link) => link.label !== "Contact")
@@ -41,7 +41,7 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="whitespace-nowrap text-sm font-semibold text-ink hover:text-brand"
+                    className="whitespace-nowrap text-base font-semibold text-ink hover:text-brand"
                   >
                     {link.label}
                   </Link>
@@ -50,19 +50,19 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a
             href={business.support.href}
             target="_blank"
             rel="noopener noreferrer"
             title="Remote support session for existing customers (opens TeamViewer in a new tab)"
-            className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-brand hover:text-brand-dark"
+            className="inline-flex items-center gap-1 whitespace-nowrap text-base font-semibold text-brand hover:text-brand-dark"
           >
             {business.support.label}
-            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
-          <Button href="/contact">Contact</Button>
-          <Button href="/contact">Request A Quote</Button>
+          <Button href="/contact" className="!text-base">Contact</Button>
+          <Button href="/contact" className="!text-base">Request A Quote</Button>
         </div>
 
         <MobileNav links={primaryNav} />

@@ -34,14 +34,16 @@
 
   --color-steel-200: #e5e7eb;
   --color-steel-400: #9ca3af;
-  --color-steel-600: #4b5563;
+  /* Primary brand grey, matching the logo wordmark. */
+  --color-steel-600: #666666;
 
-  --color-brand: #2563eb;
-  --color-brand-dark: #1d4ed8;
-  --color-brand-soft: #eff4ff;
-  /* Lighter accent for text on dark backgrounds — #2563eb only hits 3.4:1
-     on --color-ink, which fails WCAG AA for text this size. This hits 9.8:1. */
-  --color-brand-light: #93c5fd;
+  /* Primary brand blue, matching the logo. */
+  --color-brand: #4588c6;
+  --color-brand-dark: #387bb8;
+  --color-brand-soft: #f3f7fb;
+  /* Lighter accent for text on dark backgrounds — #4588c6 only hits 4.7:1
+     on --color-ink, which is borderline for text this size. This hits 9.7:1. */
+  --color-brand-light: #a1c3e2;
 
   --color-warning: #92400e;
   --color-warning-bg: #fef3c7;

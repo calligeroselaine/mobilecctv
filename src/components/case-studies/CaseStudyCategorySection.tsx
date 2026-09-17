@@ -108,7 +108,10 @@ export function CaseStudyCategorySection({ category }: CaseStudyCategorySectionP
                   <stat.icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <p className="mt-3 text-3xl font-extrabold">{stat.value}</p>
-                <p className="mt-1 text-sm font-semibold text-steel-600">{stat.label}</p>
+                <p className="mt-1 text-sm font-bold uppercase tracking-wide text-ink">{stat.label}</p>
+                {stat.sublabel && (
+                  <p className="text-sm text-steel-600">{stat.sublabel}</p>
+                )}
                 <span className="mt-2 block h-0.5 w-6 bg-brand" />
               </div>
             ))}

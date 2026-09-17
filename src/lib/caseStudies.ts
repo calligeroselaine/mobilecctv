@@ -1,0 +1,259 @@
+import type { LucideIcon } from "lucide-react";
+import {
+  Camera,
+  ShieldCheck,
+  Repeat2,
+  Users,
+  Calendar,
+  TrendingUp,
+  Handshake,
+  CalendarClock,
+  Settings2,
+} from "lucide-react";
+import { contactHref } from "@/lib/contactHref";
+
+export type CaseStudyStat = {
+  icon: LucideIcon;
+  value: string;
+  label: string;
+};
+
+export type CaseStudy = {
+  slug: string;
+  title: string;
+  client: string;
+  location: string;
+  challenge: string;
+  solution: string;
+  result: string;
+  /** Plain factual statement from the client — never rendered with quotation
+   * marks or a named attribution unless the client supplied a direct quote. */
+  clientProof?: string;
+  image: string;
+  imageAlt: string;
+};
+
+export type CaseStudyCategory = {
+  id: string;
+  heroEyebrow: string;
+  heroTitle: string;
+  heroIntro: string;
+  heroImage: string;
+  heroImageAlt: string;
+  stats: CaseStudyStat[];
+  caseStudies: CaseStudy[];
+  /** Set when a case study for this category is confirmed but not yet
+   * built (e.g. still waiting on a client-supplied photo). */
+  pendingNote?: string;
+  closingCta: {
+    heading: string;
+    description: string;
+    buttonLabel: string;
+    href: string;
+  };
+};
+
+export const caseStudyCategories: CaseStudyCategory[] = [
+  {
+    id: "trailers",
+    heroEyebrow: "Mobile CCTV Trailers",
+    heroTitle: "Mobile CCTV Trailers in Action",
+    heroIntro:
+      "When security needs to be deployed quickly, the result matters more than the specification sheet. See how our mobile CCTV trailers are being used across construction sites and major public events.",
+    heroImage: "/images/onsite-trailer-2018.jpg",
+    heroImageAlt: "Mobile CCTV security trailer deployed on site",
+    stats: [
+      {
+        icon: Camera,
+        value: "15 camera views",
+        label: "Recording 24/7 across the ADCO Forest High School site",
+      },
+      {
+        icon: ShieldCheck,
+        value: "Zero break-ins",
+        label: "Since trailer and pole camera deployment at Forest High School",
+      },
+      {
+        icon: Repeat2,
+        value: "1 deployment, 2 jobs",
+        label: "Granny Smith Festival: bump-in security into live crowd management",
+      },
+      {
+        icon: Users,
+        value: "Zero major incidents",
+        label: "Across Granny Smith Festival bump-in through pack-down",
+      },
+    ],
+    caseStudies: [
+      {
+        slug: "adco-constructions",
+        title: "ADCO Constructions",
+        client: "ADCO Constructions",
+        location: "The Forest High School | Frenchs Forest, NSW",
+        challenge:
+          "As construction of the new Forest High School neared completion, the site had been hit by multiple break-ins and thefts, including stolen tools and copper. A back entrance had already been used during two separate break-ins.",
+        solution:
+          "Mobile CCTV Solutions deployed two mobile CCTV trailers across the site's main accessible areas, supported by a pole camera covering the vulnerable rear entrance. Together, the system provided 15 camera views recording 24/7. After hours, motion detection automatically alerted site managers, who could immediately access live footage remotely and see exactly who was on site.",
+        result:
+          "From the day the CCTV trailers became operational, there were no further break-ins and no further loss of equipment or finished components. The system also gave ADCO senior management another unexpected benefit: remote visibility of daily construction progress from head office.",
+        clientProof:
+          "ADCO is a repeat Mobile CCTV Solutions client. Following the result at The Forest High School, management confirmed they were very happy with both the equipment and the outcome and would use Mobile CCTV Solutions again.",
+        image: "/images/case-study-adco-forest-high-school.jpg",
+        imageAlt: "Mobile CCTV Solutions team with ADCO Constructions staff on site at Forest High School",
+      },
+    ],
+    pendingNote:
+      "Granny Smith Festival (City of Ryde Council, Eastwood NSW) case study is confirmed by the client and awaiting a supplied photo before it's added here.",
+    closingCta: {
+      heading: "Need temporary CCTV coverage for your site?",
+      description:
+        "Whether you're protecting a construction project for months or an event site for days, we'll design the coverage around the risk.",
+      buttonLabel: "Get a Quote for Mobile CCTV Trailer Hire",
+      href: contactHref({ engagement: "Hire", solution: "Mobile CCTV Trailer" }),
+    },
+  },
+  {
+    id: "pole-cameras",
+    heroEyebrow: "Pole Cameras",
+    heroTitle: "Pole Cameras in Action",
+    heroIntro:
+      "Some of the most important areas to monitor are exactly where permanent CCTV isn't available. Our pole cameras extend surveillance into temporary, remote and hard-to-cover locations without the need to build permanent CCTV infrastructure.",
+    heroImage: "/images/pole-cam-deployed-bushland.jpg",
+    heroImageAlt: "Mobi Pole Cam mounted on a solar-powered pole against dense bushland",
+    stats: [
+      {
+        icon: Calendar,
+        value: "4 years running",
+        label: "Pont3 has rebooked us for the TCS Sydney Marathon every year",
+      },
+      {
+        icon: Camera,
+        value: "28 live streams",
+        label: "Generated by 10 event pole cameras and 2 CCTV trailers at Bathurst",
+      },
+      {
+        icon: TrendingUp,
+        value: "150,000+ patrons",
+        label: "Secured across the Bathurst 1000 race weekend",
+      },
+      {
+        icon: Handshake,
+        value: "Repeat client",
+        label: "Guardian Venue Management rebooked us for two more Bathurst events",
+      },
+    ],
+    caseStudies: [
+      {
+        slug: "tcs-sydney-marathon",
+        title: "TCS Sydney Marathon",
+        client: "Pont3",
+        location: "Sydney, NSW",
+        challenge:
+          "The TCS Sydney Marathon isn't contained inside a venue. Equipment and infrastructure must be protected across the course before race day. Then, once the event begins, organisers need visibility across runner muster areas, the race start and changing road conditions throughout a live city-wide event.",
+        solution:
+          "Mobile CCTV Solutions installed pole cameras and CCTV trailers across key locations before race day, protecting equipment and infrastructure overnight. On race day, those cameras became part of the event-management network. The team could monitor runner muster areas in real time and see precisely when the first and last runners left each corral — critical information for managing race movements and reopening roads on schedule.",
+        result:
+          "Every runner group departed on time. Road closures reopened according to schedule. And no major incidents were recorded across the event.",
+        clientProof:
+          "Pont3 has returned to Mobile CCTV Solutions for the TCS Sydney Marathon for four consecutive years.",
+        image: "/images/case-study-sydney-marathon-cameras.jpg",
+        imageAlt: "Pole camera equipment staged for the TCS Sydney Marathon deployment",
+      },
+      {
+        slug: "supercars-bathurst-1000-pole-cameras",
+        title: "Supercars Bathurst 1000",
+        client: "Guardian Venue Management",
+        location: "Bathurst, NSW",
+        challenge:
+          "Bathurst creates an unusual surveillance problem: a huge temporary event environment with areas where permanent CCTV simply doesn't exist. Guardian Venue Management needed visibility across entry and exit points, vehicle checkpoints, crowded public spaces and temporary bar areas throughout the event.",
+        solution:
+          "Mobile CCTV Solutions deployed 10 event pole cameras alongside two CCTV trailers. The temporary system generated 28 live CCTV streams, allowing the security team to monitor the areas that mattered rather than relying on fixed camera locations. Those streams were also integrated with more than 30 existing local CCTV feeds.",
+        result:
+          "The security team could identify crowd and vehicle movement as it happened and redirect resources before issues developed. The operation successfully supported an event attracting more than 150,000 patrons and 20,000 campers across race weekend.",
+        clientProof:
+          "Guardian Venue Management is a repeat client and rebooked Mobile CCTV Solutions for a further two Bathurst race events in 2026.",
+        image: "/images/case-study-bathurst-1000.jpg",
+        imageAlt: "Pole camera trailer deployed on a hill with the Mount Panorama Bathurst sign in the background",
+      },
+    ],
+    closingCta: {
+      heading: "Need cameras where your existing CCTV can't reach?",
+      description:
+        "We can deploy standalone pole cameras for events, public spaces, construction sites and temporary trouble spots.",
+      buttonLabel: "Plan Your Pole Camera Coverage",
+      href: contactHref({ engagement: "Hire", solution: "Pole Camera" }),
+    },
+  },
+  {
+    id: "mobile-operations-centre",
+    heroEyebrow: "Mobile Operations Centre",
+    heroTitle: "Mobile Operations Centres in Action",
+    heroIntro:
+      "A camera gives you visibility. A Mobile Operations Centre gives your team somewhere to use that visibility to make decisions. For major events and temporary operations, we create a fully functioning command environment where security, event management and key agencies can work from the same real-time information.",
+    heroImage: "/images/mobile-operations-centre-events.jpg",
+    heroImageAlt: "Mobile Operations Centre trailer branded for outdoor events",
+    stats: [
+      {
+        icon: CalendarClock,
+        value: "31 nights straight",
+        label: "Ramadan Nights delivered with no major incidents",
+      },
+      {
+        icon: Repeat2,
+        value: "7th year running",
+        label: "Engaged for Ramadan Nights since it began",
+      },
+      {
+        icon: Users,
+        value: "4 operators",
+        label: "Working simultaneously from the Bathurst Mobile Operations Centre",
+      },
+      {
+        icon: Settings2,
+        value: "58 CCTV feeds",
+        label: "28 temporary plus 30+ existing streams consolidated at Bathurst",
+      },
+    ],
+    caseStudies: [
+      {
+        slug: "ramadan-nights",
+        title: "Ramadan Nights",
+        client: "Canterbury-Bankstown Council",
+        location: "NSW",
+        challenge:
+          "Ramadan Nights runs every night for 31 consecutive nights, bringing sustained crowds into a busy event precinct. Council needed more than cameras. Security, Police, medical teams and event management needed a central location from which they could see the event, communicate and respond quickly.",
+        solution:
+          "Mobile CCTV Solutions deployed a Mobile Operations Centre supported by solar-powered pole cameras and a wider camera network connected using Wi-Fi bridges. Inside the Operations Centre, Security, NSW Police, medical personnel and the event manager worked together from one central command point, with live visibility across the event footprint and surrounding areas.",
+        result:
+          "All 31 nights were delivered with no major incidents. The value of real-time visibility was particularly clear when an approaching weather front was identified through the CCTV network. Resources could be deployed quickly to manage the situation before it escalated.",
+        clientProof:
+          "2025 marked the seventh year Mobile CCTV Solutions had been engaged for the event.",
+        image: "/images/case-study-ramadan-nights.jpg",
+        imageAlt: "CCTV trailer at the Ramadan Nights street festival with Lakemba Nights signage",
+      },
+      {
+        slug: "supercars-bathurst-1000-operations-centre",
+        title: "Supercars Bathurst 1000",
+        client: "Guardian Venue Management",
+        location: "Bathurst, NSW",
+        challenge:
+          "Guardian Venue Management needed to run a 24-hour security operation for 10 days, with more than 100 security personnel on shift each day. They needed a functioning control room — not simply somewhere to park a desk.",
+        solution:
+          "Mobile CCTV Solutions deployed a fully equipped Mobile Operations Centre as the security team's command post. Up to four operators could work from the Centre simultaneously, with communications, internet and workstations available on site. The Operations Centre brought together 28 temporary CCTV streams plus more than 30 existing local CCTV feeds, giving the security team a consolidated view of the event. A separate CCTV workstation was also installed in the client's management office.",
+        result:
+          "Instead of teams operating from fragmented information, security management could see crowd and vehicle movements live and redirect personnel and resources before pressure points developed. The Mobile Operations Centre became the operational home base for the entire security team throughout the event.",
+        clientProof:
+          "Guardian Venue Management is a repeat customer and subsequently booked Mobile CCTV Solutions for another two race events at Bathurst.",
+        image: "/images/case-study-bathurst-1000.jpg",
+        imageAlt: "Pole camera trailer deployed on a hill with the Mount Panorama Bathurst sign in the background",
+      },
+    ],
+    closingCta: {
+      heading: "Need a control room where one doesn't exist?",
+      description:
+        "Our Mobile Operations Centres can be deployed with the technology, connectivity and CCTV network required to run complex temporary operations from one location.",
+      buttonLabel: "Talk to Us About Your Event or Operation",
+      href: "/contact",
+    },
+  },
+];

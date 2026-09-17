@@ -1,4 +1,4 @@
-import { Truck, Antenna, PartyPopper, type LucideIcon } from "lucide-react";
+import { Camera, Antenna, Tent, type LucideIcon } from "lucide-react";
 
 /**
  * The three homepage "pathway" cards — the client's decision-tree entry
@@ -23,7 +23,7 @@ export const pathways: Pathway[] = [
   {
     slug: "mobile-cctv-trailers",
     href: "/mobile-cctv-trailers",
-    icon: Truck,
+    icon: Camera,
     eyebrow: "Explore",
     heading: "Mobile CCTV Trailers",
     description:
@@ -41,19 +41,19 @@ export const pathways: Pathway[] = [
     description:
       "Standalone solar pole cameras for sites without power or network infrastructure — fixed or 4x-zoom PTZ, with 7–30 day cloud recording.",
     buttonLabel: "Explore Pole Cameras",
-    image: "/images/pole-cam-deployed-bushland.jpg",
+    image: "/images/pole-cam-card.jpg",
     imageAlt: "Mobi Pole Cam solar-powered surveillance unit deployed on a pole against bushland",
   },
   {
     slug: "temporary-cctv-for-events",
     href: "/solutions/events-temporary-sites",
-    icon: PartyPopper,
+    icon: Tent,
     eyebrow: "Explore",
     heading: "Temporary CCTV For Events",
     description:
       "Flexible surveillance for events, festivals and short-term security requirements — coverage for events of any size, deployed and removed on your schedule.",
     buttonLabel: "Explore Event Solutions",
-    image: "/images/mobile-operations-centre-events.jpg",
+    image: "/images/mobile-operations-centre-card.jpg",
     imageAlt: "Mobile CCTV Solutions' Mobile Operations Centre trailer branded for outdoor events, live concerts and festivals",
   },
 ];

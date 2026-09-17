@@ -7,6 +7,7 @@ import { Applications } from "@/components/home/Applications";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { WhyUs } from "@/components/home/WhyUs";
 import { RecentBlog } from "@/components/home/RecentBlog";
+import { TeamOverviewVideo } from "@/components/home/TeamOverviewVideo";
 import { QuoteRequest } from "@/components/home/QuoteRequest";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <HowItWorks />
       <WhyUs />
       <RecentBlog />
+      <TeamOverviewVideo />
       <QuoteRequest />
     </>
   );

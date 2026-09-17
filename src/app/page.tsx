@@ -15,6 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <PathwayCards />
+      <TeamOverviewVideo />
       <SystemsInAction />
       <TrustStrip />
       <KeyBenefits />
@@ -22,7 +23,6 @@ export default function Home() {
       <HowItWorks />
       <WhyUs />
       <RecentBlog />
-      <TeamOverviewVideo />
       <QuoteRequest />
     </>
   );

@@ -29,8 +29,8 @@ export const pathways: Pathway[] = [
     description:
       "Solar-powered, towable surveillance trailers with 360° camera coverage and remote live access — deployed in minutes, no mains power required.",
     buttonLabel: "Explore Trailers",
-    image: "/images/construction-site.jpg",
-    imageAlt: "Mobile CCTV Solutions trailer deployed on a construction site with a crane behind it",
+    image: "/images/trailer-site-inspection.jpg",
+    imageAlt: "Mobile CCTV Solutions team inspecting a deployed trailer's solar panel on a construction site",
   },
   {
     slug: "pole-cameras",
@@ -41,8 +41,8 @@ export const pathways: Pathway[] = [
     description:
       "Standalone solar pole cameras for sites without power or network infrastructure — fixed or 4x-zoom PTZ, with 7–30 day cloud recording.",
     buttonLabel: "Explore Pole Cameras",
-    image: "/images/pole-camera-security.png",
-    imageAlt: "Mobi Pole Cam solar-powered surveillance unit deployed on a pole",
+    image: "/images/pole-cam-deployed-bushland.jpg",
+    imageAlt: "Mobi Pole Cam solar-powered surveillance unit deployed on a pole against bushland",
   },
   {
     slug: "temporary-cctv-for-events",
@@ -53,7 +53,7 @@ export const pathways: Pathway[] = [
     description:
       "Flexible surveillance for events, festivals and short-term security requirements — coverage for events of any size, deployed and removed on your schedule.",
     buttonLabel: "Explore Event Solutions",
-    image: "/images/pole-camera-event-security.jpg",
-    imageAlt: "Mobi Pole Cam providing event security coverage",
+    image: "/images/mobile-operations-centre-events.jpg",
+    imageAlt: "Mobile CCTV Solutions' Mobile Operations Centre trailer branded for outdoor events, live concerts and festivals",
   },
 ];

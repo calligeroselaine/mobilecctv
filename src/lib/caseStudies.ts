@@ -101,9 +101,21 @@ export const caseStudyCategories: CaseStudyCategory[] = [
         image: "/images/case-study-adco-forest-high-school.jpg",
         imageAlt: "Mobile CCTV Solutions team with ADCO Constructions staff on site at Forest High School",
       },
+      {
+        slug: "granny-smith-festival",
+        title: "Granny Smith Festival",
+        client: "City of Ryde Council",
+        location: "Eastwood, NSW",
+        challenge:
+          "Before thousands of visitors arrived, valuable infrastructure and equipment was already sitting on an unattended festival site. City of Ryde needed to protect those assets throughout bump-in, then transition the same CCTV infrastructure into an active crowd-management and public-safety system once the festival opened.",
+        solution:
+          "Mobile CCTV Solutions deployed a mobile CCTV trailer and pole cameras ahead of the event, providing continuous surveillance across the site while equipment and infrastructure were most vulnerable. On festival day, that same network became a live operational tool, giving the event team visibility across busy public areas and crowd movement.",
+        result:
+          "No theft or vandalism was recorded during the lead-up. Once the festival opened, crowd movement remained orderly and safe, with zero major incidents from set-up through to pack-down. One deployment. Two very different security requirements. No need to install permanent infrastructure.",
+        image: "/images/blog/granny-smith-festival.jpg",
+        imageAlt: "Mobile CCTV Solutions trailer deployed at the Granny Smith Festival in Eastwood",
+      },
     ],
-    pendingNote:
-      "Granny Smith Festival (City of Ryde Council, Eastwood NSW) case study is confirmed by the client and awaiting a supplied photo before it's added here.",
     closingCta: {
       heading: "Need temporary CCTV coverage for your site?",
       description:

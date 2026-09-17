@@ -36,11 +36,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/case-studies" className="hover:text-white">
-                Case Studies
-              </Link>
-            </li>
           </ul>
         </div>
 

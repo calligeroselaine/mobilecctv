@@ -1,4 +1,4 @@
-import { Camera, Antenna, Tent, type LucideIcon } from "lucide-react";
+import { Camera, Antenna, CalendarClock, type LucideIcon } from "lucide-react";
 
 /**
  * The three homepage "pathway" cards — the client's decision-tree entry
@@ -47,7 +47,7 @@ export const pathways: Pathway[] = [
   {
     slug: "temporary-cctv-for-events",
     href: "/solutions/events-temporary-sites",
-    icon: Tent,
+    icon: CalendarClock,
     eyebrow: "Explore",
     heading: "Temporary CCTV For Events",
     description:

@@ -33,7 +33,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden min-[1400px]:block">
+        <nav className="hidden min-[1100px]:block">
           <ul className="flex items-center gap-2 xl:gap-5">
             {primaryNav
               .filter((link) => link.label !== "Contact")
@@ -50,7 +50,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-2 min-[1400px]:flex xl:gap-3">
+        <div className="hidden items-center gap-2 min-[1100px]:flex xl:gap-3">
           <a
             href={business.support.href}
             target="_blank"

@@ -7,16 +7,23 @@ import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { Faq } from "@/components/ui/Faq";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { CaseStudyCategorySection } from "@/components/case-studies/CaseStudyCategorySection";
 import { benefits as allBenefits } from "@/lib/benefits";
 import { getPostBySlug } from "@/lib/blog";
 import { business } from "@/lib/business";
 import type { Solution } from "@/lib/solutions";
+import type { CaseStudyCategory } from "@/lib/caseStudies";
 
 type SolutionPageTemplateProps = {
   solution: Solution;
+  /** A richer, dedicated case-study section (photo + stats + Challenge/
+   * Solution/Result) to show instead of the plain blog-post case study
+   * cards below — used by events-temporary-sites, which has real case
+   * studies built for it. */
+  caseStudyCategory?: CaseStudyCategory;
 };
 
-export function SolutionPageTemplate({ solution }: SolutionPageTemplateProps) {
+export function SolutionPageTemplate({ solution, caseStudyCategory }: SolutionPageTemplateProps) {
   const relevantBenefits = allBenefits.filter((benefit) =>
     solution.benefitTitles.includes(benefit.title)
   );
@@ -112,7 +119,9 @@ export function SolutionPageTemplate({ solution }: SolutionPageTemplateProps) {
         </div>
       </Section>
 
-      {caseStudies.length > 0 && (
+      {caseStudyCategory ? (
+        <CaseStudyCategorySection category={caseStudyCategory} showClosingCta={false} />
+      ) : caseStudies.length > 0 && (
         <Section tone="alt">
           <SectionHeading eyebrow="Real Deployments" title="Case Studies" />
           {solution.reviewNote && (

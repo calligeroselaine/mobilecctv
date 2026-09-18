@@ -6,9 +6,13 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
+import { CaseStudyCategorySection } from "@/components/case-studies/CaseStudyCategorySection";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 import { contactHref } from "@/lib/contactHref";
+import { caseStudyCategories } from "@/lib/caseStudies";
+
+const trailersCaseStudies = caseStudyCategories.find((category) => category.id === "trailers")!;
 
 export const metadata: Metadata = buildMetadata({
   title: "Mobile CCTV Trailers & Trailer Hire",
@@ -177,6 +181,8 @@ export default function TrailersPage() {
           />
         </div>
       </Section>
+
+      <CaseStudyCategorySection category={trailersCaseStudies} showClosingCta={false} />
 
       <Section tone="brand" className="text-center">
         <h2 className="text-h2">Extremely Cost Effective</h2>

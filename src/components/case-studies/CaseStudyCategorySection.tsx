@@ -6,6 +6,10 @@ import type { CaseStudyCategory, CaseStudy } from "@/lib/caseStudies";
 
 type CaseStudyCategorySectionProps = {
   category: CaseStudyCategory;
+  /** Set false when the host page already has its own closing CTA right
+   * after this section (e.g. embedded on a product page) — avoids two
+   * near-identical CTA bands stacked back to back. Defaults to true. */
+  showClosingCta?: boolean;
 };
 
 const infoRows = [
@@ -81,7 +85,7 @@ function CaseStudyBlock({ study }: { study: CaseStudy }) {
   );
 }
 
-export function CaseStudyCategorySection({ category }: CaseStudyCategorySectionProps) {
+export function CaseStudyCategorySection({ category, showClosingCta = true }: CaseStudyCategorySectionProps) {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-white">
@@ -127,17 +131,19 @@ export function CaseStudyCategorySection({ category }: CaseStudyCategorySectionP
         </div>
       </Section>
 
-      <Section tone="brand">
-        <SectionHeading title={category.closingCta.heading} align="center" onDark />
-        <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-white/90">
-          {category.closingCta.description}
-        </p>
-        <div className="mt-8 flex justify-center">
-          <Button href={category.closingCta.href} variant="inverse">
-            {category.closingCta.buttonLabel}
-          </Button>
-        </div>
-      </Section>
+      {showClosingCta && (
+        <Section tone="brand">
+          <SectionHeading title={category.closingCta.heading} align="center" onDark />
+          <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-white/90">
+            {category.closingCta.description}
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Button href={category.closingCta.href} variant="inverse">
+              {category.closingCta.buttonLabel}
+            </Button>
+          </div>
+        </Section>
+      )}
     </>
   );
 }

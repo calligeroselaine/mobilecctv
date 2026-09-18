@@ -6,9 +6,13 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { CaseStudyCategorySection } from "@/components/case-studies/CaseStudyCategorySection";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 import { contactHref } from "@/lib/contactHref";
+import { caseStudyCategories } from "@/lib/caseStudies";
+
+const poleCamerasCaseStudies = caseStudyCategories.find((category) => category.id === "pole-cameras")!;
 
 export const metadata: Metadata = buildMetadata({
   title: "Pole-Mounted CCTV Cameras",
@@ -164,6 +168,8 @@ export default function PoleCamerasPage() {
           </Button>
         </div>
       </Section>
+
+      <CaseStudyCategorySection category={poleCamerasCaseStudies} showClosingCta={false} />
 
       <Section tone="alt">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">

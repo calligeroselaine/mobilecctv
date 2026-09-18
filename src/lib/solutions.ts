@@ -280,10 +280,11 @@ export const solutions: Solution[] = [
       "360° Coverage & PIR Detection",
       "A Fraction Of Guard Costs",
     ],
-    caseStudySlugs: [
-      "securing-the-granny-smith-festival-with-mobile-cctv-solutions",
-      "safeguarding-tradition-the-crucial-role-of-mobile-cctv-solutions-at-sydneys-largest-ramadan-festival",
-    ],
+    // Superseded by the dedicated Mobile Operations Centre case-study
+    // section (caseStudyCategory prop) — same real stories (Granny Smith
+    // Festival, Ramadan Nights), shown with full detail instead of as
+    // blog-post cards.
+    caseStudySlugs: [],
     faqs: [
       {
         question: "How quickly can a trailer be deployed for an event?",

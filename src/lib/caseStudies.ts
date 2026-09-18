@@ -1,11 +1,11 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Camera,
   ShieldCheck,
   Users,
   Calendar,
   CalendarClock,
   Video,
+  Antenna,
   MapPin,
   HardHat,
   PartyPopper,
@@ -82,7 +82,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
         sublabel: "after deployment",
       },
       {
-        icon: Camera,
+        icon: Video,
         value: "15",
         label: "Camera views",
         sublabel: "at ADCO",
@@ -161,7 +161,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
     heroImageAlt: "Mobi Pole Cam mounted on a solar-powered pole against dense bushland",
     stats: [
       {
-        icon: Camera,
+        icon: Antenna,
         value: "10",
         label: "Event pole cameras",
         sublabel: "at Bathurst",

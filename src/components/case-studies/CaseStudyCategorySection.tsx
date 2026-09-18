@@ -128,7 +128,8 @@ export function CaseStudyCategorySection({ category, showClosingCta = true }: Ca
                 key={stat.label}
                 className={`border-white/20 pl-6 md:border-l ${i === 0 ? "md:border-l-0 md:pl-0" : ""}`}
               >
-                <p className={`${condensed.className} text-4xl font-extrabold leading-none text-white md:text-5xl`}>
+                <stat.icon className="h-6 w-6 text-brand-light" aria-hidden="true" />
+                <p className={`${condensed.className} mt-3 text-4xl font-extrabold leading-none text-white md:text-5xl`}>
                   {stat.value}
                 </p>
                 <p className="mt-3 text-sm font-bold uppercase tracking-wide text-white">

@@ -1,4 +1,4 @@
-import { Camera, Antenna, CalendarClock, type LucideIcon } from "lucide-react";
+import { Video, Antenna, CalendarClock, type LucideIcon } from "lucide-react";
 
 /**
  * The three homepage "pathway" cards — the client's decision-tree entry
@@ -23,7 +23,7 @@ export const pathways: Pathway[] = [
   {
     slug: "mobile-cctv-trailers",
     href: "/mobile-cctv-trailers",
-    icon: Camera,
+    icon: Video,
     eyebrow: "Explore",
     heading: "Mobile CCTV Trailers",
     description:

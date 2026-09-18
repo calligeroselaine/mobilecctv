@@ -4,7 +4,6 @@ import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CaseStudyCategorySection } from "@/components/case-studies/CaseStudyCategorySection";
 import { business } from "@/lib/business";
@@ -176,15 +175,12 @@ export default function PoleCamerasPage() {
           <div>
             <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-xl">
               <Image
-                src="/images/mobi-pole-cam-768x1024.jpg"
-                alt="Mobi Pole Cam product photo"
+                src="/images/pole-cam-product-photo.jpg"
+                alt="Mobi Pole Cam solar-powered surveillance unit deployed on a pole"
                 fill
                 sizes="(min-width: 768px) 30vw, 90vw"
                 className="object-cover"
               />
-            </div>
-            <div className="mt-4">
-              <ReviewFlag note="This is the only full-size Pole Cam product photo available (768×1024) — lower resolution than ideal for this slot. Please supply a higher-res version if available." />
             </div>
           </div>
           <div>

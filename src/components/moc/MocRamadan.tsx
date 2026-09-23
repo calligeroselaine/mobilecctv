@@ -175,7 +175,7 @@ export function MocRamadan() {
           {stakeholders.map((s, i) => (
             <div
               key={s.name}
-              className="flex flex-wrap items-baseline justify-between gap-x-10 gap-y-3 border-b border-white/20 py-8 hover:bg-white/[0.03]"
+              className="grid grid-cols-1 items-baseline gap-x-10 gap-y-3 border-b border-white/20 py-8 hover:bg-white/[0.03] sm:grid-cols-[minmax(0,320px)_1fr]"
             >
               <div className="flex items-baseline gap-6">
                 <span className="font-mono text-xs text-[color:oklch(0.74_0.14_70)]">{String(i + 1).padStart(2, "0")}</span>

@@ -1,28 +1,29 @@
 import { Hero } from "@/components/home/Hero";
 import { PathwayCards } from "@/components/home/PathwayCards";
-import { SystemsInAction } from "@/components/home/SystemsInAction";
 import { TrustStrip } from "@/components/home/TrustStrip";
-import { KeyBenefits } from "@/components/home/KeyBenefits";
-import { Applications } from "@/components/home/Applications";
-import { HowItWorks } from "@/components/home/HowItWorks";
 import { WhyUs } from "@/components/home/WhyUs";
-import { RecentBlog } from "@/components/home/RecentBlog";
-import { TeamOverviewVideo } from "@/components/home/TeamOverviewVideo";
 import { QuoteRequest } from "@/components/home/QuoteRequest";
 
+/**
+ * Simplified homepage flow (content/structure clean-up — not a redesign):
+ * Hero -> three core product pathways -> short credibility section ->
+ * client/council trust logos -> final enquiry CTA -> footer.
+ *
+ * Removed from this page (components kept in the project, not deleted,
+ * in case they're reused elsewhere): TeamOverviewVideo and SystemsInAction
+ * (product-detail video content that belongs on the individual product
+ * pages), KeyBenefits ("Why It Works" feature breakdown), Applications
+ * (full industries list), HowItWorks (full deployment process), and
+ * RecentBlog (blog/articles list) — per the brief, these are now
+ * secondary/product-page-level detail rather than homepage gateway content.
+ */
 export default function Home() {
   return (
     <>
       <Hero />
       <PathwayCards />
-      <TeamOverviewVideo />
-      <SystemsInAction />
-      <TrustStrip />
-      <KeyBenefits />
-      <Applications />
-      <HowItWorks />
       <WhyUs />
-      <RecentBlog />
+      <TrustStrip />
       <QuoteRequest />
     </>
   );

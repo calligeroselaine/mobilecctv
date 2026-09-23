@@ -107,6 +107,7 @@ export function MocStepInside() {
               neededCaption={active.photoCaption}
               aspectClassName="aspect-[16/10]"
               tone="dark"
+              icon={active.icon}
             />
           </div>
         </div>

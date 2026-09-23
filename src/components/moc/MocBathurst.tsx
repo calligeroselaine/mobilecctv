@@ -67,10 +67,11 @@ export function MocBathurst() {
           />
           <MocPlaceholderPhoto
             src={mocImages.bathurstMonitoringWall}
-            alt="Operators at the monitoring wall, Bathurst deployment"
+            alt="Bathurst deployment — still from the operational visibility film"
             neededCaption="operators at the monitoring wall"
             aspectClassName="aspect-[3/2]"
             tone="light"
+            videoStillId={mocVideos.bathurst.youtubeId}
           />
         </div>
       </div>

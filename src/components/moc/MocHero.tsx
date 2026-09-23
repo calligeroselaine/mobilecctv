@@ -12,7 +12,7 @@ export function MocHero() {
         </div>
         <h1
           className="relative z-[2] mt-5 pointer-events-none font-bold uppercase leading-[0.84] tracking-[-0.01em]"
-          style={{ fontStretch: "68%", fontSize: "clamp(58px,12.6vw,200px)" }}
+          style={{ fontStretch: "68%", fontSize: "clamp(40px,7.8vw,120px)" }}
         >
           Mobile
           <br />
@@ -20,7 +20,10 @@ export function MocHero() {
         </h1>
       </div>
 
-      <div className="relative z-[1] mx-auto -mt-6 max-w-[1440px] px-5 sm:-mt-8 sm:px-8">
+      <div
+        className="relative z-[1] mx-auto max-w-[1440px] px-5 sm:px-8"
+        style={{ marginTop: "clamp(-60px,-4vw,-24px)" }}
+      >
         <div className="relative aspect-[16/8] min-h-[300px] w-full bg-[#0E1012]">
           <Image
             src={mocImages.heroExterior}

@@ -20,7 +20,7 @@ export function MocStepInside() {
             </div>
             <h2
               className="mt-6 font-bold uppercase leading-[0.86]"
-              style={{ fontStretch: "68%", fontSize: "clamp(56px,9vw,150px)" }}
+              style={{ fontStretch: "68%", fontSize: "clamp(36px,5.5vw,90px)" }}
             >
               Step inside
             </h2>

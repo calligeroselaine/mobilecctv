@@ -41,7 +41,7 @@ export function MocRamadan() {
         </div>
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1440px] px-5 pb-10 sm:px-8 sm:pb-16">
           <div className="mb-4.5 font-mono text-[13px] tracking-[0.08em] text-[#E3E1DC]">{copy.ramadanFor}</div>
-          <h2 className="font-bold uppercase leading-[0.84]" style={{ fontStretch: "66%", fontSize: "clamp(60px,11.5vw,184px)" }}>
+          <h2 className="font-bold uppercase leading-[0.84]" style={{ fontStretch: "66%", fontSize: "clamp(40px,7.4vw,116px)" }}>
             Ramadan Nights
             <br />
             Lakemba

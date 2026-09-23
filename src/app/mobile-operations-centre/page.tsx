@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 import { faqs, mocImages } from "@/lib/moc-content";
+import { mocArchivo } from "@/lib/moc-fonts";
 import { MocSubNav } from "@/components/moc/MocSubNav";
 import { MocHero } from "@/components/moc/MocHero";
 import { MocIntro } from "@/components/moc/MocIntro";
@@ -50,7 +51,7 @@ const faqJsonLd = {
 
 export default function MobileOperationsCentrePage() {
   return (
-    <>
+    <div className={mocArchivo.className}>
       <JsonLd data={productJsonLd} />
       <JsonLd data={faqJsonLd} />
 
@@ -70,6 +71,6 @@ export default function MobileOperationsCentrePage() {
       <MocFaq />
       <MocEnquiry />
       <MocStickyCta />
-    </>
+    </div>
   );
 }

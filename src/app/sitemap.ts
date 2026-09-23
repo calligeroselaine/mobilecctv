@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${business.siteUrl}/`, changeFrequency: "monthly", priority: 1 },
     { url: `${business.siteUrl}/mobile-cctv-trailers`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${business.siteUrl}/pole-cameras`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${business.siteUrl}/mobile-operations-centre`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${business.siteUrl}/applications`, changeFrequency: "monthly", priority: 0.8 },
     ...solutions.map((solution) => ({
       url: `${business.siteUrl}${solution.path}`,

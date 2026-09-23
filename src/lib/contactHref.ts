@@ -1,5 +1,9 @@
 export type Engagement = "Hire" | "Purchase";
-export type SolutionRequired = "Mobile CCTV Trailer" | "Pole Camera" | "Both / a mix";
+export type SolutionRequired =
+  | "Mobile CCTV Trailer"
+  | "Pole Camera"
+  | "Mobile Operations Centre"
+  | "Both / a mix";
 
 /**
  * Builds a /contact link that pre-selects the "Hire, Purchase, Or

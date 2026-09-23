@@ -8,7 +8,12 @@ import { Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 type Variant = "full" | "compact";
 
 const ENGAGEMENT_VALUES = ["Hire", "Purchase"];
-const SOLUTION_VALUES = ["Mobile CCTV Trailer", "Pole Camera", "Both / a mix"];
+const SOLUTION_VALUES = [
+  "Mobile CCTV Trailer",
+  "Pole Camera",
+  "Mobile Operations Centre",
+  "Both / a mix",
+];
 
 type FormState = {
   name: string;
@@ -277,6 +282,7 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
               <option value="">Not sure — please advise</option>
               <option value="Mobile CCTV Trailer">Mobile CCTV Trailer</option>
               <option value="Pole Camera">Pole Camera</option>
+              <option value="Mobile Operations Centre">Mobile Operations Centre</option>
               <option value="Both / a mix">Both / a mix</option>
             </select>
           </Field>

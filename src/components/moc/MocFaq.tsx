@@ -15,11 +15,11 @@ export function MocFaq() {
             <span className="h-px w-7 bg-[#141619]" />
             {copy.faqEyebrow}
           </div>
-          <h2 className="font-medium leading-[1.02] tracking-[-0.025em]" style={{ fontSize: "clamp(34px,4vw,58px)" }}>
+          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,34px)" }}>
             {copy.faqHeading}
           </h2>
-          <p className="text-lg leading-[1.6] text-[#2A2D31]">{copy.faqBody}</p>
-          <a href="tel:1300996910" className="flex items-center gap-2.5 text-xl font-semibold">
+          <p className="text-base leading-[1.6] text-[#2A2D31]">{copy.faqBody}</p>
+          <a href="tel:1300996910" className="flex items-center gap-2.5 text-lg font-semibold">
             <Phone className="h-[22px] w-[22px]" aria-hidden="true" /> 1300 99 69 10
           </a>
         </div>
@@ -35,7 +35,7 @@ export function MocFaq() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-6 py-6.5 text-left"
                 >
-                  <span className="text-lg font-medium leading-[1.3] sm:text-xl">{faq.q}</span>
+                  <span className="text-base font-medium leading-[1.3] sm:text-lg">{faq.q}</span>
                   {isOpen ? (
                     <Minus className="h-[26px] w-[26px] shrink-0" aria-hidden="true" />
                   ) : (
@@ -43,7 +43,7 @@ export function MocFaq() {
                   )}
                 </button>
                 {isOpen && (
-                  <p className="max-w-[720px] pb-7 pr-4 text-lg leading-[1.65] text-[#2A2D31] sm:pr-12">{faq.a}</p>
+                  <p className="max-w-[720px] pb-7 pr-4 text-base leading-[1.65] text-[#2A2D31] sm:pr-12">{faq.a}</p>
                 )}
               </div>
             );

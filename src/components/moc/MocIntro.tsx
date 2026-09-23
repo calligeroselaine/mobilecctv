@@ -11,7 +11,7 @@ export function MocIntro() {
         </div>
         <h2
           className="mt-7 max-w-[1180px] font-medium leading-[1.02] tracking-[-0.025em]"
-          style={{ fontSize: "clamp(34px,5vw,76px)" }}
+          style={{ fontSize: "clamp(24px,2.6vw,38px)" }}
         >
           {copy.introHeading}
         </h2>
@@ -28,7 +28,7 @@ export function MocIntro() {
             <p className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">{copy.introPhotoCaption}</p>
           </div>
           <div className="flex flex-col gap-10 pt-0 lg:pt-8">
-            <p className="max-w-[560px] text-lg leading-[1.6] text-[#2A2D31] sm:text-xl">{copy.introBody}</p>
+            <p className="max-w-[560px] text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.introBody}</p>
             <div>
               <div className="border-b border-[#141619] pb-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">
                 Configured to operate as
@@ -36,7 +36,7 @@ export function MocIntro() {
               {configuredToOperateAs.map(({ letter, role }) => (
                 <div key={letter} className="flex items-baseline gap-6 border-b border-[#D6D2CA] py-5.5">
                   <span className="font-mono text-xs text-[#5B5F63]">{letter}</span>
-                  <span className="text-2xl font-medium tracking-[-0.015em] sm:text-3xl">{role}</span>
+                  <span className="text-lg font-medium tracking-[-0.015em] sm:text-xl">{role}</span>
                 </div>
               ))}
             </div>

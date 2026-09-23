@@ -25,15 +25,15 @@ export function MocEnquiry() {
           {copy.enquireEyebrow}
         </div>
         <h2
-          className="mt-6 max-w-[1200px] font-bold uppercase leading-[0.84]"
-          style={{ fontStretch: "66%", fontSize: "clamp(40px,7.5vw,120px)" }}
+          className="mt-6 max-w-[1200px] font-bold uppercase leading-[0.95]"
+          style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}
         >
           {copy.enquireHeading}
         </h2>
 
         <div className="mt-14 grid grid-cols-1 items-start gap-14 sm:mt-20 lg:grid-cols-2 lg:gap-24">
           <div className="flex flex-col gap-9">
-            <p className="max-w-[520px] text-xl leading-[1.5] text-[#E3E1DC] sm:text-2xl">{copy.enquireBody}</p>
+            <p className="max-w-[520px] text-lg leading-[1.5] text-[#E3E1DC] sm:text-xl">{copy.enquireBody}</p>
             <div className="border-t border-white/15">
               {recap.map((item) => (
                 <a

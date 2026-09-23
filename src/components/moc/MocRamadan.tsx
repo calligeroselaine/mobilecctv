@@ -41,7 +41,7 @@ export function MocRamadan() {
         </div>
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1440px] px-5 pb-10 sm:px-8 sm:pb-16">
           <div className="mb-4.5 font-mono text-[13px] tracking-[0.08em] text-[#E3E1DC]">{copy.ramadanFor}</div>
-          <h2 className="font-bold uppercase leading-[0.84]" style={{ fontStretch: "66%", fontSize: "clamp(40px,7.4vw,116px)" }}>
+          <h2 className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}>
             Ramadan Nights
             <br />
             Lakemba
@@ -52,13 +52,13 @@ export function MocRamadan() {
       {/* 5b — scale */}
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-14 px-5 pt-16 sm:px-8 sm:pt-24 lg:grid-cols-2 lg:gap-24">
         <div>
-          <p className="mb-10 max-w-[620px] text-2xl font-normal leading-[1.3] tracking-[-0.01em] sm:mb-16 sm:text-3xl">
+          <p className="mb-10 max-w-[620px] text-lg font-normal leading-[1.4] tracking-[-0.01em] sm:mb-16 sm:text-xl">
             {copy.ramadanLead}
           </p>
           <div className="grid grid-cols-2 border-t border-white/20">
             {ramadanStats.map((stat) => (
               <div key={stat.label} className="border-b border-r border-white/20 py-7 pr-4 [&:nth-child(2n)]:border-r-0">
-                <div className="font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(72px,9vw,140px)" }}>
+                <div className="font-bold leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(32px,3.4vw,46px)" }}>
                   {stat.split ? (
                     <span className="inline-flex items-center gap-[0.12em]">
                       <span className="text-[#8A8E92]">7</span>
@@ -98,7 +98,7 @@ export function MocRamadan() {
         </div>
         <h3
           className="mt-6 max-w-[980px] font-medium leading-[1.04] tracking-[-0.02em]"
-          style={{ fontSize: "clamp(32px,4vw,60px)" }}
+          style={{ fontSize: "clamp(22px,2.2vw,32px)" }}
         >
           {copy.networkHeading}
         </h3>
@@ -130,7 +130,7 @@ export function MocRamadan() {
                     <div className={`font-mono text-[11px] tracking-[0.14em] ${step.highlight ? "text-[color:oklch(0.74_0.14_70)]" : "text-[#A9ADB1]"}`}>
                       {String(i + 1).padStart(2, "0")}
                     </div>
-                    <div className="mt-1 text-xl font-bold uppercase" style={{ fontStretch: "76%" }}>
+                    <div className="mt-1 text-lg font-bold uppercase" style={{ fontStretch: "76%" }}>
                       {step.title}
                     </div>
                     <div className="mt-1.5 text-base leading-[1.5] text-[#C9CCCF]">{step.body}</div>
@@ -152,7 +152,7 @@ export function MocRamadan() {
             </div>
             <h3
               className="mt-6 font-medium leading-[1.04] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(32px,4vw,60px)" }}
+              style={{ fontSize: "clamp(22px,2.2vw,32px)" }}
             >
               {copy.stakeholdersHeading}
             </h3>
@@ -179,13 +179,13 @@ export function MocRamadan() {
             >
               <div className="flex items-baseline gap-6">
                 <span className="font-mono text-xs text-[color:oklch(0.74_0.14_70)]">{String(i + 1).padStart(2, "0")}</span>
-                <span className="font-bold uppercase leading-[0.86]" style={{ fontStretch: "66%", fontSize: "clamp(52px,8vw,128px)" }}>
+                <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(26px,3vw,38px)" }}>
                   {s.name}
                 </span>
               </div>
               <div className="flex max-w-[380px] flex-col gap-1.5">
                 <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#A9ADB1]">Uses the centre for</span>
-                <span className="text-xl leading-[1.25] sm:text-2xl">{s.use}</span>
+                <span className="text-base leading-[1.3] sm:text-lg">{s.use}</span>
               </div>
             </div>
           ))}

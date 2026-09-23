@@ -11,8 +11,8 @@ export function MocHero() {
           <span>{copy.heroMetaRight}</span>
         </div>
         <h1
-          className="relative z-[2] mt-5 pointer-events-none font-bold uppercase leading-[0.84] tracking-[-0.01em]"
-          style={{ fontStretch: "68%", fontSize: "clamp(40px,7.8vw,120px)" }}
+          className="relative z-[2] mt-5 mb-8 font-bold uppercase leading-[0.9] tracking-[-0.01em] sm:mb-10"
+          style={{ fontStretch: "68%", fontSize: "clamp(26px,3.6vw,44px)" }}
         >
           Mobile
           <br />
@@ -20,10 +20,7 @@ export function MocHero() {
         </h1>
       </div>
 
-      <div
-        className="relative z-[1] mx-auto max-w-[1440px] px-5 sm:px-8"
-        style={{ marginTop: "clamp(-60px,-4vw,-24px)" }}
-      >
+      <div className="relative z-[1] mx-auto max-w-[1440px] px-5 sm:px-8">
         <div className="relative aspect-[16/8] min-h-[300px] w-full bg-[#0E1012]">
           <Image
             src={mocImages.heroExterior}
@@ -37,7 +34,7 @@ export function MocHero() {
       </div>
 
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-end gap-10 px-5 py-12 sm:px-8 sm:py-16 md:grid-cols-2">
-        <p className="max-w-[640px] text-2xl font-normal leading-[1.18] tracking-[-0.01em] sm:text-3xl md:text-4xl">
+        <p className="max-w-[640px] text-lg font-normal leading-[1.4] tracking-[-0.01em] sm:text-xl">
           {copy.heroLead}
         </p>
         <div className="flex flex-col gap-7">

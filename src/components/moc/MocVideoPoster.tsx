@@ -86,7 +86,7 @@ function PlayOverlay({
             <PlayTriangle color="#F2F0EB" />
           </div>
           <div className="flex flex-col gap-1 text-left">
-            {caption && <span className="text-xl font-medium text-[#F2F0EB]">{caption}</span>}
+            {caption && <span className="text-base font-medium text-[#F2F0EB] sm:text-lg">{caption}</span>}
             {subCaption && (
               <span className="font-mono text-xs uppercase tracking-[0.06em] text-[#C9CCCF]">{subCaption}</span>
             )}
@@ -146,7 +146,7 @@ function PlayOverlay({
         >
           <PlayTriangle color="#F2F0EB" />
         </div>
-        {caption && <span className="max-w-[300px] text-left text-lg font-medium leading-tight sm:text-2xl">{caption}</span>}
+        {caption && <span className="max-w-[300px] text-left text-base font-medium leading-tight sm:text-lg">{caption}</span>}
         <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#C9CCCF]">{label}</span>
       </div>
     </>

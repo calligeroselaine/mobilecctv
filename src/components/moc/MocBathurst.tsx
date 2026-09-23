@@ -15,10 +15,10 @@ export function MocBathurst() {
         </div>
 
         <div className="mt-7 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-24">
-          <h2 className="font-bold uppercase leading-[0.84]" style={{ fontStretch: "66%", fontSize: "clamp(60px,10vw,168px)" }}>
+          <h2 className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.6vw,44px)" }}>
             Bathurst
           </h2>
-          <p className="max-w-[560px] text-xl leading-[1.3] tracking-[-0.01em] sm:text-2xl">{copy.bathurstLead}</p>
+          <p className="max-w-[560px] text-lg leading-[1.4] tracking-[-0.01em] sm:text-xl">{copy.bathurstLead}</p>
         </div>
 
         <div className="mt-14 sm:mt-20">
@@ -40,12 +40,12 @@ export function MocBathurst() {
               }`}
             >
               <div className="flex items-baseline justify-between">
-                <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(44px,4.4vw,68px)" }}>
+                <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(24px,2.4vw,32px)" }}>
                   {step.title}
                 </span>
                 <span className="font-mono text-xs text-[#4E5256]">{String(i + 1).padStart(2, "0")}</span>
               </div>
-              <p className="text-lg leading-[1.55] text-[#2A2D31]">{step.body}</p>
+              <p className="text-base leading-[1.55] text-[#2A2D31]">{step.body}</p>
               <div className="flex flex-wrap gap-2">
                 {step.tags.map((tag) => (
                   <span key={tag} className="border border-[#9A9C9E] px-2.5 py-1.5 font-mono text-xs">

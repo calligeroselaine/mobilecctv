@@ -20,12 +20,12 @@ export function MocStepInside() {
             </div>
             <h2
               className="mt-6 font-bold uppercase leading-[0.86]"
-              style={{ fontStretch: "68%", fontSize: "clamp(36px,5.5vw,90px)" }}
+              style={{ fontStretch: "68%", fontSize: "clamp(24px,2.8vw,36px)" }}
             >
               Step inside
             </h2>
           </div>
-          <p className="max-w-[520px] text-lg leading-[1.6] text-[#C9CCCF]">{copy.stepInsideLead}</p>
+          <p className="max-w-[520px] text-base leading-[1.6] text-[#C9CCCF]">{copy.stepInsideLead}</p>
         </div>
       </div>
 
@@ -78,13 +78,13 @@ export function MocStepInside() {
             </div>
             <h3
               className="max-w-[640px] font-medium leading-[1.06] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(28px,3vw,44px)" }}
+              style={{ fontSize: "clamp(20px,1.8vw,28px)" }}
             >
               {active.headline}
             </h3>
             {active.stat && (
               <div className="flex items-baseline gap-4 border-l-2 border-[color:oklch(0.74_0.14_70)] pl-5">
-                <span className="font-bold leading-[0.9]" style={{ fontStretch: "68%", fontSize: "clamp(64px,7vw,104px)" }}>
+                <span className="font-bold leading-[0.9]" style={{ fontStretch: "68%", fontSize: "clamp(30px,3vw,42px)" }}>
                   {active.stat}
                 </span>
                 <span className="max-w-[180px] text-base leading-[1.35] text-[#C9CCCF]">{active.statLabel}</span>

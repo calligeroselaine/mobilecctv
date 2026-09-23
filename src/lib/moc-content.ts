@@ -21,7 +21,6 @@ import {
   RadioTower,
   Truck,
   Footprints,
-  ShieldCheck,
   CalendarCheck,
   CalendarClock,
 } from "lucide-react";
@@ -187,17 +186,11 @@ export const greenfieldFacts = {
   statLabel:
     "security personnel were operating at the event shown in the film, with police working alongside operations teams.",
   points: [
-    {
-      icon: ShieldCheck,
-      label:
-        "A private control-room environment keeps confidential information separate from general staff movement.",
-    },
     { icon: CalendarCheck, label: "Available on a minimum one-week hire." },
   ],
 };
 
 export const ramadanStats = [
-  { value: "43", label: "Cameras feeding the control room" },
   { value: "9 yrs", label: "Supporting the event" },
   { value: "7 → 43", label: "Camera growth as the event grew", split: true },
   { value: "403", label: "Stallholders" },
@@ -255,7 +248,7 @@ export const bathurstSteps = [
 export const faqs = [
   {
     q: "What can the Mobile Operations Centre be used for?",
-    a: "It can operate as a security control room, event office, council office or a promoter's operational base. At Ramadan Nights in Lakemba it served as the control room for the event's camera network.",
+    a: "It's configured to whatever role your operation needs — see how it's set up on site above. At Ramadan Nights in Lakemba it served as the control room for the event's camera network.",
   },
   {
     q: "Is it suitable for greenfield sites?",
@@ -263,15 +256,15 @@ export const faqs = [
   },
   {
     q: "Can multiple stakeholders operate from it?",
-    a: "Yes. At Ramadan Nights, council used it for crowd flow and event oversight, security for crowd behaviour and operational monitoring, and police for monitoring and response.",
+    a: "Yes. At Ramadan Nights, council, security and police all worked from the same room and the same camera feeds, each for their own purpose.",
   },
   {
     q: "What connectivity is available?",
-    a: "The centre includes Starlink, along with laptop and TV connectivity for displaying information. At Ramadan Nights, camera feeds were transmitted to the control room through a wireless network.",
+    a: "The centre includes Starlink, along with laptop and TV connectivity for displaying information.",
   },
   {
     q: "What facilities are included?",
-    a: "Fingerprint access and custom event access codes; adjustable operator work tables; wall space for maps and event information; a separate bathroom with shower, toilet and sink; a mains water option or up to 200L of fresh water; hydraulic stabilisers; and exterior flood lighting.",
+    a: "Everything needed for a long shift on site: secure access, a working control room with connectivity, bathroom facilities and water, plus stabilisers and lighting for after dark.",
   },
   {
     q: "What is the minimum hire period?",
@@ -306,7 +299,7 @@ export const copy = {
   ramadanLead:
     "A camera network spread through the event space, feeding one control room — for every night of Ramadan.",
   ramadanVideoCaption:
-    "The system began with seven cameras and expanded year on year alongside the event, operating throughout Ramadan.",
+    "The event team on how the camera network has scaled with Ramadan Nights, year on year.",
   networkEyebrow: "Ramadan Nights · How the network works",
   networkHeading: "From a camera on the street to a decision in the room.",
   stakeholdersEyebrow: "Ramadan Nights · Stakeholders",

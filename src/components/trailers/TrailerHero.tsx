@@ -40,7 +40,8 @@ export function TrailerHero() {
             </a>
           </div>
         </div>
-        <div className="relative order-1 aspect-[4/3] w-full overflow-hidden lg:order-2 lg:aspect-auto">
+        <div className="order-1 lg:order-2 lg:flex lg:pr-[max(2rem,calc((100vw-1440px)/2+2rem))]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-auto lg:flex-1">
           <Image
             src={trailerImages.hero}
             alt="A Mobile CCTV Solutions trailer with raised camera mast and solar panels deployed on a grassy hill"
@@ -49,6 +50,7 @@ export function TrailerHero() {
             sizes="(min-width: 1024px) 55vw, 100vw"
             className="object-cover object-[44%_50%]"
           />
+          </div>
         </div>
       </div>
       <div className="border-t border-white/15">

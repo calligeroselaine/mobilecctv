@@ -5,9 +5,9 @@ import { business } from "@/lib/business";
 
 const recap = [
   { href: "#inside", label: "Inside the centre" },
-  { href: "#greenfield", label: "Built for greenfield sites" },
+  { href: "#why", label: "Why use one" },
   { href: "#ramadan", label: "Ramadan Nights, Lakemba" },
-  { href: "#bathurst", label: "Bathurst" },
+  { href: "#bathurst", label: "Bathurst 1000" },
 ];
 
 /**

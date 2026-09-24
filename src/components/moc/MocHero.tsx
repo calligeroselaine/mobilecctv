@@ -54,7 +54,7 @@ export function MocHero() {
               <PlayCircle className="h-5 w-5" aria-hidden="true" /> Step inside
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-4 border-t border-white/15 pt-4 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-4 border-t border-white/15 pt-4 sm:grid-cols-3">
             {heroFacts.map(({ icon: Icon, label }) => (
               <div key={label} className="flex flex-col gap-2">
                 <Icon className="h-[22px] w-[22px] text-[color:oklch(0.74_0.14_70)]" aria-hidden="true" />

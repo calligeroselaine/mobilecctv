@@ -1,4 +1,4 @@
-import { copy, configuredToOperateAs, mocImages, mocVideos } from "@/lib/moc-content";
+import { copy, mocImages, mocVideos } from "@/lib/moc-content";
 import { MocPlaceholderPhoto } from "@/components/moc/MocPlaceholderPhoto";
 
 export function MocIntro() {
@@ -10,38 +10,25 @@ export function MocIntro() {
           {copy.introEyebrow}
         </div>
         <h2
-          className="mt-7 max-w-[1180px] font-medium leading-[1.02] tracking-[-0.025em]"
+          className="mt-7 max-w-[1180px] font-medium leading-[1.05] tracking-[-0.025em]"
           style={{ fontSize: "clamp(24px,2.6vw,38px)" }}
         >
           {copy.introHeading}
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 items-start gap-14 sm:mt-20 lg:grid-cols-2 lg:gap-24">
-          <div className="flex flex-col gap-7">
+        <div className="mt-12 grid grid-cols-1 items-center gap-10 sm:mt-16 lg:grid-cols-2 lg:gap-24">
+          <div className="flex flex-col gap-4">
             <MocPlaceholderPhoto
               src={mocImages.introExteriorDetail}
               alt="Mobile Operations Centre exterior — still from the product walkthrough film"
-              neededCaption="exterior detail — entry door, fingerprint reader, flood lighting (portrait 4:5)"
-              aspectClassName="aspect-[4/5] max-h-[640px]"
+              neededCaption="exterior detail — entry door, fingerprint reader, flood lighting"
+              aspectClassName="aspect-[16/10]"
               tone="light"
               videoStillId={mocVideos.walkthrough.youtubeId}
             />
             <p className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">{copy.introPhotoCaption}</p>
           </div>
-          <div className="flex flex-col gap-10 pt-0 lg:pt-8">
-            <p className="max-w-[560px] text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.introBody}</p>
-            <div>
-              <div className="border-b border-[#141619] pb-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">
-                Configured to operate as
-              </div>
-              {configuredToOperateAs.map(({ letter, role }) => (
-                <div key={letter} className="flex items-baseline gap-6 border-b border-[#D6D2CA] py-5.5">
-                  <span className="font-mono text-xs text-[#5B5F63]">{letter}</span>
-                  <span className="text-lg font-medium tracking-[-0.015em] sm:text-xl">{role}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="max-w-[560px] text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.introBody}</p>
         </div>
       </div>
     </section>

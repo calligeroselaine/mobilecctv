@@ -9,7 +9,8 @@ import { MocSubNav } from "@/components/moc/MocSubNav";
 import { MocHero } from "@/components/moc/MocHero";
 import { MocIntro } from "@/components/moc/MocIntro";
 import { MocStepInside } from "@/components/moc/MocStepInside";
-import { MocGreenfield } from "@/components/moc/MocGreenfield";
+import { MocWhy } from "@/components/moc/MocWhy";
+import { MocApplications } from "@/components/moc/MocApplications";
 import { MocRamadan } from "@/components/moc/MocRamadan";
 import { MocBathurst } from "@/components/moc/MocBathurst";
 import { MocFaq } from "@/components/moc/MocFaq";
@@ -65,7 +66,8 @@ export default function MobileOperationsCentrePage() {
       <MocHero />
       <MocIntro />
       <MocStepInside />
-      <MocGreenfield />
+      <MocWhy />
+      <MocApplications />
       <MocRamadan />
       <MocBathurst />
       <MocFaq />

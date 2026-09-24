@@ -21,8 +21,11 @@ import {
   RadioTower,
   Truck,
   Footprints,
-  CalendarCheck,
-  CalendarClock,
+  ShieldCheck,
+  Users,
+  Building2,
+  HardHat,
+  Tent,
 } from "lucide-react";
 
 /**
@@ -76,17 +79,17 @@ export const mocImages = {
 };
 
 export const heroFacts: { icon: LucideIcon; label: string }[] = [
-  { icon: Fingerprint, label: "Fingerprint & event-code access" },
-  { icon: Satellite, label: "Starlink & display connectivity" },
-  { icon: Droplet, label: "Bathroom & up to 200L water" },
-  { icon: CalendarClock, label: "Minimum hire one week" },
+  { icon: ShieldCheck, label: "For security and event operations teams" },
+  { icon: Users, label: "For councils, promoters and site managers" },
+  { icon: MapPin, label: "For sites with little existing infrastructure" },
 ];
 
 export const configuredToOperateAs = [
   { letter: "A", role: "Security control room" },
-  { letter: "B", role: "Event office" },
-  { letter: "C", role: "Council office" },
-  { letter: "D", role: "Promoter's operational base" },
+  { letter: "B", role: "Event operations base" },
+  { letter: "C", role: "Site office" },
+  { letter: "D", role: "Council or event management base" },
+  { letter: "E", role: "Promoter or management office" },
 ];
 
 export type MocThemeItem = { icon: LucideIcon; label: string };
@@ -168,33 +171,71 @@ export const insideThemes: MocTheme[] = [
   },
 ];
 
-export const shedComparison: {
-  icon: LucideIcon;
-  title: string;
-  shed: string;
-  moc: string;
-}[] = [
-  { icon: Lock, title: "Private, secure room", shed: "Additional arrangements needed", moc: "Fingerprint access + custom event codes" },
-  { icon: Bolt, title: "Power & displays", shed: "Organised separately", moc: "Power, laptop & TV connectivity" },
-  { icon: Satellite, title: "Internet", shed: "Organised separately", moc: "Starlink on board" },
-  { icon: Droplet, title: "Water & amenities", shed: "Organised separately", moc: "Bathroom, shower, toilet, sink · mains or up to 200L" },
-  { icon: Table2, title: "Operator workspace", shed: "Fit-out required", moc: "Adjustable work tables + wall space for maps" },
+export const whyPoints: { icon: LucideIcon; title: string; body: string }[] = [
+  {
+    icon: Lock,
+    title: "One private base",
+    body: "Confidential operational information stays separate from general staff activity, while security and police can work side by side.",
+  },
+  {
+    icon: Bolt,
+    title: "Everything arrives together",
+    body: "Workspace, power, internet and water don't have to be organised separately around a conventional site shed.",
+  },
+  {
+    icon: ArrowDownToLine,
+    title: "An operational base, fast",
+    body: "A working environment on sites with little existing infrastructure — ready for the team rather than built around them.",
+  },
 ];
 
 export const greenfieldFacts = {
   stat: "100+",
   statLabel:
     "security personnel were operating at the event shown in the film, with police working alongside operations teams.",
-  points: [
-    { icon: CalendarCheck, label: "Available on a minimum one-week hire." },
-  ],
 };
 
+export const applications: { icon: LucideIcon; label: string }[] = [
+  { icon: Tent, label: "Major events" },
+  { icon: ShieldCheck, label: "Temporary security operations" },
+  { icon: MapPin, label: "Greenfield sites" },
+  { icon: HardHat, label: "Construction and infrastructure projects" },
+  { icon: Building2, label: "Temporary command environments" },
+];
+
 export const ramadanStats = [
-  { value: "9 yrs", label: "Supporting the event" },
-  { value: "7 → 43", label: "Camera growth as the event grew", split: true },
+  { value: "31", label: "Consecutive event nights" },
+  { value: "43", label: "Cameras across the event space" },
+  { value: "7 → 43", label: "Camera network growth", split: true },
   { value: "403", label: "Stallholders" },
 ];
+
+export const ramadanStory = {
+  tagline: "One command point for a complex multi-agency event.",
+  challenge:
+    "Ramadan Nights runs for 31 consecutive nights, bringing sustained crowds into a busy event precinct. Council needed more than cameras: security, police, medical teams and event management needed one place from which to see the event, communicate and respond.",
+  solution:
+    "A Mobile Operations Centre, supported by solar-powered pole cameras and a wider camera network. Security, NSW Police, medical personnel and event management worked together from a central command point with live visibility across the event.",
+  result:
+    "All 31 nights were delivered with no major incidents. When an approaching weather front was identified through the CCTV network, resources could be deployed to manage the situation before it escalated. Mobile CCTV Solutions is a repeat engagement for the event.",
+};
+
+export const bathurstStory = {
+  tagline: "A temporary operational home base for a large security operation.",
+  client: "Guardian Venue Management",
+  challenge:
+    "A large, round-the-clock security operation that needed a functioning control room, not simply somewhere to place a desk.",
+  solution:
+    "A fully equipped Mobile Operations Centre as the security team's command post, with communications, internet and workstations for the operators inside. It brought temporary CCTV streams and existing local feeds into one view, and a separate CCTV workstation was installed in the client's management office.",
+  result:
+    "Security management could see crowd and vehicle movements live and redirect personnel and resources before pressure points developed. The centre became the security team's operational home base throughout the event, and Guardian Venue Management went on to book two further Bathurst race events.",
+  stats: [
+    { value: "10", label: "Days, operating 24 hours" },
+    { value: "100+", label: "Security personnel on shift each day" },
+    { value: "28 + 30+", label: "Temporary streams plus existing feeds" },
+    { value: "4", label: "Operators working inside at once" },
+  ],
+};
 
 export const ramadanStatsNote =
   "Figures as described by the event team in the deployment interview.";
@@ -229,43 +270,23 @@ export const stakeholders = [
 export const bathurstSteps = [
   {
     title: "Identify",
-    body: "Spot queues, congestion and access issues as they develop across the site.",
+    body: "Queues, congestion and access issues as they develop.",
     tags: ["Queues", "Congestion", "Vehicle access"],
   },
   {
     title: "Assess",
-    body: "Live camera visibility from the control room shows where the operational bottleneck actually is.",
+    body: "Live operational visibility shows where the bottleneck is.",
     tags: ["Live feeds", "Traffic flow"],
   },
   {
     title: "Respond",
-    body: "Redirect resources, change gate deployment and manage traffic flow based on what the team can see.",
+    body: "Redirect resources, manage gates and address traffic flow.",
     tags: ["Gates", "Resources", "Traffic"],
     highlight: true,
   },
 ];
 
 export const faqs = [
-  {
-    q: "What can the Mobile Operations Centre be used for?",
-    a: "It's configured to whatever role your operation needs — see how it's set up on site above. At Ramadan Nights in Lakemba it served as the control room for the event's camera network.",
-  },
-  {
-    q: "Is it suitable for greenfield sites?",
-    a: "Yes. It's designed for sites where little infrastructure exists. Instead of organising power, internet, water and workspace separately around a conventional site shed, the centre brings them together in one unit.",
-  },
-  {
-    q: "Can multiple stakeholders operate from it?",
-    a: "Yes. At Ramadan Nights, council, security and police all worked from the same room and the same camera feeds, each for their own purpose.",
-  },
-  {
-    q: "What connectivity is available?",
-    a: "The centre includes Starlink, along with laptop and TV connectivity for displaying information.",
-  },
-  {
-    q: "What facilities are included?",
-    a: "Everything needed for a long shift on site: secure access, a working control room with connectivity, bathroom facilities and water, plus stabilisers and lighting for after dark.",
-  },
   {
     q: "What is the minimum hire period?",
     a: "The minimum hire period is one week.",
@@ -274,42 +295,52 @@ export const faqs = [
     q: "How quickly can it be deployed?",
     a: "Timing depends on your site, location and event requirements. Contact our team with your dates and we'll confirm availability and logistics.",
   },
+  {
+    q: "What does it need on site?",
+    a: "It carries its own Starlink connection and up to 200L of fresh water, with a mains-water option. Tell us about your site and we'll talk through power and access requirements for your location.",
+  },
+  {
+    q: "How many people can work inside?",
+    a: "At Bathurst, up to four operators worked from the centre at the same time. Talk to us about your team and how you'd use the space.",
+  },
+  {
+    q: "Can it be used as something other than a security control room?",
+    a: "Yes. It can be configured as a security control room, event operations base, site office, council or event management base, or a promoter's management office.",
+  },
 ];
 
-/** Narrative copy blocks, taken near-verbatim from the reference prototype. */
+/** Narrative copy blocks. */
 export const copy = {
   heroMetaLeft: "Products / Event & site operations",
   heroMetaRight: "Available for hire · Australia-wide enquiries",
   heroLead:
-    "A secure, self-contained control room that brings workspace, connectivity and amenities to sites where little infrastructure exists.",
+    "A secure, self-contained control room that brings a working operations base to events and sites where little infrastructure exists.",
   introEyebrow: "01 — The product",
   introHeading:
-    "Big events and remote sites still need a control room. This one arrives on wheels.",
+    "A camera gives you visibility. A Mobile Operations Centre gives your team somewhere to use that visibility to make decisions.",
   introBody:
-    "The Mobile Operations Centre is a purpose-built, towable operations room. It gives event, security and council teams a private workspace with secure access, connectivity, bathroom facilities and water capability — in one unit, on the site where it's needed.",
-  introPhotoCaption: "Fitted for secure, private operations on greenfield event sites.",
-  stepInsideEyebrow: "02 — Walkthrough",
+    "It is a functioning command environment — a purpose-built, towable operations room where security, event management and key agencies work from shared, real-time information, on the site where it's needed.",
+  introPhotoCaption: "A private, secured base for event and site operations.",
+  stepInsideEyebrow: "02 — What's inside",
   stepInsideLead:
     "Walk through the unit from the door to the stabilisers — access, workspace, connectivity and the facilities that let a team stay on site through a long operation.",
-  greenfieldEyebrow: "03 — Built for greenfield operations",
-  greenfieldHeading: "A site shed is a room. An operation needs a base.",
-  greenfieldBody:
-    "On a greenfield event site there's often nothing to plug into. A conventional site shed still needs power, internet, water and a usable workspace organised separately. The Mobile Operations Centre brings those together in one private, secured unit.",
+  whyEyebrow: "03 — Why use one",
+  whyHeading: "A site shed is a room. An operation needs a base.",
+  whyBody:
+    "On a greenfield event site there's often nothing to plug into. The value of a Mobile Operations Centre isn't any single feature — it's having a private, connected, self-contained operational base arrive as one deployable unit.",
+  rolesTitle: "Can function as",
+  applicationsEyebrow: "04 — Where it can be used",
+  applicationsHeading: "Wherever an operation needs a base.",
+  applicationsLink: "See how it has worked in two real deployments",
+  deploymentsEyebrow: "05 — Real-world deployments",
   ramadanFor: "For Canterbury-Bankstown City Council",
-  ramadanLead:
-    "A camera network spread through the event space, feeding one control room — for every night of Ramadan.",
   ramadanVideoCaption:
     "The event team on how the camera network has scaled with Ramadan Nights, year on year.",
-  networkEyebrow: "Ramadan Nights · How the network works",
-  networkHeading: "From a camera on the street to a decision in the room.",
-  stakeholdersEyebrow: "Ramadan Nights · Stakeholders",
-  stakeholdersHeading: "One operations centre. Three ways of using it.",
-  stakeholdersBody:
-    "Council, security and police shared the same room and the same feeds — each for their own operational purpose.",
-  bathurstEyebrow: "05 — Deployment",
-  bathurstLead:
-    "Operational visibility over queues, gates and vehicle access — so teams can see a bottleneck forming and move resources to meet it.",
-  faqEyebrow: "06 — Questions",
+  networkTitle: "From a camera on the street to a decision in the room",
+  stakeholdersTitle: "One centre, three ways of using it",
+  bathurstEyebrow: "Deployment two",
+  bathurstConceptTitle: "Identify. Assess. Respond.",
+  faqEyebrow: "06 — Practical questions",
   faqHeading: "Planning an operation?",
   faqBody:
     "If your question isn't covered here, our team can talk through your site, dates and requirements.",
@@ -321,9 +352,9 @@ export const copy = {
 
 export const subNavLinks = [
   { href: "#inside", label: "Inside" },
-  { href: "#greenfield", label: "Greenfield" },
+  { href: "#why", label: "Why" },
+  { href: "#applications", label: "Uses" },
   { href: "#ramadan", label: "Ramadan Nights" },
-  { href: "#network", label: "Network" },
   { href: "#bathurst", label: "Bathurst" },
   { href: "#faq", label: "FAQ" },
 ];

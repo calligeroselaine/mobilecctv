@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { PathwayCards } from "@/components/home/PathwayCards";
+import { RentOrPurchase } from "@/components/home/RentOrPurchase";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { WhyUs } from "@/components/home/WhyUs";
 import { QuoteRequest } from "@/components/home/QuoteRequest";
@@ -26,6 +27,7 @@ export default function Home() {
     <>
       <Hero />
       <PathwayCards />
+      <RentOrPurchase />
       <WhyUs />
       <TrustStrip />
       <QuoteRequest />

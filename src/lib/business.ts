@@ -54,6 +54,7 @@ export const primaryNav: NavLink[] = [
 export const productNav: NavLink[] = [
   { label: "Mobile CCTV Trailers", href: "/mobile-cctv-trailers" },
   { label: "Pole Cameras", href: "/pole-cameras" },
+  { label: "Mobile Operations Centre", href: "/mobile-operations-centre" },
 ];
 
 /** Footer legal/utility links. Login is intentionally excluded site-wide. */

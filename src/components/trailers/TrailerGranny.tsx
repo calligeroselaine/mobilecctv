@@ -68,7 +68,7 @@ export function TrailerGranny() {
           <span className={`whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] ${accent} lg:col-start-1 lg:row-start-1`}>03 · The result</span>
           <p className="max-w-[820px] text-base leading-[1.65] text-[#C9CCCF] sm:text-lg lg:col-start-2 lg:row-span-2 lg:row-start-1">{grannyStory.result}</p>
           <div className="mt-6 lg:col-start-1 lg:row-start-2 lg:mt-4">
-            <div className="font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(64px,7vw,100px)" }}>
+            <div className="ml-[58.8px] w-fit -translate-x-1/2 font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(64px,7vw,100px)" }}>
               {grannyStory.stat.value}
             </div>
             <div className="mt-3 font-mono text-xs uppercase tracking-[0.1em]">{grannyStory.stat.label}</div>

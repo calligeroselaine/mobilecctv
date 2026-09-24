@@ -1,4 +1,4 @@
-import { copy, bathurstStory, mocVideos } from "@/lib/moc-content";
+import { copy, bathurstStory, bathurstSteps, mocVideos } from "@/lib/moc-content";
 import { MocVideoPoster } from "@/components/moc/MocVideoPoster";
 
 export function MocBathurst() {
@@ -69,6 +69,25 @@ export function MocBathurst() {
             className="min-h-[260px]"
           />
           <p className="mt-4 max-w-[720px] text-base leading-[1.6] text-[#2A2D31]">{bathurstStory.videoCaption}</p>
+          <div className="mt-6 grid grid-cols-1 gap-x-8 sm:grid-cols-3">
+            {bathurstSteps.map((step, i) => (
+              <div
+                key={step.title}
+                className={`flex flex-col gap-2.5 border-t-2 pb-4 pt-5 ${step.highlight ? "border-[color:oklch(0.62_0.14_65)]" : "border-[#141619]"}`}
+              >
+                <div className="flex items-baseline justify-between">
+                  <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(22px,2vw,28px)" }}>{step.title}</span>
+                  <span className="font-mono text-xs text-[#4E5256]">{String(i + 1).padStart(2, "0")}</span>
+                </div>
+                <p className="text-base leading-[1.5] text-[#2A2D31]">{step.body}</p>
+                <div className="flex flex-wrap gap-2">
+                  {step.tags.map((tag) => (
+                    <span key={tag} className="border border-[#9A9C9E] px-2.5 py-1 font-mono text-xs">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

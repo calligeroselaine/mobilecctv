@@ -72,7 +72,8 @@ export function MocRamadan() {
             </div>
           ))}
         </div>
-        <div className="mx-auto flex w-full max-w-[400px] flex-col gap-4">
+        <div className="mx-auto flex w-full max-w-[460px] flex-col gap-4">
+          <div className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Primary film · The deployment</div>
           <MocVideoPoster
             video={mocVideos.ramadanScale}
             title="Ramadan Nights — scale of the deployment"
@@ -120,10 +121,10 @@ export function MocRamadan() {
           <div>
             <p className="text-lg font-medium leading-[1.25] tracking-[-0.01em]">{copy.networkTitle}</p>
             <div className="mt-6 flex flex-wrap items-start gap-8">
-              <div className="w-full max-w-[240px] shrink-0">
+              <div className="w-full max-w-[200px] shrink-0">
                 <MocVideoPoster video={mocVideos.network} title="Ramadan Nights — how the network works" variant="glass-circle" />
                 <div className="flex justify-between pt-2.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#A9ADB1]">
-                  <span>The network</span>
+                  <span>Supporting · Network</span>
                   <span>{mocVideos.network.label}</span>
                 </div>
               </div>
@@ -143,10 +144,10 @@ export function MocRamadan() {
           <div>
             <p className="text-lg font-medium leading-[1.25] tracking-[-0.01em]">{copy.stakeholdersTitle}</p>
             <div className="mt-6 flex flex-wrap items-start gap-8">
-              <div className="w-full max-w-[240px] shrink-0">
+              <div className="w-full max-w-[200px] shrink-0">
                 <MocVideoPoster video={mocVideos.stakeholders} title="Ramadan Nights — hear from the stakeholders" variant="square-notch-right" />
                 <div className="flex justify-between pt-2.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#A9ADB1]">
-                  <span>The stakeholders</span>
+                  <span>Supporting · Users</span>
                   <span>{mocVideos.stakeholders.label}</span>
                 </div>
               </div>

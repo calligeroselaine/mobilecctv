@@ -175,7 +175,7 @@ export const whyPoints: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon: Lock,
     title: "One private base",
-    body: "Confidential operational information stays separate from general staff activity, while security and police can work side by side.",
+    body: "Operational information stays inside the team using it, while security and police can work side by side.",
   },
   {
     icon: Bolt,
@@ -190,9 +190,8 @@ export const whyPoints: { icon: LucideIcon; title: string; body: string }[] = [
 ];
 
 export const greenfieldFacts = {
-  stat: "100+",
   statLabel:
-    "security personnel were operating at the event shown in the film, with police working alongside operations teams.",
+    "In the film, a large security team and police work alongside each other from one private base, with confidential information kept apart from general staff activity.",
 };
 
 export const applications: { icon: LucideIcon; label: string }[] = [
@@ -201,6 +200,25 @@ export const applications: { icon: LucideIcon; label: string }[] = [
   { icon: MapPin, label: "Greenfield sites" },
   { icon: HardHat, label: "Construction and infrastructure projects" },
   { icon: Building2, label: "Temporary command environments" },
+];
+
+export const bathurstSteps = [
+  {
+    title: "Identify",
+    body: "Queues, congestion and access issues as they develop.",
+    tags: ["Queues", "Congestion", "Vehicle access"],
+  },
+  {
+    title: "Assess",
+    body: "Live operational visibility shows where the bottleneck is.",
+    tags: ["Live feeds", "Traffic flow"],
+  },
+  {
+    title: "Respond",
+    body: "Redirect resources, manage gates and address traffic flow.",
+    tags: ["Gates", "Resources", "Traffic"],
+    highlight: true,
+  },
 ];
 
 export const ramadanStats = [
@@ -219,7 +237,7 @@ export const ramadanStory = {
   result:
     "All 31 nights were delivered with no major incidents. When an approaching weather front was identified through the CCTV network, resources could be deployed to manage the situation before it escalated.",
   clientProof:
-    "Ramadan Nights is a repeat engagement: Mobile CCTV Solutions has supported the event in previous years as well.",
+    "Mobile CCTV Solutions has been repeatedly engaged to support Ramadan Nights.",
 };
 
 export const bathurstStory = {
@@ -257,13 +275,13 @@ export const networkSteps: {
   {
     icon: Truck,
     title: "Mobile Operations Centre",
-    body: "Feeds are monitored from one secure room on site.",
+    body: "Feeds are monitored on site in the Operations Centre.",
     highlight: true,
   },
   {
     icon: Footprints,
     title: "Operational response",
-    body: "Security, police and event management see what's happening and make operational decisions.",
+    body: "Teams act on what the feeds show.",
   },
 ];
 

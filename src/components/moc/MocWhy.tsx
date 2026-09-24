@@ -30,12 +30,9 @@ export function MocWhy() {
             </div>
           </div>
           <div className="flex min-w-0 flex-1 flex-col" style={{ flexBasis: 440 }}>
-            <div className="flex flex-col gap-2.5 border-b-2 border-[#141619] pb-7">
-              <span className="font-bold leading-[0.9]" style={{ fontStretch: "68%", fontSize: "clamp(32px,3.2vw,44px)" }}>
-                {greenfieldFacts.stat}
-              </span>
-              <span className="max-w-[440px] text-base leading-[1.5] text-[#2A2D31]">{greenfieldFacts.statLabel}</span>
-            </div>
+            <p className="max-w-[520px] border-b-2 border-[#141619] pb-7 text-lg font-medium leading-[1.35] tracking-[-0.01em]">
+              {greenfieldFacts.statLabel}
+            </p>
             {whyPoints.map((point) => {
               const Icon = point.icon;
               return (

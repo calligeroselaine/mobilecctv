@@ -12,8 +12,8 @@ export function TrailerIntro() {
         <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div>
             <h2
-              className="font-bold uppercase leading-[0.92] tracking-[-0.01em]"
-              style={{ fontStretch: "68%", fontSize: "clamp(28px,5.4vw,78px)" }}
+              className="font-medium leading-[1.05] tracking-[-0.025em]"
+              style={{ fontSize: "clamp(24px,2.6vw,38px)" }}
             >
               {trailerCopy.introHeading}
             </h2>

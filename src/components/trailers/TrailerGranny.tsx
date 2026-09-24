@@ -27,7 +27,7 @@ export function TrailerGranny() {
         </div>
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1440px] px-5 pb-10 sm:px-8 sm:pb-14">
           <div className="mb-4 font-mono text-[13px] tracking-[0.08em] text-[#E3E1DC]">For {grannyStory.client}</div>
-          <h2 className="font-bold uppercase leading-[0.88]" style={{ fontStretch: "66%", fontSize: "clamp(32px,7.5vw,112px)" }}>
+          <h2 className="font-bold uppercase leading-[0.88]" style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}>
             Granny Smith
             <br />
             Festival
@@ -49,7 +49,7 @@ export function TrailerGranny() {
               p ? (
                 <div key={p.label} className="border border-white/20 p-6 sm:p-8">
                   <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#A9ADB1]">{p.label}</div>
-                  <h3 className="mt-3 font-bold uppercase leading-none" style={{ fontStretch: "70%", fontSize: "clamp(32px,3.6vw,52px)" }}>
+                  <h3 className="mt-3 font-bold uppercase leading-none" style={{ fontStretch: "70%", fontSize: "clamp(24px,2.4vw,32px)" }}>
                     {p.title}
                   </h3>
                   <p className="mt-5 text-base leading-[1.6] text-[#C9CCCF]">{p.text}</p>
@@ -66,7 +66,7 @@ export function TrailerGranny() {
 
         <div className="mt-14 grid grid-cols-1 items-center gap-10 border-t border-white/20 py-12 pb-16 sm:pb-24 lg:grid-cols-[auto_1fr] lg:gap-20">
           <div>
-            <div className="font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(96px,14vw,200px)" }}>
+            <div className="font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(56px,6vw,88px)" }}>
               {grannyStory.stat.value}
             </div>
             <div className="mt-3 font-mono text-xs uppercase tracking-[0.1em]">{grannyStory.stat.label}</div>

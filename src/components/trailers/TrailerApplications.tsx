@@ -10,7 +10,7 @@ export function TrailerApplications() {
           {trailerCopy.applicationsEyebrow}
         </div>
         <div className="mt-7 grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-24">
-          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(26px,3vw,42px)" }}>
+          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(22px,2.4vw,32px)" }}>
             {trailerCopy.applicationsHeading}
           </h2>
           <ul className="grid grid-cols-1 border-t-2 border-[#141619] sm:grid-cols-2 sm:gap-x-10">

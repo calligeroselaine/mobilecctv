@@ -5,7 +5,7 @@ export function TrailerCta() {
   return (
     <section id="enquire" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: 140 }}>
       <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
-        <h2 className="max-w-[1100px] font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(30px,7vw,104px)" }}>
+        <h2 className="max-w-[1100px] font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}>
           Put a trailer on your site
         </h2>
         <p className="mt-6 max-w-[520px] text-lg leading-[1.5] text-[#E3E1DC]">

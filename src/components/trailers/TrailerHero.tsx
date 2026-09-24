@@ -14,13 +14,13 @@ export function TrailerHero() {
           </div>
           <h1
             className="mt-5 font-bold uppercase leading-[0.86] tracking-[-0.02em]"
-            style={{ fontStretch: "66%", fontSize: "clamp(34px,6.2vw,92px)" }}
+            style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}
           >
             Mobile CCTV
             <br />
             Trailers
           </h1>
-          <p className="mt-6 max-w-[520px] text-lg leading-[1.4] text-[#E3E1DC] sm:text-xl">{trailerCopy.heroLead}</p>
+          <p className="mt-6 max-w-[520px] text-base leading-[1.45] text-[#E3E1DC] sm:text-lg">{trailerCopy.heroLead}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={trailerCta.hire}

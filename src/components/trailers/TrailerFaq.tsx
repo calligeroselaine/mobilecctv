@@ -14,7 +14,7 @@ export function TrailerFaq() {
             <span className="h-px w-7 bg-[#141619]" />
             {trailerCopy.faqEyebrow}
           </div>
-          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(28px,3vw,42px)" }}>
+          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,34px)" }}>
             {trailerCopy.faqHeading}
           </h2>
           <a href="tel:1300996910" className="flex items-center gap-2.5 text-lg font-semibold">

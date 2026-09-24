@@ -23,7 +23,7 @@ export function TrailerAdco() {
         <div className="mt-7 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-20">
           <h2
             className="font-bold uppercase leading-[0.88]"
-            style={{ fontStretch: "66%", fontSize: "clamp(30px,7vw,104px)" }}
+            style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}
           >
             ADCO
             <br />
@@ -35,7 +35,7 @@ export function TrailerAdco() {
         <div className="mt-12 grid grid-cols-1 border-t-2 border-[#141619] sm:grid-cols-3">
           {adcoStory.stats.map((s) => (
             <div key={s.label} className="border-b border-[#D6D2CA] py-6 sm:border-b-0 sm:border-r sm:pl-6 sm:pr-4 sm:first:pl-0 sm:last:border-r-0">
-              <div className="font-bold leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(44px,5.2vw,76px)" }}>
+              <div className="font-bold leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(32px,3.4vw,46px)" }}>
                 {s.value}
               </div>
               <div className="mt-3 font-mono text-xs uppercase tracking-[0.1em]">{s.label}</div>

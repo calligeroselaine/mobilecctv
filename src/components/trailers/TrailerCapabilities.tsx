@@ -14,7 +14,7 @@ export function TrailerCapabilities() {
             <div className="lg:self-start lg:[@media(min-height:820px)]:sticky lg:[@media(min-height:820px)]:top-[150px]">
               <h2
                 className="font-bold uppercase leading-[0.9]"
-                style={{ fontStretch: "68%", fontSize: "clamp(30px,6vw,88px)" }}
+                style={{ fontStretch: "68%", fontSize: "clamp(26px,3.6vw,44px)" }}
               >
                 {trailerCopy.capabilitiesHeading}
               </h2>
@@ -36,7 +36,7 @@ export function TrailerCapabilities() {
                     <div className="flex items-baseline justify-between gap-4">
                       <h3
                         className="font-bold uppercase leading-none"
-                        style={{ fontStretch: "70%", fontSize: "clamp(30px,3.2vw,46px)" }}
+                        style={{ fontStretch: "70%", fontSize: "clamp(22px,2vw,28px)" }}
                       >
                         {title}
                       </h3>
@@ -63,7 +63,7 @@ export function TrailerCapabilities() {
         <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
           <p
             className="font-bold uppercase leading-[0.88] tracking-[-0.01em]"
-            style={{ fontStretch: "66%", fontSize: "clamp(30px,8vw,120px)" }}
+            style={{ fontStretch: "66%", fontSize: "clamp(26px,4vw,54px)" }}
           >
             {trailerCopy.statement.map((line) => (
               <span key={line} className="block">

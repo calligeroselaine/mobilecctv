@@ -22,7 +22,7 @@ export function TrailerAction() {
           <div>
             <h2
               className="font-bold uppercase leading-[0.9]"
-              style={{ fontStretch: "68%", fontSize: "clamp(30px,4.6vw,64px)" }}
+              style={{ fontStretch: "68%", fontSize: "clamp(26px,3.6vw,44px)" }}
             >
               {trailerCopy.actionHeading}
             </h2>

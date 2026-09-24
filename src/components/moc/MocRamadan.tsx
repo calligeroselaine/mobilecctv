@@ -64,8 +64,8 @@ export function MocRamadan() {
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-14 px-5 pt-16 sm:px-8 sm:pt-24 lg:grid-cols-[1.3fr_1fr] lg:gap-24">
         <div className="border-t border-white/20">
           {story.map((row, i) => (
-            <div key={row.label} className="grid grid-cols-1 gap-x-10 gap-y-2 border-b border-white/20 py-7 sm:grid-cols-[150px_1fr]">
-              <div className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>
+            <div key={row.label} className="flex flex-col gap-2.5 border-b border-white/20 py-7">
+              <div className={`whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>
                 {String(i + 1).padStart(2, "0")} · {row.label}
               </div>
               <p className="text-base leading-[1.65] text-[#C9CCCF]">{row.text}</p>

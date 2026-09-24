@@ -44,11 +44,11 @@ export function MocBathurst() {
           {story.map((row, i) => (
             <div
               key={row.label}
-              className={`grid grid-cols-1 gap-x-10 gap-y-2 border-b border-[#C9C4BA] py-7 sm:grid-cols-[170px_1fr] ${
+              className={`grid grid-cols-1 items-baseline gap-x-10 gap-y-2 border-b border-[#C9C4BA] py-7 sm:grid-cols-[220px_1fr] ${
                 i === story.length - 1 ? "border-t-[3px] border-t-[color:oklch(0.62_0.14_65)]" : ""
               }`}
             >
-              <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#4E5256]">
+              <span className="whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] text-[#4E5256]">
                 {String(i + 1).padStart(2, "0")} · {row.label}
               </span>
               <p className="max-w-[860px] text-base leading-[1.65] text-[#2A2D31]">{row.text}</p>

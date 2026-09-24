@@ -1,14 +1,12 @@
-import { Video, Antenna, Truck, type LucideIcon } from "lucide-react";
+import { Video, Antenna, CalendarClock, type LucideIcon } from "lucide-react";
 
 /**
- * The three homepage "pathway" cards — the client's three core
- * product/solution pathways (Mobile CCTV Trailers, Pole Cameras, Mobile
- * Operations Centre). Each links straight to its own dedicated product
- * page. Temporary/event CCTV is an application context covered on the
- * Mobile Operations Centre and solutions pages, not a fourth core product.
+ * The three homepage "pathway" cards — product/service-led entry points.
+ * Trailers and Pole Cameras link to their product pages; Temporary CCTV
+ * For Events links to the events solutions page.
  */
 export type Pathway = {
-  slug: "mobile-cctv-trailers" | "pole-cameras" | "mobile-operations-centre";
+  slug: "mobile-cctv-trailers" | "pole-cameras" | "temporary-cctv-for-events";
   href: string;
   icon: LucideIcon;
   eyebrow: string;
@@ -45,14 +43,14 @@ export const pathways: Pathway[] = [
     imageAlt: "Mobi Pole Cam solar-powered surveillance unit deployed on a pole against bushland",
   },
   {
-    slug: "mobile-operations-centre",
-    href: "/mobile-operations-centre",
-    icon: Truck,
+    slug: "temporary-cctv-for-events",
+    href: "/solutions/events-temporary-sites",
+    icon: CalendarClock,
     eyebrow: "Explore",
-    heading: "Mobile Operations Centre",
+    heading: "Temporary CCTV For Events",
     description:
-      "A secure, self-contained control room that brings workspace, connectivity and amenities to sites where little infrastructure exists.",
-    buttonLabel: "Explore Operations Centre",
+      "Flexible surveillance for events, festivals and short-term security requirements — coverage for events of any size, deployed and removed on your schedule.",
+    buttonLabel: "Explore Event Solutions",
     image: "/images/mobile-operations-centre-card.jpg",
     imageAlt: "Mobile CCTV Solutions' Mobile Operations Centre trailer branded for outdoor events, live concerts and festivals",
   },

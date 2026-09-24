@@ -1,4 +1,4 @@
-import { copy, bathurstSteps, bathurstStory, mocVideos } from "@/lib/moc-content";
+import { copy, bathurstStory, mocVideos } from "@/lib/moc-content";
 import { MocVideoPoster } from "@/components/moc/MocVideoPoster";
 
 export function MocBathurst() {
@@ -6,6 +6,7 @@ export function MocBathurst() {
     { label: "The challenge", text: bathurstStory.challenge },
     { label: "The solution", text: bathurstStory.solution },
     { label: "The result", text: bathurstStory.result },
+    { label: "Client proof", text: bathurstStory.clientProof },
   ];
 
   return (
@@ -39,20 +40,25 @@ export function MocBathurst() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-16 lg:grid-cols-3">
+        <div className="mt-2">
           {story.map((row, i) => (
-            <div key={row.label} className={`flex flex-col gap-3 border-t-2 pb-8 pt-6 ${i === 2 ? "border-[color:oklch(0.62_0.14_65)]" : "border-[#141619]"}`}>
+            <div
+              key={row.label}
+              className={`grid grid-cols-1 gap-x-10 gap-y-2 border-b border-[#C9C4BA] py-7 sm:grid-cols-[170px_1fr] ${
+                i === story.length - 1 ? "border-l-[3px] border-l-[color:oklch(0.62_0.14_65)] pl-5 sm:pl-6" : ""
+              }`}
+            >
               <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#4E5256]">
                 {String(i + 1).padStart(2, "0")} · {row.label}
               </span>
-              <p className="text-base leading-[1.6] text-[#2A2D31]">{row.text}</p>
+              <p className="max-w-[860px] text-base leading-[1.65] text-[#2A2D31]">{row.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-14 sm:mt-20">
+        <div className="mt-12 sm:mt-16">
           <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3 font-mono text-xs uppercase tracking-[0.12em] text-[#4E5256]">
-            <span>{copy.bathurstConceptTitle} — operational visibility in action</span>
+            <span>Supporting film from the deployment</span>
             <span>{mocVideos.bathurst.label}</span>
           </div>
           <MocVideoPoster
@@ -62,29 +68,7 @@ export function MocBathurst() {
             caption="Visibility in action at Bathurst"
             className="min-h-[260px]"
           />
-          <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-3">
-            {bathurstSteps.map((step, i) => (
-              <div
-                key={step.title}
-                className={`flex flex-col gap-2.5 border-t-2 pb-4 pt-5 ${
-                  step.highlight ? "border-[color:oklch(0.62_0.14_65)]" : "border-[#141619]"
-                }`}
-              >
-                <div className="flex items-baseline justify-between">
-                  <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(22px,2vw,28px)" }}>
-                    {step.title}
-                  </span>
-                  <span className="font-mono text-xs text-[#4E5256]">{String(i + 1).padStart(2, "0")}</span>
-                </div>
-                <p className="text-base leading-[1.5] text-[#2A2D31]">{step.body}</p>
-                <div className="flex flex-wrap gap-2">
-                  {step.tags.map((tag) => (
-                    <span key={tag} className="border border-[#9A9C9E] px-2.5 py-1 font-mono text-xs">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="mt-4 max-w-[720px] text-base leading-[1.6] text-[#2A2D31]">{bathurstStory.videoCaption}</p>
         </div>
       </div>
     </section>

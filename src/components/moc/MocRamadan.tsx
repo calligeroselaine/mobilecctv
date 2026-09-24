@@ -19,6 +19,7 @@ export function MocRamadan() {
     { label: "The challenge", text: ramadanStory.challenge },
     { label: "The solution", text: ramadanStory.solution },
     { label: "The result", text: ramadanStory.result },
+    { label: "Client proof", text: ramadanStory.clientProof },
   ];
 
   return (
@@ -109,61 +110,58 @@ export function MocRamadan() {
         <p className="mt-4 text-[13px] leading-[1.5] text-[#A9ADB1]">{ramadanStatsNote}</p>
       </div>
 
-      {/* Supporting films: network + stakeholders */}
-      <div id="network" className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 px-5 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:grid-cols-2 lg:gap-24" style={{ scrollMarginTop: 140 }}>
-        <div>
-          <div className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Inside the deployment · How it works</div>
-          <h3 className="mt-4 font-medium leading-[1.1] tracking-[-0.02em]" style={{ fontSize: "clamp(20px,1.9vw,28px)" }}>
-            {copy.networkTitle}
-          </h3>
-          <div className="mt-8 flex flex-wrap items-start gap-8">
-            <div className="w-full max-w-[240px] shrink-0">
-              <MocVideoPoster video={mocVideos.network} title="Ramadan Nights — how the network works" variant="glass-circle" />
-              <div className="flex justify-between pt-2.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#A9ADB1]">
-                <span>The network</span>
-                <span>{mocVideos.network.label}</span>
-              </div>
-            </div>
-            <ol className="min-w-0 flex-1" style={{ flexBasis: 220 }}>
-              {networkSteps.map((step, i) => (
-                <li key={step.title} className="flex items-baseline gap-4 border-b border-white/15 py-3.5 first:border-t">
-                  <span className={`font-mono text-[11px] ${step.highlight ? accent : "text-[#A9ADB1]"}`}>{String(i + 1).padStart(2, "0")}</span>
-                  <span>
-                    <span className={`block text-base font-bold uppercase ${step.highlight ? accent : ""}`} style={{ fontStretch: "76%" }}>
-                      {step.title}
-                    </span>
-                    <span className="mt-0.5 block text-sm leading-[1.45] text-[#C9CCCF]">{step.body}</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </div>
+      {/* Supporting evidence — part of the same case study */}
+      <div id="network" className="mx-auto max-w-[1440px] px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20" style={{ scrollMarginTop: 140 }}>
+        <div className="flex flex-wrap items-baseline justify-between gap-3 border-t-2 border-white/30 pt-5">
+          <span className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Supporting evidence from the deployment</span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#A9ADB1]">Two further films</span>
         </div>
-
-        <div>
-          <div className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Inside the deployment · Who uses it</div>
-          <h3 className="mt-4 font-medium leading-[1.1] tracking-[-0.02em]" style={{ fontSize: "clamp(20px,1.9vw,28px)" }}>
-            {copy.stakeholdersTitle}
-          </h3>
-          <div className="mt-8 flex flex-wrap items-start gap-8">
-            <div className="w-full max-w-[240px] shrink-0">
-              <MocVideoPoster video={mocVideos.stakeholders} title="Ramadan Nights — hear from the stakeholders" variant="square-notch-right" />
-              <div className="flex justify-between pt-2.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#A9ADB1]">
-                <span>The stakeholders</span>
-                <span>{mocVideos.stakeholders.label}</span>
+        <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <p className="text-lg font-medium leading-[1.25] tracking-[-0.01em]">{copy.networkTitle}</p>
+            <div className="mt-6 flex flex-wrap items-start gap-8">
+              <div className="w-full max-w-[240px] shrink-0">
+                <MocVideoPoster video={mocVideos.network} title="Ramadan Nights — how the network works" variant="glass-circle" />
+                <div className="flex justify-between pt-2.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#A9ADB1]">
+                  <span>The network</span>
+                  <span>{mocVideos.network.label}</span>
+                </div>
               </div>
+              <ol className="min-w-0 flex-1" style={{ flexBasis: 220 }}>
+                {networkSteps.map((step, i) => (
+                  <li key={step.title} className="flex items-baseline gap-4 border-b border-white/15 py-3.5 first:border-t">
+                    <span className={`font-mono text-[11px] ${step.highlight ? accent : "text-[#A9ADB1]"}`}>{String(i + 1).padStart(2, "0")}</span>
+                    <span>
+                      <span className={`block text-base font-bold uppercase ${step.highlight ? accent : ""}`} style={{ fontStretch: "76%" }}>{step.title}</span>
+                      <span className="mt-0.5 block text-sm leading-[1.45] text-[#C9CCCF]">{step.body}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
             </div>
-            <ul className="min-w-0 flex-1" style={{ flexBasis: 220 }}>
-              {stakeholders.map((s, i) => (
-                <li key={s.name} className="border-b border-white/15 py-3.5 first:border-t">
-                  <div className="flex items-baseline gap-4">
-                    <span className={`font-mono text-[11px] ${accent}`}>{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-lg font-bold uppercase" style={{ fontStretch: "66%" }}>{s.name}</span>
-                  </div>
-                  <p className="mt-1 pl-8 text-sm leading-[1.45] text-[#C9CCCF]">{s.use}</p>
-                </li>
-              ))}
-            </ul>
+          </div>
+          <div>
+            <p className="text-lg font-medium leading-[1.25] tracking-[-0.01em]">{copy.stakeholdersTitle}</p>
+            <div className="mt-6 flex flex-wrap items-start gap-8">
+              <div className="w-full max-w-[240px] shrink-0">
+                <MocVideoPoster video={mocVideos.stakeholders} title="Ramadan Nights — hear from the stakeholders" variant="square-notch-right" />
+                <div className="flex justify-between pt-2.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#A9ADB1]">
+                  <span>The stakeholders</span>
+                  <span>{mocVideos.stakeholders.label}</span>
+                </div>
+              </div>
+              <ul className="min-w-0 flex-1" style={{ flexBasis: 220 }}>
+                {stakeholders.map((s, i) => (
+                  <li key={s.name} className="border-b border-white/15 py-3.5 first:border-t">
+                    <div className="flex items-baseline gap-4">
+                      <span className={`font-mono text-[11px] ${accent}`}>{String(i + 1).padStart(2, "0")}</span>
+                      <span className="text-lg font-bold uppercase" style={{ fontStretch: "66%" }}>{s.name}</span>
+                    </div>
+                    <p className="mt-1 pl-8 text-sm leading-[1.45] text-[#C9CCCF]">{s.use}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

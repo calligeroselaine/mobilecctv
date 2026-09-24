@@ -180,7 +180,7 @@ export const whyPoints: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon: Bolt,
     title: "Everything arrives together",
-    body: "Workspace, power, internet and water don't have to be organised separately around a conventional site shed.",
+    body: "The supporting set-up a conventional site shed needs arranged separately arrives with the unit, so the team starts work instead of building a base.",
   },
   {
     icon: ArrowDownToLine,
@@ -217,18 +217,24 @@ export const ramadanStory = {
   solution:
     "A Mobile Operations Centre, supported by solar-powered pole cameras and a wider camera network. Security, NSW Police, medical personnel and event management worked together from a central command point with live visibility across the event.",
   result:
-    "All 31 nights were delivered with no major incidents. When an approaching weather front was identified through the CCTV network, resources could be deployed to manage the situation before it escalated. Mobile CCTV Solutions is a repeat engagement for the event.",
+    "All 31 nights were delivered with no major incidents. When an approaching weather front was identified through the CCTV network, resources could be deployed to manage the situation before it escalated.",
+  clientProof:
+    "Ramadan Nights is a repeat engagement: Mobile CCTV Solutions has supported the event in previous years as well.",
 };
 
 export const bathurstStory = {
   tagline: "A temporary operational home base for a large security operation.",
   client: "Guardian Venue Management",
   challenge:
-    "A large, round-the-clock security operation that needed a functioning control room, not simply somewhere to place a desk.",
+    "Guardian Venue Management needed to run a 24-hour security operation for 10 days, with more than 100 security personnel on shift each day. They needed a functioning control room, not simply somewhere to place a desk.",
   solution:
-    "A fully equipped Mobile Operations Centre as the security team's command post, with communications, internet and workstations for the operators inside. It brought temporary CCTV streams and existing local feeds into one view, and a separate CCTV workstation was installed in the client's management office.",
+    "Mobile CCTV Solutions deployed a fully equipped Mobile Operations Centre as the security team's command post. Up to four operators could work inside simultaneously, with communications, internet and workstations available on site. The centre brought together 28 temporary CCTV streams plus more than 30 existing local CCTV feeds, and a separate CCTV workstation was installed in the client's management office.",
   result:
-    "Security management could see crowd and vehicle movements live and redirect personnel and resources before pressure points developed. The centre became the security team's operational home base throughout the event, and Guardian Venue Management went on to book two further Bathurst race events.",
+    "Security management could see crowd and vehicle movements live and redirect personnel and resources before pressure points developed. The Mobile Operations Centre became the security team's operational home base throughout the event.",
+  clientProof:
+    "Guardian Venue Management is a repeat customer and subsequently booked Mobile CCTV Solutions for another two Bathurst race events.",
+  videoCaption:
+    "Operational visibility in action at Bathurst: queues, congestion, gates and vehicle access, and moving resources to meet them.",
   stats: [
     { value: "10", label: "Days, operating 24 hours" },
     { value: "100+", label: "Security personnel on shift each day" },
@@ -267,25 +273,6 @@ export const stakeholders = [
   { name: "Police", use: "Monitoring and response" },
 ];
 
-export const bathurstSteps = [
-  {
-    title: "Identify",
-    body: "Queues, congestion and access issues as they develop.",
-    tags: ["Queues", "Congestion", "Vehicle access"],
-  },
-  {
-    title: "Assess",
-    body: "Live operational visibility shows where the bottleneck is.",
-    tags: ["Live feeds", "Traffic flow"],
-  },
-  {
-    title: "Respond",
-    body: "Redirect resources, manage gates and address traffic flow.",
-    tags: ["Gates", "Resources", "Traffic"],
-    highlight: true,
-  },
-];
-
 export const faqs = [
   {
     q: "What is the minimum hire period?",
@@ -297,7 +284,7 @@ export const faqs = [
   },
   {
     q: "What does it need on site?",
-    a: "It carries its own Starlink connection and up to 200L of fresh water, with a mains-water option. Tell us about your site and we'll talk through power and access requirements for your location.",
+    a: "What is on board is covered in What's inside. Tell us about your site and we'll talk through power, connectivity, water and access for your location.",
   },
   {
     q: "How many people can work inside?",
@@ -332,14 +319,13 @@ export const copy = {
   applicationsEyebrow: "04 — Where it can be used",
   applicationsHeading: "Wherever an operation needs a base.",
   applicationsLink: "See how it has worked in two real deployments",
-  deploymentsEyebrow: "05 — Real-world deployments",
+  deploymentsEyebrow: "05 — Real-world deployments · Case study 1",
   ramadanFor: "For Canterbury-Bankstown City Council",
   ramadanVideoCaption:
     "The event team on how the camera network has scaled with Ramadan Nights, year on year.",
   networkTitle: "From a camera on the street to a decision in the room",
   stakeholdersTitle: "One centre, three ways of using it",
-  bathurstEyebrow: "Deployment two",
-  bathurstConceptTitle: "Identify. Assess. Respond.",
+  bathurstEyebrow: "05 — Real-world deployments · Case study 2",
   faqEyebrow: "06 — Practical questions",
   faqHeading: "Planning an operation?",
   faqBody:

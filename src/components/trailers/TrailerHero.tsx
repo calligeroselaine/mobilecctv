@@ -6,14 +6,18 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 export function TrailerHero() {
   return (
     <section id="trailer-hero" className="relative overflow-hidden bg-[#16191C] text-[#F2F0EB]">
-      <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1fr_1fr]">
-        <div className="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 lg:order-1 lg:py-16 lg:pl-[max(2rem,calc((100vw-1440px)/2+2rem))] lg:pr-12">
-          <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#C9CCCF]">{trailerCopy.heroMeta}</div>
+      <div className="border-b border-white/15">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 font-mono text-xs uppercase tracking-[0.14em] text-[#C9CCCF] sm:px-8">
+          <span>{trailerCopy.heroMeta}</span>
           <div className="sr-only">
             <Breadcrumbs crumbs={[{ label: "Mobile CCTV Trailers" }]} />
           </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1fr_1fr]">
+        <div className="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 lg:order-1 lg:py-16 lg:pl-[max(2rem,calc((100vw-1440px)/2+2rem))] lg:pr-12">
           <h1
-            className="mt-5 font-bold uppercase leading-[0.86] tracking-[-0.02em]"
+            className="font-bold uppercase leading-[0.86] tracking-[-0.02em]"
             style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}
           >
             Mobile CCTV

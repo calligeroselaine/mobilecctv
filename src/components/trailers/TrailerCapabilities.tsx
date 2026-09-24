@@ -60,17 +60,20 @@ export function TrailerCapabilities() {
       </section>
 
       <section style={{ background: "#4588c6", color: "#FFFFFF" }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
-          <p
-            className="font-bold uppercase leading-[0.88] tracking-[-0.01em]"
-            style={{ fontStretch: "66%", fontSize: "clamp(26px,4vw,54px)" }}
-          >
-            {trailerCopy.statement.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
+        <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-16">
+          <ul className="grid grid-cols-1 gap-x-10 gap-y-8 lg:grid-cols-[0.8fr_0.8fr_1.4fr]">
+            {trailerCopy.statement.map((line, i) => (
+              <li key={line} className="border-t-2 border-white/70 pt-4">
+                <span className="font-mono text-xs tracking-[0.14em] text-white/80">{String(i + 1).padStart(2, "0")}</span>
+                <p
+                  className="mt-3 font-bold uppercase leading-[0.95] tracking-[-0.01em] lg:whitespace-nowrap"
+                  style={{ fontStretch: "68%", fontSize: "clamp(22px,2.2vw,32px)" }}
+                >
+                  {line}
+                </p>
+              </li>
             ))}
-          </p>
+          </ul>
         </div>
       </section>
     </>

@@ -10,7 +10,7 @@ export function MocStepInside() {
   const active = insideThemes[activeIndex];
 
   return (
-    <section id="inside" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
+    <section id="inside" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: 140 }}>
       <div className="mx-auto max-w-[1440px] px-5 pt-16 sm:px-8 sm:pt-24">
         <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-20">
           <div>

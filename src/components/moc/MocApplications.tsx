@@ -3,7 +3,7 @@ import { applications, copy } from "@/lib/moc-content";
 
 export function MocApplications() {
   return (
-    <section id="applications" style={{ background: "#E6E2DA", color: "#141619", scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
+    <section id="applications" style={{ background: "#E6E2DA", color: "#141619", scrollMarginTop: 140 }}>
       <div className="mx-auto max-w-[1440px] px-5 py-14 sm:px-8 sm:py-20">
         <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#4E5256]">
           <span className="h-px w-7 bg-[#141619]" />

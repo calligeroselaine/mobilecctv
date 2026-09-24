@@ -18,7 +18,7 @@ const recap = [
  */
 export function MocEnquiry() {
   return (
-    <section id="enquire" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
+    <section id="enquire" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: 140 }}>
       <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
         <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#A9ADB1]">
           <span className="h-px w-7 bg-[color:oklch(0.74_0.14_70)]" />

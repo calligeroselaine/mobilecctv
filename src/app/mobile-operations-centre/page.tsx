@@ -4,7 +4,6 @@ import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 import { faqs, mocImages } from "@/lib/moc-content";
 import { mocArchivo } from "@/lib/moc-fonts";
-import { MocSubNav } from "@/components/moc/MocSubNav";
 import { MocHero } from "@/components/moc/MocHero";
 import { MocIntro } from "@/components/moc/MocIntro";
 import { MocStepInside } from "@/components/moc/MocStepInside";
@@ -55,7 +54,6 @@ export default function MobileOperationsCentrePage() {
       <JsonLd data={productJsonLd} />
       <JsonLd data={faqJsonLd} />
 
-      <MocSubNav />
       <MocHero />
       <MocIntro />
       <MocStepInside />

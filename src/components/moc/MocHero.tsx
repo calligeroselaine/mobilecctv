@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export function MocHero() {
   return (
-    <section id="moc-hero" style={{ background: "#16191C", color: "#F2F0EB" }} className="overflow-hidden">
+    <section style={{ background: "#16191C", color: "#F2F0EB" }} className="overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-5 pt-10 sm:px-8 sm:pt-14">
         <div className="flex flex-wrap justify-between gap-4 font-mono text-xs uppercase tracking-[0.12em] text-[#A9ADB1]">
           <Breadcrumbs crumbs={[{ label: "Mobile Operations Centre" }]} />

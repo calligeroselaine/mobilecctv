@@ -22,7 +22,7 @@ export function MocRamadan() {
   ];
 
   return (
-    <section id="ramadan" style={{ background: "#0F1113", color: "#F2F0EB", scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
+    <section id="ramadan" style={{ background: "#0F1113", color: "#F2F0EB", scrollMarginTop: 140 }}>
       {/* Full-bleed opener */}
       <div className="relative min-h-[520px] w-full overflow-hidden" style={{ height: "clamp(520px,82vh,860px)" }}>
         <Image
@@ -110,7 +110,7 @@ export function MocRamadan() {
       </div>
 
       {/* Supporting films: network + stakeholders */}
-      <div id="network" className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 px-5 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:grid-cols-2 lg:gap-24" style={{ scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
+      <div id="network" className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 px-5 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-24 lg:grid-cols-2 lg:gap-24" style={{ scrollMarginTop: 140 }}>
         <div>
           <div className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Inside the deployment · How it works</div>
           <h3 className="mt-4 font-medium leading-[1.1] tracking-[-0.02em]" style={{ fontSize: "clamp(20px,1.9vw,28px)" }}>

@@ -349,12 +349,3 @@ export const copy = {
   enquireBody:
     "Tell us about your event or site — location, dates and who'll be working from the centre. We'll come back to you on availability and how the unit can be set up for your operation.",
 };
-
-export const subNavLinks = [
-  { href: "#inside", label: "Inside" },
-  { href: "#why", label: "Why" },
-  { href: "#applications", label: "Uses" },
-  { href: "#ramadan", label: "Ramadan Nights" },
-  { href: "#bathurst", label: "Bathurst" },
-  { href: "#faq", label: "FAQ" },
-];

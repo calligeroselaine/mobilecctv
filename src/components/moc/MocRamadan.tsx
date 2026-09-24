@@ -6,7 +6,6 @@ import {
   mocVideos,
   networkSteps,
   ramadanStats,
-  ramadanStatsNote,
   ramadanStory,
   stakeholders,
 } from "@/lib/moc-content";
@@ -108,7 +107,6 @@ export function MocRamadan() {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-[13px] leading-[1.5] text-[#A9ADB1]">{ramadanStatsNote}</p>
       </div>
 
       {/* Supporting evidence — part of the same case study */}

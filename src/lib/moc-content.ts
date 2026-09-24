@@ -256,9 +256,6 @@ export const bathurstStory = {
   ],
 };
 
-export const ramadanStatsNote =
-  "Figures as described by the event team in the deployment interview.";
-
 export const networkSteps: {
   icon: LucideIcon;
   title: string;

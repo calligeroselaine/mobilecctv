@@ -246,8 +246,6 @@ export const bathurstStory = {
     "Security management could see crowd and vehicle movements live and redirect personnel and resources before pressure points developed. The Mobile Operations Centre became the security team's operational home base throughout the event.",
   clientProof:
     "Guardian Venue Management is a repeat customer and subsequently booked Mobile CCTV Solutions for another two Bathurst race events.",
-  videoCaption:
-    "Operational visibility in action at Bathurst: queues, congestion, gates and vehicle access, and moving resources to meet them.",
   stats: [
     { value: "10", label: "Days, operating 24 hours" },
     { value: "100+", label: "Security personnel on shift each day" },

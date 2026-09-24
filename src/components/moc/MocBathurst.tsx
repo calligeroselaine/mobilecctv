@@ -68,8 +68,7 @@ export function MocBathurst() {
             caption="Visibility in action at Bathurst"
             className="min-h-[260px]"
           />
-          <p className="mt-4 max-w-[720px] text-base leading-[1.6] text-[#2A2D31]">{bathurstStory.videoCaption}</p>
-          <div className="mt-6 grid grid-cols-1 gap-x-8 sm:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-x-8 sm:grid-cols-3">
             {bathurstSteps.map((step, i) => (
               <div
                 key={step.title}

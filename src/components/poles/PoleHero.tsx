@@ -14,7 +14,7 @@ export function PoleHero() {
           </div>
         </div>
       </div>
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-stretch gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,700px)_374px] lg:justify-start lg:gap-16 lg:py-16">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-stretch gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,700px)_411px] lg:justify-start lg:gap-16 lg:py-16">
         <div className="flex flex-col justify-center">
           <h1 className="font-bold uppercase leading-[0.9] tracking-[-0.02em]" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}>
             Pole Cameras
@@ -29,13 +29,13 @@ export function PoleHero() {
             </a>
           </div>
         </div>
-        <div className="relative mx-auto aspect-[3/4] w-full max-w-[360px] overflow-hidden lg:mx-0 lg:w-[374px] lg:max-w-none">
+        <div className="relative mx-auto aspect-[3/4] w-full max-w-[360px] overflow-hidden lg:mx-0 lg:w-[411px] lg:max-w-none">
           <Image
             src={poleImages.hero}
             alt="A Mobi Pole Cam solar-powered surveillance unit on a pole against bushland"
             fill
             priority
-            sizes="(min-width: 1024px) 374px, 90vw"
+            sizes="(min-width: 1024px) 411px, 90vw"
             className="object-cover"
           />
         </div>

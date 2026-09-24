@@ -20,7 +20,7 @@ export function MocStepInside() {
             </div>
             <h2
               className="mt-6 font-bold uppercase leading-[0.86]"
-              style={{ fontStretch: "68%", fontSize: "clamp(56px,9vw,150px)" }}
+              style={{ fontStretch: "68%", fontSize: "clamp(24px,2.8vw,36px)" }}
             >
               Step inside
             </h2>
@@ -60,7 +60,7 @@ export function MocStepInside() {
                 >
                   <Icon className="h-7 w-7" aria-hidden="true" />
                   <span className="flex flex-col gap-1">
-                    <span className="font-bold uppercase tracking-[0.02em]" style={{ fontStretch: "78%", fontSize: "clamp(22px,2.2vw,30px)" }}>
+                    <span className="text-xl font-bold uppercase tracking-[0.02em]" style={{ fontStretch: "78%" }}>
                       {theme.title}
                     </span>
                     <span className="text-sm leading-[1.4] text-[#A9ADB1]">{theme.sub}</span>
@@ -78,13 +78,13 @@ export function MocStepInside() {
             </div>
             <h3
               className="max-w-[640px] font-medium leading-[1.06] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(28px,3vw,44px)" }}
+              style={{ fontSize: "clamp(20px,1.8vw,28px)" }}
             >
               {active.headline}
             </h3>
             {active.stat && (
               <div className="flex items-baseline gap-4 border-l-2 border-[color:oklch(0.74_0.14_70)] pl-5">
-                <span className="font-bold leading-[0.88]" style={{ fontStretch: "68%", fontSize: "clamp(64px,7vw,108px)" }}>
+                <span className="font-bold leading-[0.9]" style={{ fontStretch: "68%", fontSize: "clamp(30px,3vw,42px)" }}>
                   {active.stat}
                 </span>
                 <span className="max-w-[180px] text-base leading-[1.35] text-[#C9CCCF]">{active.statLabel}</span>

@@ -15,10 +15,10 @@ export function MocBathurst() {
         </div>
 
         <div className="mt-7 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-24">
-          <h2 className="font-bold uppercase leading-[0.86]" style={{ fontStretch: "66%", fontSize: "clamp(60px,10vw,168px)" }}>
+          <h2 className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.6vw,44px)" }}>
             Bathurst
           </h2>
-          <p className="max-w-[560px] leading-[1.3] tracking-[-0.01em]" style={{ fontSize: "clamp(20px,2vw,30px)" }}>{copy.bathurstLead}</p>
+          <p className="max-w-[560px] text-lg leading-[1.4] tracking-[-0.01em] sm:text-xl">{copy.bathurstLead}</p>
         </div>
 
         <div className="mt-14 sm:mt-20">
@@ -40,7 +40,7 @@ export function MocBathurst() {
               }`}
             >
               <div className="flex items-baseline justify-between">
-                <span className="font-bold uppercase leading-[0.86]" style={{ fontStretch: "66%", fontSize: "clamp(30px,3vw,44px)" }}>
+                <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(24px,2.4vw,32px)" }}>
                   {step.title}
                 </span>
                 <span className="font-mono text-xs text-[#4E5256]">{String(i + 1).padStart(2, "0")}</span>

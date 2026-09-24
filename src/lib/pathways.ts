@@ -3,7 +3,7 @@ import { Video, Antenna, CalendarClock, type LucideIcon } from "lucide-react";
 /**
  * The three homepage "pathway" cards — product/service-led entry points.
  * Trailers and Pole Cameras link to their product pages; Temporary CCTV
- * For Events links to the events solutions page.
+ * For Events links to the Mobile Operations Centre page.
  */
 export type Pathway = {
   slug: "mobile-cctv-trailers" | "pole-cameras" | "temporary-cctv-for-events";
@@ -44,7 +44,7 @@ export const pathways: Pathway[] = [
   },
   {
     slug: "temporary-cctv-for-events",
-    href: "/solutions/events-temporary-sites",
+    href: "/mobile-operations-centre",
     icon: CalendarClock,
     eyebrow: "Explore",
     heading: "Temporary CCTV For Events",

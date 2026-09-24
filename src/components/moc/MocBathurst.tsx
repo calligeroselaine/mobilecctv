@@ -45,7 +45,7 @@ export function MocBathurst() {
             <div
               key={row.label}
               className={`grid grid-cols-1 gap-x-10 gap-y-2 border-b border-[#C9C4BA] py-7 sm:grid-cols-[170px_1fr] ${
-                i === story.length - 1 ? "border-l-[3px] border-l-[color:oklch(0.62_0.14_65)] pl-5 sm:pl-6" : ""
+                i === story.length - 1 ? "border-t-[3px] border-t-[color:oklch(0.62_0.14_65)]" : ""
               }`}
             >
               <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#4E5256]">

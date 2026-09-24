@@ -3,7 +3,7 @@ import { MocVideoPoster } from "@/components/moc/MocVideoPoster";
 
 export function MocWhy() {
   return (
-    <section id="why" style={{ background: "#F2F0EB", color: "#141619", scrollMarginTop: 60 }}>
+    <section id="why" style={{ background: "#F2F0EB", color: "#141619", scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
       <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
         <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">
           <span className="h-px w-7 bg-[#141619]" />

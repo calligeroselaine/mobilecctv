@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 import { faqs, mocImages } from "@/lib/moc-content";
@@ -55,12 +54,6 @@ export default function MobileOperationsCentrePage() {
     <div className={mocArchivo.className}>
       <JsonLd data={productJsonLd} />
       <JsonLd data={faqJsonLd} />
-
-      <div style={{ background: "#16191C" }} className="border-b border-white/10 px-5 py-3 sm:px-8">
-        <div className="mx-auto max-w-[1440px]">
-          <Breadcrumbs crumbs={[{ label: "Mobile Operations Centre" }]} />
-        </div>
-      </div>
 
       <MocSubNav />
       <MocHero />

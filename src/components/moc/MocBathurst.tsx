@@ -10,7 +10,7 @@ export function MocBathurst() {
   ];
 
   return (
-    <section id="bathurst" style={{ background: "#E6E2DA", color: "#141619", scrollMarginTop: 60 }}>
+    <section id="bathurst" style={{ background: "#E6E2DA", color: "#141619", scrollMarginTop: "var(--moc-sticky-offset, 176px)" }}>
       <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
         <div className="flex flex-wrap justify-between gap-4 font-mono text-xs uppercase tracking-[0.14em] text-[#4E5256]">
           <span className="flex items-center gap-3.5">

@@ -101,14 +101,15 @@ export function MocStepInside() {
                 );
               })}
             </div>
-            <MocPlaceholderPhoto
-              src={active.photo}
-              alt={`${active.title} — ${active.photoCaption}`}
-              neededCaption={active.photoCaption}
-              aspectClassName="aspect-[16/10]"
-              tone="dark"
-              icon={active.icon}
-            />
+            {active.photo && (
+              <MocPlaceholderPhoto
+                src={active.photo}
+                alt={`${active.title} — ${active.photoCaption}`}
+                neededCaption={active.photoCaption}
+                aspectClassName="aspect-[16/10]"
+                tone="dark"
+              />
+            )}
           </div>
         </div>
       </div>

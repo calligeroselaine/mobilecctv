@@ -68,7 +68,7 @@ export const mocVideos: Record<MocVideoKey, MocVideo> = {
  */
 export const mocImages = {
   heroExterior: "/images/mobile-operations-centre-events.jpg",
-  introExteriorDetail: null as string | null,
+  introExteriorDetail: "/images/mobile-operations-centre-exterior-detail.jpg",
   insideAccess: null as string | null,
   insideConnected: null as string | null,
   insideAmenities: null as string | null,

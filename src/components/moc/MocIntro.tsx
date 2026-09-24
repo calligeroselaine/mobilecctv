@@ -1,4 +1,4 @@
-import { copy, mocImages, mocVideos } from "@/lib/moc-content";
+import { copy, mocImages } from "@/lib/moc-content";
 import { MocPlaceholderPhoto } from "@/components/moc/MocPlaceholderPhoto";
 
 export function MocIntro() {
@@ -20,11 +20,10 @@ export function MocIntro() {
           <div className="flex flex-col gap-4">
             <MocPlaceholderPhoto
               src={mocImages.introExteriorDetail}
-              alt="Mobile Operations Centre exterior — still from the product walkthrough film"
+              alt="Mobile Operations Centre trailer, branded for outdoor events, live concerts and festivals, with a Mobile CCTV Solutions camera tower alongside"
               neededCaption="exterior detail — entry door, fingerprint reader, flood lighting"
-              aspectClassName="aspect-[16/10]"
+              aspectClassName="aspect-[3/2]" priority={false}
               tone="light"
-              videoStillId={mocVideos.walkthrough.youtubeId}
             />
             <p className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">{copy.introPhotoCaption}</p>
           </div>

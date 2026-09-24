@@ -49,10 +49,10 @@ export function TrailerAdco() {
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src={trailerImages.adco}
-                alt="Mobile CCTV Solutions team with ADCO Constructions staff beside a trailer at The Forest High School site"
+                alt="A Mobile CCTV Solutions trailer with raised mast on the Forest High School construction site, with two site staff beside it"
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[55%_50%]"
               />
             </div>
             <div>

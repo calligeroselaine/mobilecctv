@@ -1,6 +1,5 @@
-import { copy, bathurstSteps, bathurstStory, mocImages, mocVideos } from "@/lib/moc-content";
+import { copy, bathurstSteps, bathurstStory, mocVideos } from "@/lib/moc-content";
 import { MocVideoPoster } from "@/components/moc/MocVideoPoster";
-import { MocPlaceholderPhoto } from "@/components/moc/MocPlaceholderPhoto";
 
 export function MocBathurst() {
   const story = [
@@ -86,24 +85,6 @@ export function MocBathurst() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <MocPlaceholderPhoto
-            src={mocImages.bathurstDeployment}
-            alt="Mobile CCTV Solutions unit deployed at Mount Panorama, Bathurst"
-            neededCaption="vehicle access / gate queue"
-            aspectClassName="aspect-[3/2]"
-            tone="light"
-          />
-          <MocPlaceholderPhoto
-            src={mocImages.bathurstMonitoringWall}
-            alt="Bathurst deployment — still from the operational visibility film"
-            neededCaption="operators at the monitoring wall"
-            aspectClassName="aspect-[3/2]"
-            tone="light"
-            videoStillId={mocVideos.bathurst.youtubeId}
-          />
         </div>
       </div>
     </section>

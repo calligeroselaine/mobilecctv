@@ -1,4 +1,4 @@
-import { copy, configuredToOperateAs, greenfieldFacts, mocVideos, whyPoints } from "@/lib/moc-content";
+import { copy, configuredToOperateAs, mocVideos, whyPoints } from "@/lib/moc-content";
 import { MocVideoPoster } from "@/components/moc/MocVideoPoster";
 
 export function MocWhy() {
@@ -30,13 +30,10 @@ export function MocWhy() {
             </div>
           </div>
           <div className="flex min-w-0 flex-1 flex-col" style={{ flexBasis: 440 }}>
-            <p className="max-w-[520px] border-b-2 border-[#141619] pb-7 text-lg font-medium leading-[1.35] tracking-[-0.01em]">
-              {greenfieldFacts.statLabel}
-            </p>
             {whyPoints.map((point) => {
               const Icon = point.icon;
               return (
-                <div key={point.title} className="flex items-start gap-5 border-b border-[#D6D2CA] py-6">
+                <div key={point.title} className="flex items-start gap-5 border-b border-[#D6D2CA] py-6 first:border-t-2 first:border-t-[#141619]">
                   <Icon className="mt-0.5 h-7 w-7 shrink-0" aria-hidden="true" />
                   <div className="flex flex-col gap-1.5">
                     <span className="text-lg font-semibold">{point.title}</span>

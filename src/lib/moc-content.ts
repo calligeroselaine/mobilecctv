@@ -189,11 +189,6 @@ export const whyPoints: { icon: LucideIcon; title: string; body: string }[] = [
   },
 ];
 
-export const greenfieldFacts = {
-  statLabel:
-    "In the film, a large security team and police work alongside each other from one private base, with confidential information kept apart from general staff activity.",
-};
-
 export const applications: { icon: LucideIcon; label: string }[] = [
   { icon: Tent, label: "Major events" },
   { icon: ShieldCheck, label: "Temporary security operations" },

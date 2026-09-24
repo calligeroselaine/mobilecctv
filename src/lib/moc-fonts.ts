@@ -13,5 +13,6 @@ import { Archivo } from "next/font/google";
  */
 export const mocArchivo = Archivo({
   subsets: ["latin"],
+  axes: ["wdth"],
   display: "swap",
 });

@@ -11,7 +11,7 @@ export function MocGreenfield() {
         </div>
 
         <div className="mt-7 grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-24">
-          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(22px,2.4vw,32px)" }}>
+          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(34px,4.4vw,66px)" }}>
             {copy.greenfieldHeading}
           </h2>
           <p className="max-w-[560px] pt-2 text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.greenfieldBody}</p>
@@ -31,7 +31,7 @@ export function MocGreenfield() {
           </div>
           <div className="flex min-w-0 flex-1 flex-col" style={{ flexBasis: 440 }}>
             <div className="flex flex-col gap-2.5 border-b border-[#D6D2CA] pb-7">
-              <span className="font-bold leading-[0.9]" style={{ fontStretch: "68%", fontSize: "clamp(32px,3.2vw,44px)" }}>
+              <span className="font-bold leading-[0.88]" style={{ fontStretch: "68%", fontSize: "clamp(64px,7vw,108px)" }}>
                 {greenfieldFacts.stat}
               </span>
               <span className="max-w-[440px] text-base leading-[1.5] text-[#2A2D31]">{greenfieldFacts.statLabel}</span>
@@ -56,7 +56,7 @@ export function MocGreenfield() {
           <div className="flex flex-wrap items-end justify-between gap-6 border-b-2 border-[#141619] pb-5">
             <h3
               className="font-bold uppercase leading-none"
-              style={{ fontStretch: "72%", fontSize: "clamp(20px,1.8vw,26px)" }}
+              style={{ fontStretch: "72%", fontSize: "clamp(22px,2.2vw,30px)" }}
             >
               What arrives on site
             </h3>

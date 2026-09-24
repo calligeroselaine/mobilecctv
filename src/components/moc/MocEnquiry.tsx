@@ -26,7 +26,7 @@ export function MocEnquiry() {
         </div>
         <h2
           className="mt-6 max-w-[1200px] font-bold uppercase leading-[0.95]"
-          style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}
+          style={{ fontStretch: "66%", fontSize: "clamp(56px,10vw,164px)" }}
         >
           {copy.enquireHeading}
         </h2>

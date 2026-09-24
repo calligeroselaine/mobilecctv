@@ -15,7 +15,7 @@ export function MocFaq() {
             <span className="h-px w-7 bg-[#141619]" />
             {copy.faqEyebrow}
           </div>
-          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,34px)" }}>
+          <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(34px,4.4vw,66px)" }}>
             {copy.faqHeading}
           </h2>
           <p className="text-base leading-[1.6] text-[#2A2D31]">{copy.faqBody}</p>

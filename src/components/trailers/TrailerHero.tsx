@@ -6,8 +6,8 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 export function TrailerHero() {
   return (
     <section id="trailer-hero" className="relative overflow-hidden bg-[#16191C] text-[#F2F0EB]">
-      <div className="grid grid-cols-1 lg:min-h-[640px] lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="order-2 flex flex-col justify-end px-5 py-12 sm:px-8 lg:order-1 lg:py-16 lg:pl-[max(2rem,calc((100vw-1440px)/2+2rem))] lg:pr-12">
+      <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1fr_1fr]">
+        <div className="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 lg:order-1 lg:py-16 lg:pl-[max(2rem,calc((100vw-1440px)/2+2rem))] lg:pr-12">
           <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#C9CCCF]">{trailerCopy.heroMeta}</div>
           <div className="sr-only">
             <Breadcrumbs crumbs={[{ label: "Mobile CCTV Trailers" }]} />
@@ -36,14 +36,14 @@ export function TrailerHero() {
             </a>
           </div>
         </div>
-        <div className="relative order-1 aspect-[4/3] w-full lg:order-2 lg:aspect-auto">
+        <div className="relative order-1 aspect-[4/3] w-full overflow-hidden lg:order-2 lg:aspect-auto">
           <Image
             src={trailerImages.hero}
             alt="A Mobile CCTV Solutions trailer with raised camera mast and solar panels deployed on a grassy hill"
             fill
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-cover object-[47%_60%]"
+            className="origin-[46%_88%] scale-[1.3] object-cover object-[46%_70%]"
           />
         </div>
       </div>

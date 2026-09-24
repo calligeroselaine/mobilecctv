@@ -9,7 +9,7 @@ export function TrailerIntro() {
           <span className="h-px w-7 bg-[#141619]" />
           {trailerCopy.introEyebrow}
         </div>
-        <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+        <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div>
             <h2
               className="font-medium leading-[1.05] tracking-[-0.025em]"
@@ -23,13 +23,13 @@ export function TrailerIntro() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-[4/5] w-full overflow-hidden">
+          <div className="relative aspect-[4/3] w-full overflow-hidden">
             <Image
               src={trailerImages.intro}
               alt="A Mobile CCTV Solutions trailer with raised mast deployed on a gravel construction site"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover object-[38%_50%]"
+              className="origin-[48%_76%] scale-[1.35] object-cover"
             />
           </div>
         </div>

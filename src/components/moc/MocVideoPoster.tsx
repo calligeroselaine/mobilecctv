@@ -121,8 +121,8 @@ function PlayOverlay({
         style={isLeft ? undefined : { paddingLeft: 22, paddingRight: 0 }}
       >
         {isLeft && (
-          <div className="grid h-13 w-13 shrink-0 place-items-center bg-[color:oklch(0.74_0.14_70)]" style={{ width: 52, height: 52 }}>
-            <PlayTriangle color="#141619" small />
+          <div className="grid h-13 w-13 shrink-0 place-items-center bg-[#4588c6]" style={{ width: 52, height: 52 }}>
+            <PlayTriangle color="#FFFFFF" small />
           </div>
         )}
         {caption && <span className="text-base font-medium text-[#F2F0EB]">{caption}</span>}

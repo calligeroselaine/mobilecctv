@@ -45,7 +45,7 @@ export function MocHero() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#enquire"
-              className="inline-flex items-center gap-2.5 bg-[color:oklch(0.74_0.14_70)] px-7 py-4.5 text-base font-semibold text-[#141619]"
+              className="inline-flex items-center gap-2.5 bg-[#4588c6] px-7 py-4.5 text-base font-semibold text-white"
               style={{ padding: "18px 28px" }}
             >
               Enquire about availability <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -61,7 +61,7 @@ export function MocHero() {
           <div className="grid grid-cols-1 gap-x-4 gap-y-4 border-t border-white/15 pt-4 sm:grid-cols-3">
             {heroFacts.map(({ icon: Icon, label }) => (
               <div key={label} className="flex flex-col gap-2">
-                <Icon className="h-[22px] w-[22px] text-[color:oklch(0.74_0.14_70)]" aria-hidden="true" />
+                <Icon className="h-[22px] w-[22px] text-[#4588c6]" aria-hidden="true" />
                 <span className="text-sm leading-[1.35] text-[#C9CCCF]">{label}</span>
               </div>
             ))}

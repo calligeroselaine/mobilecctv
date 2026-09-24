@@ -22,7 +22,7 @@ export function MocApplications() {
             ))}
           </ul>
         </div>
-        <a href="#ramadan" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[#141619] hover:text-[#B97A22]">
+        <a href="#ramadan" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[#141619] hover:text-[#387bb8]">
           {copy.applicationsLink} <ArrowDown className="h-4 w-4" aria-hidden="true" />
         </a>
       </div>

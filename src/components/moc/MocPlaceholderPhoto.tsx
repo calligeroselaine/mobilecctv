@@ -76,7 +76,7 @@ export function MocPlaceholderPhoto({
           }`}
         >
           <Icon
-            className={isDark ? "h-9 w-9 text-[color:oklch(0.74_0.14_70)] sm:h-10 sm:w-10" : "h-9 w-9 text-[#141619] sm:h-10 sm:w-10"}
+            className={isDark ? "h-9 w-9 text-[#4588c6] sm:h-10 sm:w-10" : "h-9 w-9 text-[#141619] sm:h-10 sm:w-10"}
             aria-hidden="true"
           />
         </div>

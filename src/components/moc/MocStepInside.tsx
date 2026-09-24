@@ -15,7 +15,7 @@ export function MocStepInside() {
         <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-20">
           <div>
             <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#A9ADB1]">
-              <span className="h-px w-7 bg-[color:oklch(0.74_0.14_70)]" />
+              <span className="h-px w-7 bg-[#4588c6]" />
               {copy.stepInsideEyebrow}
             </div>
             <h2
@@ -55,7 +55,7 @@ export function MocStepInside() {
                   type="button"
                   onClick={() => setActiveIndex(index)}
                   className={`grid w-full cursor-pointer grid-cols-[40px_1fr_auto] items-center gap-x-5 gap-y-1 border-b border-l-[3px] border-white/15 py-5.5 pl-4 text-left ${
-                    isActive ? "border-l-[color:oklch(0.74_0.14_70)] text-[#F2F0EB]" : "border-l-transparent text-[#8A8E92]"
+                    isActive ? "border-l-[#4588c6] text-[#F2F0EB]" : "border-l-transparent text-[#8A8E92]"
                   }`}
                 >
                   <Icon className="h-7 w-7" aria-hidden="true" />
@@ -72,7 +72,7 @@ export function MocStepInside() {
           </div>
 
           <div className="flex flex-col gap-7">
-            <div className="flex items-baseline gap-4.5 font-mono text-xs uppercase tracking-[0.14em] text-[color:oklch(0.74_0.14_70)]">
+            <div className="flex items-baseline gap-4.5 font-mono text-xs uppercase tracking-[0.14em] text-[#4588c6]">
               <span>{active.num}</span>
               <span>{active.title}</span>
             </div>
@@ -83,7 +83,7 @@ export function MocStepInside() {
               {active.headline}
             </h3>
             {active.stat && (
-              <div className="flex items-baseline gap-4 border-l-2 border-[color:oklch(0.74_0.14_70)] pl-5">
+              <div className="flex items-baseline gap-4 border-l-2 border-[#4588c6] pl-5">
                 <span className="font-bold leading-[0.9]" style={{ fontStretch: "68%", fontSize: "clamp(30px,3vw,42px)" }}>
                   {active.stat}
                 </span>

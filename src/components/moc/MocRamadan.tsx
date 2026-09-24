@@ -11,7 +11,7 @@ import {
 } from "@/lib/moc-content";
 import { MocVideoPoster } from "@/components/moc/MocVideoPoster";
 
-const accent = "text-[color:oklch(0.74_0.14_70)]";
+const accent = "text-[#4588c6]";
 
 export function MocRamadan() {
   const story = [
@@ -42,7 +42,7 @@ export function MocRamadan() {
         <div className="absolute inset-x-0 top-0 mx-auto max-w-[1440px] px-5 py-8 sm:px-8">
           <div className="flex flex-wrap justify-between gap-4 font-mono text-xs uppercase tracking-[0.14em]">
             <span className="flex items-center gap-3.5">
-              <span className="h-px w-7 bg-[color:oklch(0.74_0.14_70)]" />
+              <span className="h-px w-7 bg-[#4588c6]" />
               {copy.deploymentsEyebrow}
             </span>
             <span>Lakemba, NSW</span>

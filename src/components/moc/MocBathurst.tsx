@@ -70,7 +70,7 @@ export function MocBathurst() {
             {bathurstSteps.map((step, i) => (
               <div
                 key={step.title}
-                className={`flex flex-col gap-2.5 border-t-2 pb-4 pt-5 ${step.highlight ? "border-[color:oklch(0.62_0.14_65)]" : "border-[#141619]"}`}
+                className={`flex flex-col gap-2.5 border-t-2 pb-4 pt-5 ${step.highlight ? "border-[#4588c6]" : "border-[#141619]"}`}
               >
                 <div className="flex items-baseline justify-between">
                   <span className="font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(22px,2vw,28px)" }}>{step.title}</span>

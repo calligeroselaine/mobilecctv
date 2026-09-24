@@ -46,7 +46,7 @@ export function MocStickyCta() {
       <span className="text-sm font-medium text-[#F2F0EB]">Mobile Operations Centre</span>
       <a
         href="#enquire"
-        className="whitespace-nowrap bg-[color:oklch(0.74_0.14_70)] px-4 py-2 text-sm font-semibold text-[#141619]"
+        className="whitespace-nowrap bg-[#4588c6] px-4 py-2 text-sm font-semibold text-white"
       >
         Enquire
       </a>

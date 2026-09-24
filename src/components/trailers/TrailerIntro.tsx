@@ -29,7 +29,7 @@ export function TrailerIntro() {
               alt="A Mobile CCTV Solutions trailer with raised mast deployed on a gravel construction site"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="origin-[48%_76%] scale-[1.35] object-cover"
+              className="object-cover"
             />
           </div>
         </div>

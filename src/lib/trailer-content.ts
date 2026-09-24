@@ -16,7 +16,7 @@ export const trailerVideos = {
 
 export const trailerImages = {
   hero: "/images/case-study-bathurst-1000.jpg",
-  intro: "/images/onsite-trailer-2018.jpg",
+  intro: "/images/mobile-cctv-trailer-intro.jpg",
   capabilities: "/images/trailer-site-inspection.jpg",
   adco: "/images/case-study-adco-forest-high-school.jpg",
   grannySmith: "/images/blog/granny-smith-festival.jpg",

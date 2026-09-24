@@ -43,7 +43,7 @@ export function TrailerHero() {
             fill
             priority
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="origin-[46%_88%] scale-[1.3] object-cover object-[46%_70%]"
+            className="object-cover object-[44%_50%]"
           />
         </div>
       </div>

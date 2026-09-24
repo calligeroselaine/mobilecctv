@@ -64,17 +64,19 @@ export function TrailerGranny() {
           <p className="mt-5 font-mono text-xs uppercase tracking-[0.12em] text-[#A9ADB1]">{grannyStory.bridge}</p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 items-center gap-10 border-t border-white/20 py-12 pb-16 sm:pb-24 lg:grid-cols-[auto_1fr] lg:gap-20">
+        <div className="mt-14 grid grid-cols-1 gap-x-16 gap-y-3 border-t border-white/20 py-8 pb-16 sm:pb-24 lg:grid-cols-[220px_1fr]">
+          <span className={`whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>03 · The result</span>
           <div>
-            <div className="font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(56px,6vw,88px)" }}>
-              {grannyStory.stat.value}
+            <p className="max-w-[820px] text-base leading-[1.65] text-[#C9CCCF] sm:text-lg">{grannyStory.result}</p>
+            <div className="mt-8 flex flex-wrap items-end gap-x-6 gap-y-2 border-t border-white/15 pt-6">
+              <div className="font-bold leading-[0.85]" style={{ fontStretch: "66%", fontSize: "clamp(56px,6vw,88px)" }}>
+                {grannyStory.stat.value}
+              </div>
+              <div className="pb-1">
+                <div className="font-mono text-xs uppercase tracking-[0.1em]">{grannyStory.stat.label}</div>
+                <div className="text-sm text-[#A9ADB1]">{grannyStory.stat.sub}</div>
+              </div>
             </div>
-            <div className="mt-3 font-mono text-xs uppercase tracking-[0.1em]">{grannyStory.stat.label}</div>
-            <div className="text-sm text-[#A9ADB1]">{grannyStory.stat.sub}</div>
-          </div>
-          <div>
-            <span className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>03 · The result</span>
-            <p className="mt-3 max-w-[640px] text-lg leading-[1.55] text-[#E3E1DC]">{grannyStory.result}</p>
           </div>
         </div>
       </div>

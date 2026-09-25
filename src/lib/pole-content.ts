@@ -176,11 +176,10 @@ export const construction = {
   eyebrow: "Also on construction sites",
   title: "A gate, watched from afar",
   text: [
-    "On a large school construction site, a pole camera was used to monitor a gate, capturing pedestrian and vehicle traffic. Site managers received notifications and could reach the camera remotely.",
+    "On a large school construction site, a pole camera was used to monitor a gate, capturing pedestrian and vehicle traffic. Site managers received notifications and could access the camera remotely.",
     "The site representative reported that theft was significantly reduced.",
   ],
   note: "Part of a combined trailer and pole camera deployment at the same site.",
-  reported: "Reported by the site representative in the film.",
 };
 
 export const poleFaqs = [

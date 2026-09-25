@@ -82,7 +82,6 @@ export function PoleBathurst() {
                 <p key={p}>{p}</p>
               ))}
             </div>
-            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#4E5256]">{construction.reported}</p>
             <p className="mt-1 text-sm text-[#4E5256]">
               {construction.note} <a href="/mobile-cctv-trailers#adco" className="font-semibold underline hover:text-[#4588c6]">See the trailer view</a>
             </p>

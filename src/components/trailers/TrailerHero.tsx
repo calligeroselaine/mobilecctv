@@ -15,16 +15,23 @@ export function TrailerHero() {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1fr_1fr]">
-        <div className="order-2 flex flex-col justify-center px-5 py-12 sm:px-8 lg:order-1 lg:py-16 lg:pl-[max(2rem,calc((100vw-1440px)/2+2rem))] lg:pr-12">
+        <div className="order-1 px-5 pb-6 pt-10 sm:px-8 lg:hidden">
+          <h1 className="font-bold uppercase leading-[0.86] tracking-[-0.02em]" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}>
+            Mobile CCTV
+            <br />
+            Trailers
+          </h1>
+        </div>
+        <div className="order-3 flex flex-col justify-center px-5 py-10 sm:px-8 lg:order-1 lg:py-16 lg:pl-[max(2rem,calc((100vw-1440px)/2+2rem))] lg:pr-12">
           <h1
-            className="font-bold uppercase leading-[0.86] tracking-[-0.02em]"
+            className="hidden font-bold uppercase leading-[0.86] tracking-[-0.02em] lg:block"
             style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}
           >
             Mobile CCTV
             <br />
             Trailers
           </h1>
-          <p className="mt-6 max-w-[520px] text-base leading-[1.45] text-[#E3E1DC] sm:text-lg">{trailerCopy.heroLead}</p>
+          <p className="max-w-[520px] lg:mt-6 text-base leading-[1.45] text-[#E3E1DC] sm:text-lg">{trailerCopy.heroLead}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={trailerCta.hire}
@@ -40,7 +47,7 @@ export function TrailerHero() {
             </a>
           </div>
         </div>
-        <div className="order-1 lg:order-2 lg:flex lg:pr-[max(2rem,calc((100vw-1440px)/2+2rem))]">
+        <div className="order-2 px-5 sm:px-8 lg:flex lg:px-0 lg:pr-[max(2rem,calc((100vw-1440px)/2+2rem))]">
           <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-auto lg:flex-1">
           <Image
             src={trailerImages.hero}

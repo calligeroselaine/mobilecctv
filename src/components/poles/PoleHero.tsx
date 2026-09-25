@@ -14,12 +14,15 @@ export function PoleHero() {
           </div>
         </div>
       </div>
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-stretch gap-10 px-5 py-12 sm:px-8 lg:grid-cols-[minmax(0,700px)_411px] lg:justify-start lg:gap-16 lg:py-16">
-        <div className="flex flex-col justify-center">
-          <h1 className="font-bold uppercase leading-[0.9] tracking-[-0.02em]" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}>
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-stretch gap-6 px-5 py-10 sm:px-8 lg:grid-cols-[minmax(0,700px)_411px] lg:justify-start lg:gap-16 lg:py-16">
+        <h1 className="order-1 font-bold uppercase leading-[0.9] tracking-[-0.02em] lg:hidden" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}>
+          Pole Cameras
+        </h1>
+        <div className="order-3 flex flex-col justify-center lg:order-1">
+          <h1 className="hidden font-bold uppercase leading-[0.9] tracking-[-0.02em] lg:block" style={{ fontStretch: "66%", fontSize: "clamp(28px,3.8vw,48px)" }}>
             Pole Cameras
           </h1>
-          <p className="mt-6 max-w-[620px] text-lg leading-[1.4] text-[#E3E1DC] sm:text-xl">{poleCopy.heroLead}</p>
+          <p className="max-w-[620px] lg:mt-6 text-lg leading-[1.4] text-[#E3E1DC] sm:text-xl">{poleCopy.heroLead}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={poleCta.hire} className="inline-flex items-center gap-2.5 bg-[#4588c6] px-7 py-4 text-base font-semibold text-white hover:bg-[#387bb8]">
               Hire enquiry <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -29,7 +32,7 @@ export function PoleHero() {
             </a>
           </div>
         </div>
-        <div className="relative mx-auto aspect-[3/4] w-full max-w-[360px] overflow-hidden lg:mx-0 lg:w-[411px] lg:max-w-none">
+        <div className="relative order-2 aspect-[3/4] w-full overflow-hidden max-lg:max-h-[520px] lg:order-2 lg:mx-0 lg:w-[411px] lg:max-w-none">
           <Image
             src={poleImages.hero}
             alt="A Mobi Pole Cam solar-powered surveillance unit on a pole against bushland"

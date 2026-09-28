@@ -71,7 +71,7 @@ export function MocRamadan() {
             </div>
           ))}
         </div>
-        <div className="mx-auto flex w-full max-w-[460px] flex-col gap-4">
+        <div className="mx-auto flex w-full max-w-[360px] flex-col gap-4">
           <div className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Primary film · The deployment</div>
           <MocVideoPoster
             video={mocVideos.ramadanScale}

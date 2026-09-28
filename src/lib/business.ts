@@ -47,6 +47,7 @@ export const primaryNav: NavLink[] = [
   { label: "Pole Cameras", href: "/pole-cameras" },
   { label: "Temporary CCTV for Events", href: "/mobile-operations-centre" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 

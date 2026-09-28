@@ -21,14 +21,19 @@ export function TrailerAdco() {
         </div>
 
         <div className="mt-7 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-20">
-          <h2
-            className="font-bold uppercase leading-[0.88]"
-            style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}
-          >
-            ADCO
-            <br />
-            Constructions
-          </h2>
+          <div>
+            <h2
+              className="font-bold uppercase leading-[0.88]"
+              style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}
+            >
+              ADCO
+              <br />
+              Constructions
+            </h2>
+            <p className="mt-3 font-mono text-xs uppercase tracking-[0.12em] text-[#5B5F63]">
+              {adcoStory.project}, {adcoStory.place}
+            </p>
+          </div>
           <p className="max-w-[520px] text-lg leading-[1.4] tracking-[-0.01em] sm:text-xl">{adcoStory.tagline}</p>
         </div>
 

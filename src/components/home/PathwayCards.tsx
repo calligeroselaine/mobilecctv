@@ -14,7 +14,7 @@ import { pathways } from "@/lib/pathways";
  */
 export function PathwayCards() {
   return (
-    <section className="bg-surface-alt py-14 md:py-20">
+    <section className="bg-surface-alt py-10 md:py-14">
       <Container>
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {pathways.map((pathway) => {

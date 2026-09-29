@@ -11,7 +11,7 @@ import { contactHref } from "@/lib/contactHref";
  */
 export function RentOrPurchase() {
   return (
-    <Section tone="ink">
+    <Section tone="ink" compact>
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
         <div>
           <SectionHeading title="Hire Or Purchase" onDark />

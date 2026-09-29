@@ -22,7 +22,7 @@ export function WhyUs() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <Section tone="surface">
+    <Section tone="surface" compact>
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <div>
           <SectionHeading eyebrow="Why Mobile CCTV Solutions" title="Security Specialists, Not Just Equipment Hire" />

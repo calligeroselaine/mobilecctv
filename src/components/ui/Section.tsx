@@ -7,6 +7,9 @@ type SectionProps = {
   className?: string;
   /** Alternating background for visual rhythm between sections. */
   tone?: "surface" | "alt" | "ink" | "brand";
+  /** Tighter vertical padding — used where sections were feeling too
+   * spread out (e.g. the homepage) without changing every page's rhythm. */
+  compact?: boolean;
 };
 
 const toneClasses: Record<NonNullable<SectionProps["tone"]>, string> = {
@@ -22,9 +25,13 @@ export function Section({
   id,
   className = "",
   tone = "surface",
+  compact = false,
 }: SectionProps) {
   return (
-    <section id={id} className={`py-14 md:py-20 ${toneClasses[tone]} ${className}`}>
+    <section
+      id={id}
+      className={`${compact ? "py-10 md:py-14" : "py-14 md:py-20"} ${toneClasses[tone]} ${className}`}
+    >
       <Container>{children}</Container>
     </section>
   );

@@ -19,7 +19,7 @@ const reassurance = [
 
 export function QuoteRequest() {
   return (
-    <Section id="get-a-quote" tone="alt">
+    <Section id="get-a-quote" tone="alt" compact>
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
         <div>
           <SectionHeading eyebrow="Get In Touch" title="Get A Quote Today" />

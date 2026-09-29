@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Play } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Play } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { business } from "@/lib/business";
 
@@ -34,6 +35,13 @@ export function WhyUs() {
               </li>
             ))}
           </ul>
+          <Link
+            href="/case-studies"
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-dark"
+          >
+            See our case studies
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
         <div className="mx-auto w-full max-w-xs">
           {playing ? (

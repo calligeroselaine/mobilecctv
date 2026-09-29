@@ -47,9 +47,11 @@ export const primaryNav: NavLink[] = [
   { label: "Pole Cameras", href: "/pole-cameras" },
   { label: "Temporary CCTV for Events", href: "/mobile-operations-centre" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
+
+/** Footer "Site" column — same as primaryNav, plus Blog (kept out of the header). */
+export const footerNav: NavLink[] = [...primaryNav, { label: "Blog", href: "/blog" }];
 
 /** Product-specific links, used in the footer's "Products" column. */
 export const productNav: NavLink[] = [

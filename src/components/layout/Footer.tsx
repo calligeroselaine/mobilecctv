@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
-import { business, primaryNav, productNav, legalNav } from "@/lib/business";
+import { business, footerNav, productNav, legalNav } from "@/lib/business";
 import { Container } from "@/components/layout/Container";
 
 export function Footer() {
@@ -29,7 +29,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-white">Site</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {primaryNav.map((link) => (
+            {footerNav.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="hover:text-white">
                   {link.label}

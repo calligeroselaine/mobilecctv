@@ -7,10 +7,11 @@ import { QuoteRequest } from "@/components/home/QuoteRequest";
 
 /**
  * Simplified homepage flow (content/structure clean-up — not a redesign):
- * Hero -> three core product pathways -> short credibility section
- * (bullets paired with the "hear it from our team" clip in the same
- * section, in place of the static photo it used to run next to) ->
- * client/council trust logos -> final enquiry CTA -> footer.
+ * Hero -> a compact scrolling strip of client/council trust logos, right
+ * under the hero banner -> three core product pathways -> short
+ * credibility section (bullets paired with the "hear it from our team"
+ * clip in the same section, in place of the static photo it used to run
+ * next to) -> final enquiry CTA -> footer.
  *
  * Removed from this page (components kept in the project, not deleted,
  * in case they're reused elsewhere): TeamOverviewVideo (its video now
@@ -26,10 +27,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <TrustStrip />
       <PathwayCards />
       <RentOrPurchase />
       <WhyUs />
-      <TrustStrip />
       <QuoteRequest />
     </>
   );

@@ -51,8 +51,12 @@ export const primaryNav: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-/** Footer "Site" column — same as primaryNav, plus Blog (kept out of the header). */
-export const footerNav: NavLink[] = [...primaryNav, { label: "Blog", href: "/blog" }];
+/** Footer "Site" column — same as primaryNav, plus Blog and Case Studies (kept out of the header). */
+export const footerNav: NavLink[] = [
+  ...primaryNav,
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/blog" },
+];
 
 /** Product-specific links, used in the footer's "Products" column. */
 export const productNav: NavLink[] = [

@@ -1,4 +1,4 @@
-import { Archivo } from "next/font/google";
+import { Archivo, Poppins } from "next/font/google";
 
 /**
  * The Mobile Operations Centre design spec calls for Archivo, a variable
@@ -13,5 +13,19 @@ import { Archivo } from "next/font/google";
  */
 export const mocArchivo = Archivo({
   subsets: ["latin"],
+  display: "swap",
+});
+
+/**
+ * Poppins ExtraBold — a literal font-family match for the logo's bold
+ * geometric sans wordmark (near-circular O/C, uniform stroke weight),
+ * as opposed to mocArchivo's condensed display treatment used for the
+ * big section headlines. Use sparingly, only where copy should read as
+ * a direct echo of the logo (e.g. the "A camera gives you visibility…"
+ * intro heading) — this is a second font family, not a site-wide swap.
+ */
+export const logoFont = Poppins({
+  subsets: ["latin"],
+  weight: ["800"],
   display: "swap",
 });

@@ -9,14 +9,14 @@ export function PoleFaq() {
   return (
     <section id="faq" style={{ background: "#F2F0EB", color: "#141619", scrollMarginTop: 140 }}>
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-24">
-        <div className="flex max-w-[420px] flex-col gap-6">
+        <div className="flex max-w-[420px] flex-col gap-4">
           <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">
             <span className="h-px w-7 bg-[#141619]" />
             {poleCopy.faqEyebrow}
           </div>
           <h2 className="font-medium leading-[1.1] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,34px)" }}>{poleCopy.faqHeading}</h2>
-          <a href="tel:1300996910" className="flex items-center gap-2.5 text-lg font-semibold">
-            <Phone className="h-[22px] w-[22px]" aria-hidden="true" /> 1300 99 69 10
+          <a href="tel:1300996910" className="flex items-center gap-2 text-sm font-medium text-[#5B5F63] hover:text-[#141619]">
+            <Phone className="h-4 w-4" aria-hidden="true" /> 1300 99 69 10
           </a>
         </div>
         <div className="border-t-2 border-[#141619]">

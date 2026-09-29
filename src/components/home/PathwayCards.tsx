@@ -40,15 +40,23 @@ export function PathwayCards() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <span
-                    className="absolute bottom-0 left-1/2 z-10 flex h-14 w-14 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-brand text-white shadow-lg ring-4 ring-white"
-                    aria-hidden="true"
-                  >
-                    <Icon className="h-6 w-6" />
-                  </span>
+                  <div className="absolute inset-x-0 bottom-0 z-10 flex translate-y-1/2 items-center justify-center gap-3">
+                    <span className="rounded-full bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink shadow-md ring-1 ring-steel-200">
+                      Hire
+                    </span>
+                    <span
+                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand text-white shadow-lg ring-4 ring-white"
+                      aria-hidden="true"
+                    >
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <span className="rounded-full bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink shadow-md ring-1 ring-steel-200">
+                      Purchase
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex flex-1 flex-col px-6 pb-6 pt-10 text-center">
+                <div className="flex flex-1 flex-col px-6 pb-6 pt-12 text-center">
                   <p className="text-eyebrow font-bold uppercase text-brand">
                     {pathway.eyebrow}
                   </p>

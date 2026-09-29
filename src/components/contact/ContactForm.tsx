@@ -12,7 +12,7 @@ const SOLUTION_VALUES = [
   "Mobile CCTV Trailer",
   "Pole Camera",
   "Mobile Operations Centre",
-  "Both / a mix",
+  "All three / a mix",
 ];
 
 type FormState = {
@@ -272,7 +272,7 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
             />
           </Field>
 
-          <Field id={`${formId}-solution`} label="Solution Required">
+          <Field id={`${formId}-solution`} label="What Are You Interested In?">
             <select
               id={`${formId}-solution`}
               value={state.solution}
@@ -283,7 +283,7 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
               <option value="Mobile CCTV Trailer">Mobile CCTV Trailer</option>
               <option value="Pole Camera">Pole Camera</option>
               <option value="Mobile Operations Centre">Mobile Operations Centre</option>
-              <option value="Both / a mix">Both / a mix</option>
+              <option value="All three / a mix">All three / a mix</option>
             </select>
           </Field>
 

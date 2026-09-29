@@ -14,7 +14,7 @@ export function RentOrPurchase() {
     <Section tone="ink">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
         <div>
-          <SectionHeading title="Rent Or Purchase" onDark />
+          <SectionHeading title="Hire Or Purchase" onDark />
           <p className="mt-4 max-w-[520px] text-lg text-steel-200">
             Short, mid and long-term hire, or outright purchase — with no
             locked-in contracts. Tell us about your site and we&rsquo;ll

@@ -17,15 +17,16 @@ export const mocArchivo = Archivo({
 });
 
 /**
- * Poppins ExtraBold — a literal font-family match for the logo's bold
- * geometric sans wordmark (near-circular O/C, uniform stroke weight),
- * as opposed to mocArchivo's condensed display treatment used for the
- * big section headlines. Use sparingly, only where copy should read as
- * a direct echo of the logo (e.g. the "A camera gives you visibility…"
- * intro heading) — this is a second font family, not a site-wide swap.
+ * Poppins — a literal font-family match for the logo's geometric sans
+ * wordmark (near-circular O/C, uniform stroke weight), as opposed to
+ * mocArchivo's condensed display treatment used for the big section
+ * headlines. Regular weight, not bold. Use sparingly, only where copy
+ * should read as a direct echo of the logo (e.g. the "A camera gives
+ * you visibility…" intro heading) — this is a second font family, not
+ * a site-wide swap.
  */
 export const logoFont = Poppins({
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["400"],
   display: "swap",
 });

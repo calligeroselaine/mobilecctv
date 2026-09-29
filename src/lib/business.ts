@@ -21,7 +21,7 @@ export const business = {
     postcode: "2086",
     country: "Australia",
   },
-  additionalLocations: ["Perth – Coming Soon!"],
+  additionalLocations: [] as string[],
   abn: "53 615 546 560",
   licence: "Master Licence No 000103010",
   social: {

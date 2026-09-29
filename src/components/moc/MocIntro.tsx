@@ -10,8 +10,8 @@ export function MocIntro() {
           {copy.introEyebrow}
         </div>
         <h2
-          className="mt-7 max-w-[1180px] font-medium leading-[1.05] tracking-[-0.025em]"
-          style={{ fontSize: "clamp(24px,2.6vw,38px)" }}
+          className="mt-7 max-w-[1180px] font-bold uppercase leading-[1.1] tracking-[-0.01em]"
+          style={{ fontStretch: "82%", fontSize: "clamp(22px,2.4vw,34px)" }}
         >
           {copy.introHeading}
         </h2>

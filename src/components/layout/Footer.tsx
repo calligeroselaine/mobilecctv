@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
+import { FacebookIcon, InstagramIcon, TiktokIcon } from "@/components/ui/SocialIcons";
 import { business, footerNav, productNav, legalNav } from "@/lib/business";
 import { Container } from "@/components/layout/Container";
 
@@ -70,6 +70,15 @@ export function Footer() {
               className="text-steel-200 hover:text-white"
             >
               <InstagramIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={business.social.tiktok}
+              aria-label="TikTok"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-steel-200 hover:text-white"
+            >
+              <TiktokIcon className="h-5 w-5" />
             </a>
           </div>
         </div>

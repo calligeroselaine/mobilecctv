@@ -27,6 +27,7 @@ export const business = {
   social: {
     facebook: "https://www.facebook.com/Mobile-CCTV-Solutions-743284015838170/",
     instagram: "https://www.instagram.com/mobile.cctv/",
+    tiktok: "https://www.tiktok.com/@mobilecctvsolutions",
   },
   support: {
     label: "Support",

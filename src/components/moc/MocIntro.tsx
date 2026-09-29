@@ -11,7 +11,7 @@ export function MocIntro() {
           {copy.introEyebrow}
         </div>
         <h2
-          className={`mt-7 max-w-[1180px] uppercase leading-[1.15] tracking-[-0.01em] ${logoFont.className}`}
+          className={`mt-7 max-w-[1180px] leading-[1.15] tracking-[-0.01em] ${logoFont.className}`}
           style={{ fontSize: "clamp(20px,2.2vw,32px)" }}
         >
           {copy.introHeading}

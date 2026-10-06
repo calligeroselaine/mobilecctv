@@ -44,14 +44,14 @@ export function TrailerAction() {
               ))}
             </ul>
             </div>
-            <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
-              <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
+            <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1 lg:grid-cols-[auto_1fr]">
+              <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-[1005/1024] lg:h-full">
                 <Image
                   src="/images/trailer-equipment-cameras-cropped.jpg"
                   alt="A Mobile CCTV Solutions trailer with raised camera mast, with spare cameras laid out on a tray in front"
                   fill
                   sizes="(min-width: 1024px) 28vw, 45vw"
-                  className="object-cover object-[50%_8%]"
+                  className="object-cover"
                 />
                 <figcaption className={captionClass}>Trailer equipment detail.</figcaption>
               </figure>

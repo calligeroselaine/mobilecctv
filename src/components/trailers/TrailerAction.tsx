@@ -24,7 +24,7 @@ export function TrailerAction() {
             />
             <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-[#5B5F63]">{trailerCopy.actionCaption}</p>
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 lg:mb-[29px]">
             <div>
             <h2
               className="font-bold uppercase leading-[0.9]"

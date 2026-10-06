@@ -53,7 +53,7 @@ export function TrailerAction() {
                   sizes="(min-width: 1024px) 28vw, 45vw"
                   className="object-cover"
                 />
-                <figcaption className={captionClass}>A Mobile CCTV trailer.</figcaption>
+                <figcaption className={captionClass}>Solar-powered and towable.</figcaption>
               </figure>
               <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image

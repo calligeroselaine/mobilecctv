@@ -25,7 +25,7 @@ export function MocStepInside() {
               Step inside
             </h2>
           </div>
-          <p className="max-w-[520px] text-base leading-[1.6] text-[#C9CCCF]">{copy.stepInsideLead}</p>
+          <p className="text-base leading-[1.6] text-[#C9CCCF] sm:text-lg">{copy.stepInsideLead}</p>
         </div>
       </div>
 

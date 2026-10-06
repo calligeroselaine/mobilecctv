@@ -32,7 +32,7 @@ export function PoleAction() {
 
         <div className="mt-14 border-t-2 border-[#141619] pt-5">
           <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">Supporting demonstrations</span>
-          <div className="mt-6 grid grid-cols-1 items-start gap-10 md:grid-cols-[minmax(0,1fr)_320px] md:gap-14 lg:grid-cols-[minmax(0,760px)_320px] lg:justify-between">
+          <div className="mt-6 grid grid-cols-1 items-start gap-10 md:grid-cols-[minmax(0,1fr)_320px] md:gap-14">
             {[
               { id: poleVideos.remote, n: "Film 02 / 05", info: poleAction.remote, vertical: false },
               { id: poleVideos.connectivity, n: "Film 03 / 05", info: poleAction.connectivity, vertical: true },

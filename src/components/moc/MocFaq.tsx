@@ -9,7 +9,7 @@ export function MocFaq() {
 
   return (
     <section id="faq" style={{ background: "#F2F0EB", color: "#141619", scrollMarginTop: 140 }}>
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-24">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-12 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-2 lg:gap-24">
         <div className="flex max-w-[420px] flex-col gap-4">
           <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">
             <span className="h-px w-7 bg-[#141619]" />

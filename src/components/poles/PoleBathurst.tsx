@@ -11,7 +11,7 @@ export function PoleBathurst() {
   return (
     <>
       <section id="bathurst" style={{ background: "#0F1113", color: "#F2F0EB", scrollMarginTop: 140 }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-14">
           <div className="flex flex-wrap justify-between gap-4 font-mono text-xs uppercase tracking-[0.14em] text-[#C9CCCF]">
             <span className="flex items-center gap-3.5">
               <span className="h-px w-7 bg-[#4588c6]" />
@@ -71,7 +71,7 @@ export function PoleBathurst() {
       </section>
 
       <section id="construction" style={{ background: "#E6E2DA", color: "#141619", scrollMarginTop: 140 }}>
-        <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div>
             <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#4588c6]">{construction.eyebrow}</span>
             <h3 className="mt-4 font-bold uppercase leading-[0.92]" style={{ fontStretch: "68%", fontSize: "clamp(24px,2.6vw,36px)" }}>

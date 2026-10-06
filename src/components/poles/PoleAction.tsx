@@ -4,7 +4,7 @@ import { TrailerVideoPoster } from "@/components/trailers/TrailerVideoPoster";
 export function PoleAction() {
   return (
     <section id="in-action" style={{ background: "#F2F0EB", color: "#141619", scrollMarginTop: 140 }}>
-      <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-14">
         <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">
           <span className="h-px w-7 bg-[#141619]" />
           {poleCopy.actionEyebrow}

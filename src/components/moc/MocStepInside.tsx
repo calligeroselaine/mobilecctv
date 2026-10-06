@@ -11,7 +11,7 @@ export function MocStepInside() {
 
   return (
     <section id="inside" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: 140 }}>
-      <div className="mx-auto max-w-[1440px] px-5 pt-16 sm:px-8 sm:pt-24">
+      <div className="mx-auto max-w-[1440px] px-5 pt-10 sm:px-8 sm:pt-14">
         <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-20">
           <div>
             <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#A9ADB1]">
@@ -29,7 +29,7 @@ export function MocStepInside() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-[1440px] flex-wrap items-start gap-12 px-5 pb-16 sm:px-8 sm:pb-24 lg:gap-24">
+      <div className="mx-auto mt-12 flex max-w-[1440px] flex-wrap items-start gap-12 px-5 pb-10 sm:px-8 sm:pb-14 lg:gap-24">
         <div className="mx-auto w-full max-w-[420px] lg:sticky lg:top-[84px]">
           <div className="flex justify-between pb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-[#A9ADB1]">
             <span>Product walkthrough</span>

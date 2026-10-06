@@ -60,7 +60,7 @@ export function MocRamadan() {
       </div>
 
       {/* Challenge / solution / result + primary video */}
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-14 px-5 pt-16 sm:px-8 sm:pt-24 lg:grid-cols-[1.3fr_1fr] lg:gap-24">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-14 px-5 pt-10 sm:px-8 sm:pt-14 lg:grid-cols-[1.3fr_1fr] lg:gap-24">
         <div className="border-t border-white/20">
           {story.map((row, i) => (
             <div key={row.label} className="flex flex-col gap-2.5 border-b border-white/20 py-7">
@@ -88,7 +88,7 @@ export function MocRamadan() {
       </div>
 
       {/* Stats */}
-      <div className="mx-auto max-w-[1440px] px-5 pt-14 sm:px-8 sm:pt-20">
+      <div className="mx-auto max-w-[1440px] px-5 pt-10 sm:px-8 sm:pt-12">
         <div className="grid grid-cols-2 border-t border-white/20 lg:grid-cols-4">
           {ramadanStats.map((stat) => (
             <div key={stat.label} className="border-b border-white/20 py-7 pr-4 lg:border-r lg:last:border-r-0 lg:pl-6 lg:first:pl-0">
@@ -110,7 +110,7 @@ export function MocRamadan() {
       </div>
 
       {/* Supporting evidence — part of the same case study */}
-      <div id="network" className="mx-auto max-w-[1440px] px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20" style={{ scrollMarginTop: 140 }}>
+      <div id="network" className="mx-auto max-w-[1440px] px-5 pb-10 pt-10 sm:px-8 sm:pb-14 sm:pt-12" style={{ scrollMarginTop: 140 }}>
         <div className="flex flex-wrap items-baseline justify-between gap-3 border-t-2 border-white/30 pt-5">
           <span className={`font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>Supporting evidence from the deployment</span>
           <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#A9ADB1]">Two further films</span>
@@ -165,7 +165,7 @@ export function MocRamadan() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-5 pb-16 sm:px-8 sm:pb-24">
+      <div className="mx-auto max-w-[1440px] px-5 pb-10 sm:px-8 sm:pb-14">
         <a href="#bathurst" className="inline-flex items-center gap-2 border-t border-white/15 pt-8 text-sm text-[#C9CCCF] hover:text-white">
           Next deployment: Supercars Bathurst 1000 <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </a>

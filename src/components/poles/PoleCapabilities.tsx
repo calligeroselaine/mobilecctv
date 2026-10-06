@@ -5,7 +5,7 @@ export function PoleCapabilities() {
   return (
     <>
       <section id="capabilities" style={{ background: "#0B0C0D", color: "#F2F0EB", scrollMarginTop: 140 }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-14">
           <div className="flex items-center gap-3.5 font-mono text-xs uppercase tracking-[0.14em] text-[#A9ADB1]">
             <span className="h-px w-7 bg-[#4588c6]" />
             {poleCopy.capabilitiesEyebrow}
@@ -57,7 +57,7 @@ export function PoleCapabilities() {
       </section>
 
       <section style={{ background: "#4588c6", color: "#FFFFFF" }}>
-        <div className="mx-auto max-w-[1440px] px-5 py-16 text-center sm:px-8 sm:py-24">
+        <div className="mx-auto max-w-[1440px] px-5 py-10 text-center sm:px-8 sm:py-14">
           <p className="mx-auto max-w-[1000px] font-bold uppercase leading-[0.95] tracking-[-0.01em]" style={{ fontStretch: "68%", fontSize: "clamp(28px,4.4vw,60px)" }}>
             {poleCopy.statement}
           </p>

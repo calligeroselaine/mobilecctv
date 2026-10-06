@@ -4,7 +4,7 @@ import { poleCta } from "@/lib/pole-content";
 export function PoleCta() {
   return (
     <section id="enquire" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: 140 }}>
-      <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 sm:py-16">
         <h2
           className="max-w-[1000px] font-bold uppercase leading-[0.92] tracking-[-0.01em]"
           style={{ fontStretch: "66%", fontSize: "clamp(28px,4.4vw,60px)" }}

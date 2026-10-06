@@ -18,7 +18,7 @@ export function MocIntro() {
           {copy.introHeading}
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-10 sm:mt-16 lg:grid-cols-2 lg:gap-24">
+        <div className="mt-12 grid grid-cols-1 items-start gap-10 sm:mt-16 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
           <div className="flex flex-col gap-4">
             <MocPlaceholderPhoto
               src={mocImages.introExteriorDetail}

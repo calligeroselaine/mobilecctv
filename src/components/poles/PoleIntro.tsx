@@ -22,19 +22,9 @@ export function PoleIntro() {
               className="object-cover"
             />
           </div>
-          <div className="flex h-full flex-col gap-8 lg:justify-between">
-            <div>
-              <h2 className="font-medium leading-[1.05] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,38px)" }}>
-                {poleCopy.introHeading}
-              </h2>
-              <div className="mt-8 grid gap-5 text-base leading-[1.65] text-[#2A2D31] sm:text-lg">
-                {poleCopy.introBody.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <figure className="relative aspect-[5/4] overflow-hidden">
+          <div className="flex h-full flex-col gap-8">
+            <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
+              <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image
                   src="/images/pole-fitting-on-site.jpg"
                   alt="A technician fitting a pole-mounted unit on site"
@@ -44,7 +34,7 @@ export function PoleIntro() {
                 />
                 <figcaption className={captionClass}>Fitting a unit on site.</figcaption>
               </figure>
-              <figure className="relative aspect-[5/4] overflow-hidden">
+              <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image
                   src="/images/pole-event-entrance.jpg"
                   alt="A pole-mounted camera at the entrance to an event"
@@ -54,6 +44,16 @@ export function PoleIntro() {
                 />
                 <figcaption className={captionClass}>On a pole at an event entrance.</figcaption>
               </figure>
+            </div>
+            <div>
+              <h2 className="font-medium leading-[1.05] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,38px)" }}>
+                {poleCopy.introHeading}
+              </h2>
+              <div className="mt-8 grid gap-5 text-base leading-[1.65] text-[#2A2D31] sm:text-lg">
+                {poleCopy.introBody.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>

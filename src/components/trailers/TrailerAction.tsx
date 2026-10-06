@@ -47,13 +47,13 @@ export function TrailerAction() {
             <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
               <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image
-                  src="/images/solar-panel-detail.jpg"
-                  alt="Close-up of a solar panel and equipment housings on a Mobile CCTV Solutions unit"
+                  src="/images/trailer-equipment-detail.jpg"
+                  alt="Close-up of the Mobile CCTV Solutions branded equipment boxes on a trailer"
                   fill
                   sizes="(min-width: 1024px) 28vw, 45vw"
-                  className="object-cover object-[50%_40%]"
+                  className="object-cover object-[50%_26%]"
                 />
-                <figcaption className={captionClass}>Solar panel detail.</figcaption>
+                <figcaption className={captionClass}>Trailer equipment detail.</figcaption>
               </figure>
               <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image

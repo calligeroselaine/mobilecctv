@@ -16,7 +16,7 @@ export const trailerVideos = {
 
 export const trailerImages = {
   hero: "/images/trailer-hero-cropped.jpg",
-  intro: "/images/mobile-cctv-trailer-intro.jpg",
+  intro: "/images/mobile-cctv-trailer-intro-cropped.jpg",
   capabilities: "/images/trailer-site-inspection.jpg",
   adco: "/images/case-study-adco-forest-high-school.jpg",
   grannySmith: "/images/blog/granny-smith-festival.jpg",

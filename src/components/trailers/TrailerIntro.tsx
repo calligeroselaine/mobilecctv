@@ -23,7 +23,7 @@ export function TrailerIntro() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <div className="relative aspect-square w-full max-w-[640px] overflow-hidden lg:justify-self-end">
             <Image
               src={trailerImages.intro}
               alt="A Mobile CCTV Solutions trailer with raised mast deployed on a gravel construction site"

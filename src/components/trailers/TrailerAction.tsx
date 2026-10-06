@@ -1,5 +1,9 @@
+import Image from "next/image";
 import { actionPoints, trailerCopy, trailerVideos } from "@/lib/trailer-content";
 import { TrailerVideoPoster } from "@/components/trailers/TrailerVideoPoster";
+
+const captionClass =
+  "absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-2.5 pt-8 font-mono text-[11px] tracking-[0.06em] text-white";
 
 export function TrailerAction() {
   return (
@@ -9,7 +13,7 @@ export function TrailerAction() {
           <span className="h-px w-7 bg-[#141619]" />
           {trailerCopy.actionEyebrow}
         </div>
-        <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-20">
+        <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-stretch lg:gap-20">
           <div className="mx-auto w-full max-w-[380px]">
             <TrailerVideoPoster
               youtubeId={trailerVideos.inAction.youtubeId}
@@ -20,7 +24,8 @@ export function TrailerAction() {
             />
             <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-[#5B5F63]">{trailerCopy.actionCaption}</p>
           </div>
-          <div>
+          <div className="flex flex-col gap-10">
+            <div>
             <h2
               className="font-bold uppercase leading-[0.9]"
               style={{ fontStretch: "68%", fontSize: "clamp(26px,3.6vw,44px)" }}
@@ -38,6 +43,29 @@ export function TrailerAction() {
                 </li>
               ))}
             </ul>
+            </div>
+            <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
+              <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
+                <Image
+                  src="/images/solar-panel-detail.jpg"
+                  alt="Close-up of a solar panel and equipment housings on a Mobile CCTV Solutions unit"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 45vw"
+                  className="object-cover object-[50%_40%]"
+                />
+                <figcaption className={captionClass}>Solar panel detail.</figcaption>
+              </figure>
+              <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
+                <Image
+                  src="/images/pole-in-use-street-dusk.jpg"
+                  alt="Cameras mounted on poles above a busy street at dusk"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 45vw"
+                  className="object-cover object-[40%_40%]"
+                />
+                <figcaption className={captionClass}>Cameras on poles at a street event.</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>

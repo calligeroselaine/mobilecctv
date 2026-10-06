@@ -30,7 +30,6 @@ export function MocIntro() {
             <p className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">{copy.introPhotoCaption}</p>
           </div>
           <div className="flex flex-col gap-8">
-            <p className="max-w-[560px] text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.introBody}</p>
             <div className="grid grid-cols-[2fr_3.75fr] items-start gap-4">
               <figure className="flex flex-col gap-3">
                 <div className="relative aspect-[2/3] w-full overflow-hidden">
@@ -57,6 +56,7 @@ export function MocIntro() {
                 <figcaption className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">Site plans on the wall, inside the unit.</figcaption>
               </figure>
             </div>
+            <p className="max-w-[560px] text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.introBody}</p>
           </div>
         </div>
       </div>

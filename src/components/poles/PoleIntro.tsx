@@ -23,6 +23,9 @@ export function PoleIntro() {
             />
           </div>
           <div className="flex h-full flex-col gap-8">
+            <h2 className="font-medium leading-[1.05] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,38px)" }}>
+              {poleCopy.introHeading}
+            </h2>
             <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
               <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image
@@ -46,10 +49,7 @@ export function PoleIntro() {
               </figure>
             </div>
             <div>
-              <h2 className="font-medium leading-[1.05] tracking-[-0.025em]" style={{ fontSize: "clamp(24px,2.6vw,38px)" }}>
-                {poleCopy.introHeading}
-              </h2>
-              <div className="mt-8 grid gap-5 text-base leading-[1.65] text-[#2A2D31] sm:text-lg">
+              <div className="grid gap-5 text-base leading-[1.65] text-[#2A2D31] sm:text-lg">
                 {poleCopy.introBody.map((p) => (
                   <p key={p}>{p}</p>
                 ))}

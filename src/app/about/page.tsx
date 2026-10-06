@@ -47,6 +47,17 @@ const pillars = [
   },
 ];
 
+const michaelBio = [
+  "A temporary site should never mean substandard security. For years it did. If you ran a street festival, a construction site or a remote worksite, nothing on the market could give you the coverage a permanent venue takes for granted. You got less, and the industry accepted it.",
+  "Michael Malligan didn\u2019t. He knew what the standard should be, because he works to it every day. So in 2016 he and Ryan Lotzof, a fellow electrician he had worked alongside in security for almost 20 years, built what was missing.",
+  "Michael is an alarm technician and electrician by trade, with decades in high-quality security and personal protection. He builds the systems, and he runs the operations that depend on them.",
+  "Qudos Bank Arena (now Afterpay Arena), Australia\u2019s largest indoor arena, has been his security client for more than seven years. He designed and built its security control room, its CCTV and its facial recognition technology, and his team continue to service all of it.",
+  "His protection work runs from one person to an entire line-up. He protects high-profile, high-risk and high-net-worth individuals. Several NRL teams bring him in to consult and protect. He travels domestically and internationally with sporting teams and touring music acts, and he owns Anchor Security, a team of more than 120.",
+  "Councils and law enforcement rely on Michael\u2019s guidance. At major events they work side by side with medical and security teams from our Mobile Operations Centre. One council has worked with us for nine years, and its coverage is now six times what it started with.",
+  "Construction companies, ports, mines and government departments across Australia use what Michael and Ryan built too. At the Bathurst 1000 Supercars, much of Mount Panorama had no CCTV at all, so we bring it all in: pole cameras, camera trailers and our Mobile Operations Centre, in a setup that has grown with every booking.",
+  "Whether your site stands for a day or for months, it gets the same standard. Every client we\u2019ve worked with has rebooked.",
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -56,7 +67,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl">
           <SectionHeading
             eyebrow="On Site"
-            title="Our Team At Work"
+            title="Meet The Team"
             align="center"
           />
           <div className="relative mt-8 aspect-[3/2] w-full overflow-hidden rounded-xl shadow-lg">
@@ -68,6 +79,16 @@ export default function AboutPage() {
               priority
               className="object-cover"
             />
+          </div>
+
+          <div className="mt-12 border-t border-steel-200 pt-10">
+            <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
+            <h3 className="text-h3 mt-2">Michael Malligan</h3>
+            <div className="mt-5 space-y-4 text-steel-600">
+              {michaelBio.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </Section>

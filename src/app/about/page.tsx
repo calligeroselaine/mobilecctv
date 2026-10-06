@@ -68,10 +68,10 @@ export default function AboutPage() {
             title="Meet The Team"
             align="center"
           />
-          <div className="relative mt-8 aspect-[3/2] w-full overflow-hidden rounded-xl shadow-lg">
+          <div className="relative mt-8 aspect-[5/4] w-full overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/team-on-site.jpg"
-              alt="Mobile CCTV Solutions team members on site with a deployed trailer"
+              src="/images/team-meet-the-team.jpg"
+              alt="Two Mobile CCTV Solutions team members at a night event"
               fill
               sizes="(min-width: 768px) 672px, 100vw"
               priority

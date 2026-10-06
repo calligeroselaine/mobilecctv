@@ -48,18 +48,21 @@ export function PoleBathurst() {
                 </div>
               ))}
             </div>
-            <div className="lg:sticky lg:top-[150px]">
-              <TrailerVideoPoster
-                youtubeId={poleVideos.bathurst}
-                title="One temporary pole camera at Mount Panorama serving several roles"
-                label="Film 04 / 05"
-                caption="Watch the pole camera in use"
-                vertical
-                className="max-w-[340px]"
-              />
-              <h3 className="mt-6 text-lg font-semibold">{bathurst.rolesTitle}</h3>
-              <p className="mt-1 text-sm text-[#A9ADB1]">{bathurst.rolesIntro}</p>
-              <ul className="mt-4 border-t border-white/20">
+            <div>
+              <div className="grid grid-cols-1 items-start gap-6 sm:grid-cols-[340px_1fr]">
+                <TrailerVideoPoster
+                  youtubeId={poleVideos.bathurst}
+                  title="One temporary pole camera at Mount Panorama serving several roles"
+                  label="Film 04 / 05"
+                  caption="Watch the pole camera in use"
+                  vertical
+                />
+                <div>
+                  <h3 className="text-lg font-semibold">{bathurst.rolesTitle}</h3>
+                  <p className="mt-2 text-sm text-[#A9ADB1]">{bathurst.rolesIntro}</p>
+                </div>
+              </div>
+              <ul className="mt-8 border-t border-white/20">
                 {bathurst.roles.map((r, i) => (
                   <li key={r} className="flex gap-4 border-b border-white/15 py-3 text-base leading-[1.4] text-[#E3E1DC]">
                     <span className="font-mono text-[11px] text-[#4588c6]">{String(i + 1).padStart(2, "0")}</span>

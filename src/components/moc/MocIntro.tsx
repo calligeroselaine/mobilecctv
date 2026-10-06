@@ -18,13 +18,13 @@ export function MocIntro() {
           {copy.introHeading}
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-10 sm:mt-16 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
+        <div className="mt-12 grid grid-cols-1 items-start gap-10 sm:mt-16 lg:grid-cols-[1fr_1.15fr] lg:items-stretch lg:gap-10">
           <div className="flex flex-col gap-4">
             <MocPlaceholderPhoto
               src={mocImages.introExteriorDetail}
               alt="Mobile Operations Centre trailer, branded for outdoor events, live concerts and festivals, with a Mobile CCTV Solutions camera tower alongside"
               neededCaption="exterior detail — entry door, fingerprint reader, flood lighting"
-              aspectClassName="aspect-[3/2]" priority={false}
+              aspectClassName="aspect-[3/2] lg:aspect-auto lg:min-h-0 lg:flex-1" priority={false}
               tone="light"
             />
             <p className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">{copy.introPhotoCaption}</p>

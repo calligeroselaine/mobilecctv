@@ -334,8 +334,8 @@ export const copy = {
   networkTitle: "From a camera on the street to a decision in the room",
   stakeholdersTitle: "One centre, three ways of using it",
   bathurstEyebrow: "05 — Real-world deployments · Case study 2",
-  faqEyebrow: "06 — Practical questions",
-  faqHeading: "Planning an operation?",
+  faqEyebrow: "06 — FAQ",
+  faqHeading: "Frequently asked questions.",
   faqBody:
     "If your question isn't covered here, our team can talk through your site, dates and requirements.",
   enquireEyebrow: "07 — Enquire",

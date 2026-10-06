@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { copy, mocImages } from "@/lib/moc-content";
 import { logoFont } from "@/lib/moc-fonts";
-import { MocPlaceholderPhoto } from "@/components/moc/MocPlaceholderPhoto";
+
+const captionClass =
+  "absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 pb-3 pt-10 font-mono text-xs tracking-[0.06em] text-white";
 
 export function MocIntro() {
   return (
@@ -18,45 +20,40 @@ export function MocIntro() {
           {copy.introHeading}
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-10 sm:mt-16 lg:grid-cols-2 lg:gap-24">
-          <div className="flex flex-col gap-4">
-            <MocPlaceholderPhoto
-              src={mocImages.introExteriorDetail}
-              alt="Mobile Operations Centre trailer, branded for outdoor events, live concerts and festivals, with a Mobile CCTV Solutions camera tower alongside"
-              neededCaption="exterior detail — entry door, fingerprint reader, flood lighting"
-              aspectClassName="aspect-[3/2]" priority={false}
-              tone="light"
+        <p className="mt-8 max-w-[860px] text-lg leading-[1.55] text-[#2A2D31] sm:text-xl lg:text-2xl">{copy.introBody}</p>
+
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 lg:grid-cols-[0.8fr_1fr] lg:gap-5">
+          <figure className="relative aspect-[4/5] overflow-hidden">
+            <Image
+              src="/images/moc-interior-control-room.jpg"
+              alt="Inside the Mobile Operations Centre: a wall of live camera feeds above the operators' desk"
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              className="object-cover object-[50%_35%]"
             />
-            <p className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">{copy.introPhotoCaption}</p>
-          </div>
-          <div className="flex flex-col gap-8">
-            <p className="max-w-[560px] text-base leading-[1.6] text-[#2A2D31] sm:text-lg">{copy.introBody}</p>
-            <div className="grid grid-cols-[2fr_3.75fr] items-start gap-4">
-              <figure className="flex flex-col gap-3">
-                <div className="relative aspect-[2/3] w-full overflow-hidden">
-                  <Image
-                    src="/images/moc-interior-control-room.jpg"
-                    alt="Inside the Mobile Operations Centre: a wall of live camera feeds above the operators' desk"
-                    fill
-                    sizes="(min-width: 1024px) 15vw, 35vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">The live camera wall.</figcaption>
-              </figure>
-              <figure className="flex flex-col gap-3">
-                <div className="relative aspect-[5/4] w-full overflow-hidden">
-                  <Image
-                    src="/images/moc-interior-site-plans.jpg"
-                    alt="Inside the Mobile Operations Centre: site plans pinned to the wall above the team's equipment"
-                    fill
-                    sizes="(min-width: 1024px) 28vw, 65vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="font-mono text-xs tracking-[0.06em] text-[#5B5F63]">Site plans on the wall, inside the unit.</figcaption>
-              </figure>
-            </div>
+            <figcaption className={captionClass}>The live camera wall.</figcaption>
+          </figure>
+          <div className="grid grid-cols-1 gap-4 lg:grid-rows-[1.2fr_1fr] lg:gap-5">
+            <figure className="relative aspect-[3/2] overflow-hidden lg:aspect-auto">
+              <Image
+                src={mocImages.introExteriorDetail}
+                alt="Mobile Operations Centre trailer, branded for outdoor events, live concerts and festivals, with a Mobile CCTV Solutions camera tower alongside"
+                fill
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-cover"
+              />
+              <figcaption className={captionClass}>{copy.introPhotoCaption}</figcaption>
+            </figure>
+            <figure className="relative aspect-[3/2] overflow-hidden lg:aspect-auto">
+              <Image
+                src="/images/moc-interior-site-plans.jpg"
+                alt="Inside the Mobile Operations Centre: site plans pinned to the wall above the team's equipment"
+                fill
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-cover object-[50%_40%]"
+              />
+              <figcaption className={captionClass}>Site plans on the wall, inside the unit.</figcaption>
+            </figure>
           </div>
         </div>
       </div>

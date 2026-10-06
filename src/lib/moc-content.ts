@@ -48,12 +48,12 @@ export type MocVideoKey =
 export type MocVideo = {
   youtubeId: string;
   label: string;
-  aspect: "9/16" | "21/9";
+  aspect: "9/16" | "21/9" | "4/3";
 };
 
 export const mocVideos: Record<MocVideoKey, MocVideo> = {
   walkthrough: { youtubeId: "-qVThfdCSFE", label: "Film 01 / 06", aspect: "9/16" },
-  greenfield: { youtubeId: "IHd_TpbLGys", label: "Film 02 / 06", aspect: "9/16" },
+  greenfield: { youtubeId: "IHd_TpbLGys", label: "Film 02 / 06", aspect: "4/3" },
   ramadanScale: { youtubeId: "VLov3goKPUQ", label: "Film 03 / 06", aspect: "9/16" },
   network: { youtubeId: "wKaPTO_ryT8", label: "Film 04 / 06", aspect: "9/16" },
   stakeholders: { youtubeId: "_iZGdqe0yPw", label: "Film 05 / 06", aspect: "9/16" },

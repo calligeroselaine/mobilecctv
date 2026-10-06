@@ -29,7 +29,8 @@ export function MocVideoPoster({ video, title, variant, caption, subCaption, cla
     `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`
   );
 
-  const aspectClass = video.aspect === "21/9" ? "aspect-[21/9]" : "aspect-[9/16]";
+  const aspectClass =
+    video.aspect === "21/9" ? "aspect-[21/9]" : video.aspect === "4/3" ? "aspect-[4/3]" : "aspect-[9/16]";
 
   if (playing) {
     return (

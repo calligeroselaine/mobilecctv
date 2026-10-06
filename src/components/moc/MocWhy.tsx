@@ -18,7 +18,7 @@ export function MocWhy() {
         </div>
 
         <div className="mt-14 flex flex-wrap items-start gap-12 sm:mt-20 lg:gap-24">
-          <div className="mx-auto w-full max-w-[320px]">
+          <div className="mx-auto w-full max-w-[440px]">
             <MocVideoPoster
               video={mocVideos.greenfield}
               title="Why use a Mobile Operations Centre — greenfield operations"

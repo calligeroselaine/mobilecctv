@@ -3,8 +3,6 @@ import Image from "next/image";
 import { MapPin, BadgeCheck, ShieldCheck, Flag } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
-import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -121,24 +119,6 @@ export default function AboutPage() {
               <p className="mt-2 text-steel-600">{description}</p>
             </div>
           ))}
-        </div>
-      </Section>
-
-      <Section tone="ink">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-h2">Licence &amp; Registration</h2>
-          <p className="mt-4 text-steel-200">
-            {business.legalName}
-            <br />
-            {business.licence}
-            <br />
-            ABN {business.abn}
-          </p>
-          <div className="mt-6">
-            <Button href="/contact" variant="inverse">
-              Request A Quote
-            </Button>
-          </div>
         </div>
       </Section>
     </>

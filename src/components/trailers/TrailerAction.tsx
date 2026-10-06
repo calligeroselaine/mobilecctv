@@ -25,25 +25,6 @@ export function TrailerAction() {
             <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-[#5B5F63]">{trailerCopy.actionCaption}</p>
           </div>
           <div className="flex flex-col gap-10">
-            <div>
-            <h2
-              className="font-bold uppercase leading-[0.9]"
-              style={{ fontStretch: "68%", fontSize: "clamp(26px,3.6vw,44px)" }}
-            >
-              {trailerCopy.actionHeading}
-            </h2>
-            <ul className="mt-8 border-t-2 border-[#141619]">
-              {actionPoints.map((p, i) => (
-                <li key={p.title} className="grid grid-cols-[32px_1fr] gap-x-3 border-b border-[#D6D2CA] py-5">
-                  <span className="font-mono text-xs text-[#4588c6]">{String(i + 1).padStart(2, "0")}</span>
-                  <span>
-                    <span className="block text-lg font-semibold">{p.title}</span>
-                    <span className="mt-1 block text-base leading-[1.5] text-[#2A2D31]">{p.text}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            </div>
             <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
               <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image
@@ -65,6 +46,25 @@ export function TrailerAction() {
                 />
                 <figcaption className={captionClass}>Cameras on poles at a street event.</figcaption>
               </figure>
+            </div>
+            <div>
+            <h2
+              className="font-bold uppercase leading-[0.9]"
+              style={{ fontStretch: "68%", fontSize: "clamp(26px,3.6vw,44px)" }}
+            >
+              {trailerCopy.actionHeading}
+            </h2>
+            <ul className="mt-8 border-t-2 border-[#141619]">
+              {actionPoints.map((p, i) => (
+                <li key={p.title} className="grid grid-cols-[32px_1fr] gap-x-3 border-b border-[#D6D2CA] py-5">
+                  <span className="font-mono text-xs text-[#4588c6]">{String(i + 1).padStart(2, "0")}</span>
+                  <span>
+                    <span className="block text-lg font-semibold">{p.title}</span>
+                    <span className="mt-1 block text-base leading-[1.5] text-[#2A2D31]">{p.text}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
             </div>
           </div>
         </div>

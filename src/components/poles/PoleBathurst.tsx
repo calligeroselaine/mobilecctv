@@ -54,6 +54,8 @@ export function PoleBathurst() {
                 title="One temporary pole camera at Mount Panorama serving several roles"
                 label="Film 04 / 05"
                 caption="Watch the pole camera in use"
+                vertical
+                className="max-w-[340px]"
               />
               <h3 className="mt-6 text-lg font-semibold">{bathurst.rolesTitle}</h3>
               <p className="mt-1 text-sm text-[#A9ADB1]">{bathurst.rolesIntro}</p>

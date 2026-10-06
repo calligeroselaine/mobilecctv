@@ -48,8 +48,8 @@ export const poleCopy = {
   applicationsEyebrow: "04 — Where it's used",
   applicationsHeading: "Can you see your situation here?",
   deploymentsEyebrow: "05 — Real-world deployments",
-  faqEyebrow: "06 — Practical questions",
-  faqHeading: "Before you enquire.",
+  faqEyebrow: "06 — FAQ",
+  faqHeading: "Frequently asked questions.",
 };
 
 export type PoleTheme = { num: string; icon: LucideIcon; title: string; lead: string; items: string[] };

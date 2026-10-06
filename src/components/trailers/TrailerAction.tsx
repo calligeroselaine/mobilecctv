@@ -9,13 +9,14 @@ export function TrailerAction() {
           <span className="h-px w-7 bg-[#141619]" />
           {trailerCopy.actionEyebrow}
         </div>
-        <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
-          <div>
+        <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-20">
+          <div className="mx-auto w-full max-w-[380px]">
             <TrailerVideoPoster
               youtubeId={trailerVideos.inAction.youtubeId}
               title="Mobile CCTV Trailer in a real deployment"
               label={trailerVideos.inAction.label}
               caption="Watch the deployment"
+              vertical
             />
             <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-[#5B5F63]">{trailerCopy.actionCaption}</p>
           </div>

@@ -8,16 +8,19 @@ type Props = {
   label: string;
   caption?: string;
   className?: string;
+  /** Portrait (9:16) video — shown vertically instead of letterboxed in a 16:9 block. */
+  vertical?: boolean;
 };
 
-/** Click-to-load 16:9 YouTube poster — no iframe until the visitor clicks. */
-export function TrailerVideoPoster({ youtubeId, title, label, caption, className = "" }: Props) {
+/** Click-to-load YouTube poster (16:9, or 9:16 when `vertical`) — no iframe until the visitor clicks. */
+export function TrailerVideoPoster({ youtubeId, title, label, caption, className = "", vertical = false }: Props) {
+  const aspect = vertical ? "aspect-[9/16]" : "aspect-video";
   const [playing, setPlaying] = useState(false);
   const [poster, setPoster] = useState(`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`);
 
   if (playing) {
     return (
-      <div className={`relative aspect-video w-full overflow-hidden bg-black ${className}`}>
+      <div className={`relative ${aspect} w-full overflow-hidden bg-black ${className}`}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
           title={title}
@@ -35,7 +38,7 @@ export function TrailerVideoPoster({ youtubeId, title, label, caption, className
       type="button"
       onClick={() => setPlaying(true)}
       aria-label={`Play ${title}`}
-      className={`group relative block aspect-video w-full overflow-hidden bg-black ${className}`}
+      className={`group relative block ${aspect} w-full overflow-hidden bg-black ${className}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- external YouTube thumbnail */}
       <img

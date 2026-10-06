@@ -34,13 +34,13 @@ export function PoleAction() {
           <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#5B5F63]">Supporting demonstrations</span>
           <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14">
             {[
-              { id: poleVideos.remote, n: "Film 02 / 05", info: poleAction.remote },
-              { id: poleVideos.connectivity, n: "Film 03 / 05", info: poleAction.connectivity },
-            ].map(({ id, n, info }) => (
+              { id: poleVideos.remote, n: "Film 02 / 05", info: poleAction.remote, vertical: false },
+              { id: poleVideos.connectivity, n: "Film 03 / 05", info: poleAction.connectivity, vertical: true },
+            ].map(({ id, n, info, vertical }) => (
               <div key={id}>
-                <TrailerVideoPoster youtubeId={id} title={info.label} label={n} className="max-w-[560px]" />
+                <TrailerVideoPoster youtubeId={id} title={info.label} label={n} vertical={vertical} className={vertical ? "max-w-[320px]" : "max-w-[560px]"} />
                 <h3 className="mt-4 text-lg font-semibold">{info.label}</h3>
-                <p className="mt-1 max-w-[560px] text-base leading-[1.55] text-[#2A2D31]">{info.caption}</p>
+                <p className={`mt-1 text-base leading-[1.55] text-[#2A2D31] ${vertical ? "max-w-[320px]" : "max-w-[560px]"}`}>{info.caption}</p>
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { contactHref } from "@/lib/contactHref";
+import { TrailerVideoPoster } from "@/components/trailers/TrailerVideoPoster";
 
 /**
  * Restores the old site's "Rent or Purchase" callout (removed earlier
@@ -27,15 +27,12 @@ export function RentOrPurchase() {
             </Button>
           </div>
         </div>
-        <div className="relative aspect-[16/9] w-full overflow-hidden">
-          <Image
-            src="/images/mobile-cctv-trailers.jpg"
-            alt="A Mobile CCTV Solutions trailer with raised camera mast on grass at dusk"
-            fill
-            sizes="(min-width: 768px) 45vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+        <TrailerVideoPoster
+          youtubeId="S-Ehp6-3p1Q"
+          title="Mobile CCTV Trailer by Mobile CCTV Solutions"
+          label="Mobile CCTV Trailer"
+          caption="Watch the trailer"
+        />
       </div>
     </Section>
   );

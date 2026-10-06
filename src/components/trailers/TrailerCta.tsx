@@ -4,7 +4,7 @@ import { trailerCta } from "@/lib/trailer-content";
 export function TrailerCta() {
   return (
     <section id="enquire" style={{ background: "#16191C", color: "#F2F0EB", scrollMarginTop: 140 }}>
-      <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 py-10 sm:px-8 sm:py-14">
         <h2 className="max-w-[1100px] font-bold uppercase leading-[0.9]" style={{ fontStretch: "66%", fontSize: "clamp(26px,3.6vw,44px)" }}>
           Put a trailer on your site
         </h2>

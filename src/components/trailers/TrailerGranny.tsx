@@ -36,7 +36,7 @@ export function TrailerGranny() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-5 pt-16 sm:px-8 sm:pt-24">
+      <div className="mx-auto max-w-[1440px] px-5 pt-10 sm:px-8 sm:pt-14">
         <div className="grid grid-cols-1 gap-x-16 gap-y-3 border-t border-white/20 py-8 lg:grid-cols-[220px_1fr]">
           <span className={`whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>01 · The challenge</span>
           <p className="max-w-[820px] text-base leading-[1.65] text-[#C9CCCF] sm:text-lg">{grannyStory.challenge}</p>
@@ -64,7 +64,7 @@ export function TrailerGranny() {
           <p className="mt-5 font-mono text-xs uppercase tracking-[0.12em] text-[#A9ADB1]">{grannyStory.bridge}</p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-x-16 gap-y-3 border-t border-white/20 py-8 pb-16 sm:pb-24 lg:grid-cols-[220px_1fr]">
+        <div className="mt-14 grid grid-cols-1 gap-x-16 gap-y-3 border-t border-white/20 py-8 pb-10 sm:pb-14 lg:grid-cols-[220px_1fr]">
           <span className={`whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] ${accent}`}>03 · The result</span>
           <div>
             <p className="max-w-[820px] text-base leading-[1.65] text-[#C9CCCF] sm:text-lg">{grannyStory.result}</p>

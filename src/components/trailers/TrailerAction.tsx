@@ -47,7 +47,7 @@ export function TrailerAction() {
             <div className="grid grid-cols-2 gap-4 lg:min-h-0 lg:flex-1">
               <figure className="relative aspect-[5/4] overflow-hidden lg:aspect-auto">
                 <Image
-                  src="/images/trailer-equipment-cameras.jpg"
+                  src="/images/trailer-equipment-cameras-cropped.jpg"
                   alt="A Mobile CCTV Solutions trailer with raised camera mast, with spare cameras laid out on a tray in front"
                   fill
                   sizes="(min-width: 1024px) 28vw, 45vw"

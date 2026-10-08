@@ -99,7 +99,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 border-t border-steel-200 pt-10">
-            <p className="text-eyebrow font-bold uppercase text-brand">Co-Founder</p>
+            <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
             <h3 className="text-h3 mt-2">Ryan Lotzof</h3>
             <div className="mt-5 space-y-4 text-steel-600">
               {ryanBio.map((paragraph) => (

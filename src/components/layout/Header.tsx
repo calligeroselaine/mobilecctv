@@ -34,7 +34,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden min-[1100px]:block min-[1100px]:flex-1">
-          <ul className="flex w-full items-center justify-evenly gap-3 xl:gap-6">
+          <ul className="mx-auto flex w-full max-w-[760px] items-center justify-evenly gap-3 xl:gap-6">
             {primaryNav
               .filter((link) => link.label !== "Contact")
               .map((link) => (

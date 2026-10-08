@@ -93,9 +93,9 @@ export default function AboutPage() {
           <div className="mt-12 grid grid-cols-1 gap-12 border-t border-steel-200 pt-10 lg:grid-cols-2 lg:gap-16">
             <div>
               <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
-              <h3 className="text-h3 mt-2">Michael Malligan</h3>
+              <h3 className="text-h3 mt-2">Ryan Lotzof</h3>
               <div className="mt-5 space-y-4 text-steel-600">
-                {michaelBio.map((paragraph) => (
+                {ryanBio.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
@@ -103,9 +103,9 @@ export default function AboutPage() {
 
             <div>
               <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
-              <h3 className="text-h3 mt-2">Ryan Lotzof</h3>
+              <h3 className="text-h3 mt-2">Michael Malligan</h3>
               <div className="mt-5 space-y-4 text-steel-600">
-                {ryanBio.map((paragraph) => (
+                {michaelBio.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>

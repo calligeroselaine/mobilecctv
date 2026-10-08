@@ -71,40 +71,44 @@ export default function AboutPage() {
       <PageHero title="About Mobile CCTV Solutions" crumbs={[{ label: "About" }]} />
 
       <Section tone="surface">
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading
-            eyebrow="On Site"
-            title="Meet The Team"
-            align="center"
-          />
-          <div className="relative mt-8 aspect-[5/4] w-full overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src="/images/team-meet-the-team.jpg"
-              alt="Two Mobile CCTV Solutions team members at a night event"
-              fill
-              sizes="(min-width: 768px) 672px, 100vw"
-              priority
-              className="object-cover"
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl">
+            <SectionHeading
+              eyebrow="On Site"
+              title="Meet The Team"
+              align="center"
             />
-          </div>
-
-          <div className="mt-12 border-t border-steel-200 pt-10">
-            <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
-            <h3 className="text-h3 mt-2">Michael Malligan</h3>
-            <div className="mt-5 space-y-4 text-steel-600">
-              {michaelBio.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+            <div className="relative mt-8 aspect-[5/4] w-full overflow-hidden rounded-xl shadow-lg">
+              <Image
+                src="/images/team-meet-the-team.jpg"
+                alt="Two Mobile CCTV Solutions team members at a night event"
+                fill
+                sizes="(min-width: 768px) 672px, 100vw"
+                priority
+                className="object-cover"
+              />
             </div>
           </div>
 
-          <div className="mt-12 border-t border-steel-200 pt-10">
-            <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
-            <h3 className="text-h3 mt-2">Ryan Lotzof</h3>
-            <div className="mt-5 space-y-4 text-steel-600">
-              {ryanBio.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+          <div className="mt-12 grid grid-cols-1 gap-12 border-t border-steel-200 pt-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
+              <h3 className="text-h3 mt-2">Michael Malligan</h3>
+              <div className="mt-5 space-y-4 text-steel-600">
+                {michaelBio.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-eyebrow font-bold uppercase text-brand">Founder</p>
+              <h3 className="text-h3 mt-2">Ryan Lotzof</h3>
+              <div className="mt-5 space-y-4 text-steel-600">
+                {ryanBio.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>

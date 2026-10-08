@@ -99,9 +99,6 @@ export function MobileNav({ links }: MobileNavProps) {
             <Button href="/contact" className="w-full">
               Contact
             </Button>
-            <Button href="/contact" className="w-full">
-              Request A Quote
-            </Button>
           </div>
         </div>
       )}

@@ -62,7 +62,6 @@ export function Header() {
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
           <Button href="/contact" className="!px-4 !text-base">Contact</Button>
-          <Button href="/contact" className="!px-4 !text-base">Request A Quote</Button>
         </div>
 
         <MobileNav links={primaryNav} />

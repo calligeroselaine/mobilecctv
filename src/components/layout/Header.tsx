@@ -34,7 +34,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden min-[1100px]:block">
-          <ul className="flex items-center gap-2 xl:gap-5">
+          <ul className="flex items-center gap-3 xl:gap-10">
             {primaryNav
               .filter((link) => link.label !== "Contact")
               .map((link) => (

@@ -56,6 +56,15 @@ const michaelBio = [
   "Whether your site stands for a day or for months, it gets the same standard. Every client we\u2019ve worked with has rebooked.",
 ];
 
+const ryanBio = [
+  "A temporary site doesn\u2019t mean a substandard solution. That\u2019s the idea Ryan and Michael pioneered when they built Mobile CCTV Solutions in 2016, and it\u2019s why our camera trailers, pole cameras and Mobile Operations Centre deliver full coverage where there\u2019s no mains power, no fixed network and nobody nearby. Ryan is the front line who ensures they stay powered and connected wherever they\u2019re sent, and the reason clients know their call gets answered at any hour.",
+  "People regularly call him the Unicorn. It started because he kept delivering things clients believed couldn\u2019t be done, in timeframes they didn\u2019t think were possible, and it stuck because he keeps delivering on it. Replying to a client in the middle of the night is normal for him. So is jumping on a plane to Kalgoorlie or Groote Eylandt with just hours\u2019 notice.",
+  "Ryan\u2019s an electrician by trade with almost 20 years in security, most of it alongside Michael. In business Ryan knows what a client on a deadline needs: a straight answer, fast, from someone who can make the decision.",
+  "He co-designs the power and connectivity behind our whole range: solar, battery storage and generator auto-start that keep equipment running off-grid for as long as you need it, remote monitoring around the clock, and live footage in front of the right people wherever your site is.",
+  "He\u2019s also the person you\u2019ll first chat to about your requirements. Ryan works directly with councils, government departments, construction companies and event organisers, so the mix of camera trailers, pole cameras and Mobile Operations Centre you\u2019re recommended comes from someone who knows exactly what each one can do. That\u2019s the case at Canterbury-Bankstown\u2019s Ramadan Nights, the City of Ryde\u2019s Granny Smith Festival and the TCS Sydney Marathon, and on sites that run from one day to several months.",
+  "So when you talk to Ryan, you\u2019re not just speaking to a qualified electrician, you are talking to someone who\u2019s built and installed the equipment himself, can make the call on the spot, and will still be answering his phone long after it\u2019s on your site. If he says it\u2019ll be done, it\u2019s done and that\u2019s why every client has rebooked.",
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -84,6 +93,16 @@ export default function AboutPage() {
             <h3 className="text-h3 mt-2">Michael Malligan</h3>
             <div className="mt-5 space-y-4 text-steel-600">
               {michaelBio.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 border-t border-steel-200 pt-10">
+            <p className="text-eyebrow font-bold uppercase text-brand">Co-Founder</p>
+            <h3 className="text-h3 mt-2">Ryan Lotzof</h3>
+            <div className="mt-5 space-y-4 text-steel-600">
+              {ryanBio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>

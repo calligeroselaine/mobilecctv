@@ -133,14 +133,14 @@ export function Footer() {
               </li>
             ))}
             <li>
-              Site build by{" "}
+              Website by{" "}
               <a
                 href="https://www.gevantage.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white"
               >
-                www.gevantage.com
+                Gevantage
               </a>
             </li>
           </ul>

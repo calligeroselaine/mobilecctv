@@ -132,6 +132,17 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              Site build by{" "}
+              <a
+                href="https://www.gevantage.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                www.gevantage.com
+              </a>
+            </li>
           </ul>
         </Container>
       </div>

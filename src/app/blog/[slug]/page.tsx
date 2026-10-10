@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { getAdjacentPosts, getAllPosts, getPostBySlug } from "@/lib/blog";
 import { business } from "@/lib/business";
@@ -77,12 +76,6 @@ export default async function BlogPostPage({
               className="object-cover"
             />
           </div>
-
-          {post.reviewNote && (
-            <div className="mb-8">
-              <ReviewFlag note={post.reviewNote} />
-            </div>
-          )}
 
           <div
             className="[&_p]:mb-4 [&_p]:text-steel-600 [&_p]:leading-relaxed [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2 [&_li]:text-steel-600 [&_strong]:font-semibold [&_strong]:text-ink"

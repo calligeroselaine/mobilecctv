@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { buildMetadata } from "@/lib/metadata";
 import { business } from "@/lib/business";
 
@@ -17,9 +16,6 @@ export default function LegalsPage() {
       <PageHero title="Legals" crumbs={[{ label: "Legals" }]} />
       <Section tone="surface">
         <div className="mx-auto max-w-2xl">
-          <div className="mb-8">
-            <ReviewFlag note="This page did not exist on the old site (the footer link was dead). Drafted below for sign-off — please confirm licence terms, hire terms and website terms of use are accurate before this goes live." />
-          </div>
           <h2 className="text-h2">Business Details</h2>
           <p className="mt-3 text-steel-600">
             {business.legalName}

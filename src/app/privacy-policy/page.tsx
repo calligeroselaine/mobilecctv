@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { buildMetadata } from "@/lib/metadata";
 import { business } from "@/lib/business";
 
@@ -17,9 +16,6 @@ export default function PrivacyPolicyPage() {
       <PageHero title="Privacy Policy" crumbs={[{ label: "Privacy Policy" }]} />
       <Section tone="surface">
         <div className="mx-auto max-w-2xl">
-          <div className="mb-8">
-            <ReviewFlag note="This page did not exist on the old site (the footer link was dead). Drafted below for sign-off — please confirm the data-handling practices described match how Mobile CCTV Solutions actually operates before this goes live." />
-          </div>
           <h2 className="text-h2">Overview</h2>
           <p className="mt-3 text-steel-600">
             Mobile CCTV Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;,

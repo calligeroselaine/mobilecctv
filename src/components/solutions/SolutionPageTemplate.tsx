@@ -4,7 +4,6 @@ import { ArrowRight, ShieldAlert } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { ReviewFlag } from "@/components/ui/ReviewFlag";
 import { Faq } from "@/components/ui/Faq";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CaseStudyCategorySection } from "@/components/case-studies/CaseStudyCategorySection";
@@ -124,11 +123,6 @@ export function SolutionPageTemplate({ solution, caseStudyCategory }: SolutionPa
       ) : caseStudies.length > 0 && (
         <Section tone="alt">
           <SectionHeading eyebrow="Real Deployments" title="Case Studies" />
-          {solution.reviewNote && (
-            <div className="mt-4">
-              <ReviewFlag note={solution.reviewNote} />
-            </div>
-          )}
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
             {caseStudies.map((post) => (
               <Link

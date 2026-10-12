@@ -4,7 +4,13 @@ import { FormEvent, Suspense, useEffect, useId, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
-import { CONTACT_SEND_FAILURE_MESSAGE } from "@/lib/contactMessages";
+import {
+  CONTACT_EMAIL,
+  CONTACT_FAILURE_LEAD,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+  CONTACT_SEND_FAILURE_MESSAGE,
+} from "@/lib/contactMessages";
 
 type Variant = "full" | "compact";
 
@@ -209,7 +215,21 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
           className="flex items-start gap-2.5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 sm:col-span-2"
         >
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-          <span>{serverError}</span>
+          {serverError === CONTACT_SEND_FAILURE_MESSAGE ? (
+            <span>
+              {CONTACT_FAILURE_LEAD}
+              <a href={CONTACT_PHONE_HREF} className="font-semibold underline">
+                {CONTACT_PHONE_DISPLAY}
+              </a>{" "}
+              or{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold underline">
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </span>
+          ) : (
+            <span>{serverError}</span>
+          )}
         </div>
       )}
 

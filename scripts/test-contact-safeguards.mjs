@@ -119,9 +119,9 @@ test("scrubForLog caps length", () => {
   assert.equal(scrubForLog("x".repeat(1000)).length, 200);
 });
 
-test("the failure message is the agreed wording", () => {
+test("the failure message is the agreed wording and matches the business contact details", () => {
   assert.equal(
     CONTACT_SEND_FAILURE_MESSAGE,
-    "Sorry, we couldn't send your enquiry right now. Please try again later or contact Mobile CCTV Solutions directly."
+    "Sorry, we couldn't send your enquiry right now. Please try again later or contact Mobile CCTV Solutions directly on 1300 99 69 10 or sales@mobilecctvsolutions.com.au."
   );
 });

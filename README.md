@@ -21,7 +21,7 @@ email id). If the key is missing, Resend rejects the email (invalid key,
 unverified domain, rate limit, daily/monthly quota, API error) or the
 request fails or times out, the visitor sees *"Sorry, we couldn't send your
 enquiry right now. Please try again later or contact Mobile CCTV Solutions
-directly."*, keeps everything they typed, and can press Send again. Failures
+directly on 1300 99 69 10 or sales@mobilecctvsolutions.com.au."*, keeps everything they typed, and can press Send again. Failures
 are logged on the server (reason, HTTP status and Resend's error text, with
 keys and email addresses scrubbed) — never the visitor's details.
 

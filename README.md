@@ -15,13 +15,17 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Contact form setup (required before launch)
 
 The enquiry/quote form (`src/components/contact/ContactForm.tsx`, submitting
-to `src/app/api/contact/route.ts`) is fully built and functional — validation,
-accessibility, spam prevention and loading/error/success states all work —
-**but no email provider is connected yet.** Until you set the environment
-variables below, every valid submission gets a clear error message back
-("the enquiry form isn't fully set up yet, please call/email us directly")
-instead of a fake success. This is intentional: we do not want visitors to
-think their enquiry was received when nobody actually gets it.
+to `src/app/api/contact/route.ts`) only tells a visitor their enquiry was
+sent when Resend has actually accepted the email (a 2xx response with an
+email id). If the key is missing, Resend rejects the email (invalid key,
+unverified domain, rate limit, daily/monthly quota, API error) or the
+request fails or times out, the visitor sees *"Sorry, we couldn't send your
+enquiry right now. Please try again later or contact Mobile CCTV Solutions
+directly."*, keeps everything they typed, and can press Send again. Failures
+are logged on the server (reason, HTTP status and Resend's error text, with
+keys and email addresses scrubbed) — never the visitor's details.
+
+Run `npm run test:contact` to check these safeguards.
 
 Sending is done via [Resend](https://resend.com).
 

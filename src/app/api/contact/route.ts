@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
 import { business } from "@/lib/business";
+import { CONTACT_SEND_FAILURE_MESSAGE } from "@/lib/contactMessages";
+import { sendEnquiryEmail } from "@/lib/sendEnquiryEmail";
 
 /**
  * Contact/quote form submission endpoint.
  *
- * IMPORTANT — this does not yet send real emails. No Resend account is
- * configured for this project. Until RESEND_API_KEY and CONTACT_TO_EMAIL
- * are set (see README.md § "Contact form setup"), every valid submission
- * gets a clear 501 error back — never a fake "success". Once those env
- * vars are set, this route sends real emails via Resend with no further
- * code changes required.
+ * A visitor is only told "ok" when Resend has actually accepted the email
+ * (2xx + an email id — see sendEnquiryEmail). Every other outcome (missing
+ * key, rate limit, daily/monthly quota, API error, network failure,
+ * timeout) returns the same failure message so nobody is ever told their
+ * enquiry was sent when it wasn't. Failures are logged server-side without
+ * the API key or any of the visitor's details.
  */
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,21 +83,9 @@ export async function POST(request: Request) {
   const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
   if (!resendApiKey) {
-    console.warn(
-      "[/api/contact] RESEND_API_KEY not set — see README.md 'Contact form setup'. Submission was NOT sent:",
-      { name: body.name, email: body.email }
-    );
-    return NextResponse.json(
-      {
-        error:
-          "Sorry, the enquiry form isn't fully set up yet. Please call us on " +
-          business.phone.display +
-          " or email " +
-          business.email +
-          " directly.",
-      },
-      { status: 501 }
-    );
+    // Log the problem, never the visitor's details.
+    console.error("[/api/contact] enquiry NOT sent: RESEND_API_KEY is not set.");
+    return NextResponse.json({ ok: false, error: CONTACT_SEND_FAILURE_MESSAGE }, { status: 503 });
   }
 
   const lines = [
@@ -112,37 +102,29 @@ export async function POST(request: Request) {
     body.message,
   ].filter(Boolean);
 
-  try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: `${business.name} Website <${fromEmail}>`,
-        to: [toEmail],
-        reply_to: body.email,
-        subject: `New enquiry from ${body.name}${body.company ? ` (${body.company})` : ""}`,
-        text: lines.join("\n"),
-      }),
+  const result = await sendEnquiryEmail({
+    apiKey: resendApiKey,
+    from: `${business.name} Website <${fromEmail}>`,
+    to: toEmail,
+    replyTo: body.email as string,
+    subject: `New enquiry from ${body.name}${body.company ? ` (${body.company})` : ""}`,
+    text: lines.join("\n"),
+  });
+
+  if (!result.ok) {
+    // Only the reason, HTTP status and Resend's scrubbed error text are
+    // logged — no API key, no name/email/message from the visitor.
+    console.error("[/api/contact] enquiry NOT sent:", {
+      reason: result.reason,
+      status: result.status,
+      detail: result.detail,
     });
-
-    if (!res.ok) {
-      const errBody = await res.text().catch(() => "");
-      console.error("[/api/contact] Resend send error:", res.status, errBody);
-      return NextResponse.json(
-        { error: "Something went wrong sending your enquiry. Please try again or call us directly." },
-        { status: 502 }
-      );
-    }
-
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("[/api/contact] Resend send error:", err);
+    const retryable = result.reason === "rate_limited" || result.reason === "quota_exceeded";
     return NextResponse.json(
-      { error: "Something went wrong sending your enquiry. Please try again or call us directly." },
-      { status: 502 }
+      { ok: false, error: CONTACT_SEND_FAILURE_MESSAGE },
+      { status: retryable ? 503 : 502 }
     );
   }
+
+  return NextResponse.json({ ok: true });
 }

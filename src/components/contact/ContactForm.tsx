@@ -4,6 +4,7 @@ import { FormEvent, Suspense, useEffect, useId, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
+import { CONTACT_SEND_FAILURE_MESSAGE } from "@/lib/contactMessages";
 
 type Variant = "full" | "compact";
 
@@ -102,6 +103,10 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [serverError, setServerError] = useState<string | null>(null);
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
+  // Synchronous guard: state updates are async, so a fast double-click could
+  // otherwise fire two requests before the button disables.
+  const inFlightRef = useRef(false);
   const formStartedAt = useRef<number | null>(null);
   const formId = useId();
 
@@ -119,12 +124,22 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
     }
   }
 
+  // Bring the failure message into view — on a long form it would otherwise
+  // sit above the fold while the visitor is looking at the Send button.
+  useEffect(() => {
+    if (status === "error") {
+      errorRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
+  }, [status]);
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (inFlightRef.current) return;
     const fieldErrors = validate(state, variant);
     setErrors(fieldErrors);
     if (Object.keys(fieldErrors).length > 0) return;
 
+    inFlightRef.current = true;
     setStatus("submitting");
     setServerError(null);
 
@@ -139,22 +154,29 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
         }),
       });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
-        setServerError(
-          data?.error ||
-            "Something went wrong sending your enquiry. Please try again or call us directly."
-        );
-        setStatus("error");
+      const data = await res.json().catch(() => null);
+
+      // Success only when the server confirms Resend accepted the email.
+      if (res.ok && data?.ok === true) {
+        setStatus("success");
         return;
       }
 
-      setStatus("success");
-    } catch {
+      // Failure: keep everything the visitor typed (state is untouched) and
+      // re-enable the button. Validation (400) keeps its own wording; every
+      // sending failure shows the one standard message.
       setServerError(
-        "Something went wrong sending your enquiry. Please check your connection and try again."
+        res.status === 400 && typeof data?.error === "string"
+          ? data.error
+          : CONTACT_SEND_FAILURE_MESSAGE
       );
       setStatus("error");
+    } catch {
+      // Network failure, offline, or the request was cut off.
+      setServerError(CONTACT_SEND_FAILURE_MESSAGE);
+      setStatus("error");
+    } finally {
+      inFlightRef.current = false;
     }
   }
 
@@ -182,6 +204,7 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
     <form onSubmit={handleSubmit} noValidate className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {status === "error" && serverError && (
         <div
+          ref={errorRef}
           role="alert"
           className="flex items-start gap-2.5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 sm:col-span-2"
         >

@@ -69,6 +69,14 @@ export default function PrivacyPolicyPage() {
             </a>
             .
           </p>
+          <h2 className="text-h2 mt-8">Third-Party Services</h2>
+          <p className="mt-3 text-steel-600">
+            Videos on our site are provided by YouTube. Preview images are
+            loaded from YouTube&rsquo;s servers, and YouTube&rsquo;s video
+            player is only loaded when you press play. When you send an
+            enquiry through our website, your message is passed to an email
+            delivery service so it reaches our team.
+          </p>
           <h2 className="text-h2 mt-8">How We Use Your Information</h2>
           <p className="mt-3 text-steel-600">
             We use the information you provide to respond to enquiries,

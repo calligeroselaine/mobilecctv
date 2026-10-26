@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { business } from "@/lib/business";
 import { CONTACT_SEND_FAILURE_MESSAGE } from "@/lib/contactMessages";
 import { sendEnquiryEmail } from "@/lib/sendEnquiryEmail";
+import { processEnquiry } from "@/lib/processEnquiry";
 
 /**
  * Contact/quote form submission endpoint.
@@ -76,6 +77,82 @@ export async function POST(request: Request) {
   const fieldErrors = validate(body);
   if (Object.keys(fieldErrors).length > 0) {
     return NextResponse.json({ error: "Please fix the errors below.", fieldErrors }, { status: 400 });
+  }
+
+  // ---- Brevo provider (CRM + notification + acknowledgement) --------------
+  // Off by default. Turn on with CONTACT_EMAIL_PROVIDER=brevo. While Resend is
+  // still configured it stays as the fallback if Brevo cannot send the team
+  // notification, so no enquiry is lost during the changeover.
+  if (process.env.CONTACT_EMAIL_PROVIDER?.trim().toLowerCase() === "brevo") {
+    const brevoKey = process.env.BREVO_API_KEY?.trim();
+    const senderEmail = (process.env.BREVO_SENDER_EMAIL || process.env.RESEND_FROM_EMAIL || "").trim();
+    if (!brevoKey || !senderEmail) {
+      // Misconfigured: say so in the log, then carry on with the Resend path below.
+      console.error("[/api/contact] CONTACT_EMAIL_PROVIDER=brevo but BREVO_API_KEY or BREVO_SENDER_EMAIL is missing; using Resend.");
+    } else {
+      const notifyTo = process.env.CONTACT_TO_EMAIL || business.email;
+      const host = business.siteUrl.replace(/^https?:\/\//, "");
+      const fields: [string, string][] = [
+        ["Name", body.name ?? ""],
+        ["Company", body.company ?? ""],
+        ["Email", body.email ?? ""],
+        ["Phone", body.phone ?? ""],
+        ["Location / project area", body.location ?? ""],
+        ["Solution required", body.solution ?? ""],
+        ["Hire / purchase", body.engagement ?? ""],
+        ["Approximate timing", body.timing ?? ""],
+        ["Message", body.message ?? ""],
+        ["Source", `Website enquiry - ${host}`],
+      ];
+      const resendKey = process.env.RESEND_API_KEY;
+      const outcome = await processEnquiry(
+        {
+          name: body.name as string,
+          email: body.email as string,
+          phone: body.phone,
+          company: body.company,
+          message: body.message as string,
+          fields,
+        },
+        {
+          apiKey: brevoKey,
+          sender: { email: senderEmail, name: process.env.BREVO_SENDER_NAME?.trim() || business.name },
+          notifyTo,
+          site: {
+            siteUrl: business.siteUrl,
+            businessName: business.name,
+            phoneDisplay: business.phone.display,
+            phoneHref: business.phone.href,
+          },
+          pipelinePreferred: process.env.BREVO_DEAL_PIPELINE,
+          stageNames: process.env.BREVO_DEAL_STAGE
+            ? process.env.BREVO_DEAL_STAGE.split(",").map((x) => x.trim()).filter(Boolean)
+            : ["New Enquiry", "New"],
+          sourceLabel: `Website enquiry - ${host}`,
+          log: (m) => console.error(`[/api/contact] ${m}`),
+        },
+        // Fallback while Resend is still set up: same email, sent the old way.
+        resendKey
+          ? async ({ subject, text, replyTo }) => {
+              const r = await sendEnquiryEmail({
+                apiKey: resendKey,
+                from: `${business.name} Website <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+                to: notifyTo,
+                replyTo,
+                subject,
+                text,
+              });
+              if (!r.ok) console.error(`[/api/contact] Resend fallback also failed: ${r.reason}${r.status ? ` (status ${r.status})` : ""}${r.detail ? `: ${r.detail}` : ""}`);
+              return r.ok;
+            }
+          : undefined
+      );
+      if (!outcome.ok) {
+        console.error("[/api/contact] enquiry NOT sent: Brevo notification failed and no fallback delivered it.");
+        return NextResponse.json({ ok: false, error: CONTACT_SEND_FAILURE_MESSAGE }, { status: 502 });
+      }
+      return NextResponse.json({ ok: true });
+    }
   }
 
   const resendApiKey = process.env.RESEND_API_KEY;

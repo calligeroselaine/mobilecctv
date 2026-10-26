@@ -27,6 +27,22 @@ keys and email addresses scrubbed) — never the visitor's details.
 
 Run `npm run test:contact` to check these safeguards.
 
+### Brevo CRM (optional, off by default)
+
+When `CONTACT_EMAIL_PROVIDER=brevo` and `BREVO_API_KEY` are set, each enquiry
+is also recorded in Brevo: the contact is created/updated (name, email, phone,
+source and date), a deal "Website Enquiry – [Name]" is created in the
+pipeline's starting stage with the enquiry as a note, the team gets the
+notification email and the customer gets an acknowledgement email — all from
+`BREVO_SENDER_EMAIL`. CRM problems never stop an enquiry reaching the team;
+if Brevo cannot send the team email, Resend is used as a fallback while it is
+still configured. Nobody is added to any marketing list.
+
+Code: `src/lib/brevo.ts`, `src/lib/processEnquiry.ts`, `src/lib/enquiryEmails.ts`,
+wired in `src/app/api/contact/route.ts`. Tests: `npm run test:contact`.
+Account check (read-only): `BREVO_API_KEY=… npm run brevo:check`.
+
+
 Sending is done via [Resend](https://resend.com).
 
 To connect it:

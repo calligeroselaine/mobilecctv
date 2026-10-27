@@ -386,3 +386,19 @@ export async function sendTransactionalEmail(
   if (typeof messageId !== "string" || !messageId) return { ok: false, reason: "email send returned no messageId" };
   return { ok: true };
 }
+
+// ---------------------------------------------------------------- keep-alive --
+
+/**
+ * One harmless, read-only authenticated call. Brevo expires an API key after
+ * 90 days of no use, so the site makes this call weekly (see the cron job in
+ * vercel.json) to make sure a quiet quarter without enquiries can never
+ * switch the CRM off.
+ */
+export async function pingBrevo(
+  apiKey: string,
+  opts?: BrevoOptions
+): Promise<{ ok: true } | { ok: false; status: number; code?: string }> {
+  const r = await call(apiKey, "/account", {}, opts);
+  return r.ok ? { ok: true } : { ok: false, status: r.status, code: r.code };
+}

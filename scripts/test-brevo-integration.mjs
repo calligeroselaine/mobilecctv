@@ -9,8 +9,10 @@ import {
   splitName,
   enquiryRef,
   resolvePipelineTarget,
+  pingBrevo,
   _resetPipelineCache,
 } from "../src/lib/brevo.ts";
+import { isAuthorisedCron } from "../src/lib/cronAuth.ts";
 import { processEnquiry, _resetRecentRefs } from "../src/lib/processEnquiry.ts";
 import { buildAcknowledgementEmail, buildNotificationEmail, ACK_SUBJECT } from "../src/lib/enquiryEmails.ts";
 
@@ -445,4 +447,34 @@ test("visitor text is HTML-escaped in both emails", () => {
   assert.ok(n.html.includes("&lt;script&gt;"));
   const a = buildAcknowledgementEmail({ firstName: evil, site: SITE });
   assert.ok(!a.html.includes("<script>"));
+});
+
+// ---------------------------------------------------------------- keep-alive --
+
+test("the weekly keep-alive makes one read-only call and reports failure by code only", async () => {
+  const calls = [];
+  const ok = await pingBrevo(KEY, {
+    fetchImpl: async (url, init) => {
+      calls.push(`${init.method ?? "GET"} ${new URL(url).pathname}`);
+      return new Response(JSON.stringify({ plan: [] }), { status: 200 });
+    },
+  });
+  assert.deepEqual(ok, { ok: true });
+  assert.deepEqual(calls, ["GET /v3/account"]);
+
+  const bad = await pingBrevo(KEY, {
+    fetchImpl: async () => new Response(JSON.stringify({ code: "unauthorized", message: "secret detail" }), { status: 401 }),
+  });
+  assert.deepEqual(bad, { ok: false, status: 401, code: "unauthorized" });
+  assert.ok(!JSON.stringify(bad).includes("secret detail"));
+});
+
+test("only a request carrying the CRON_SECRET may trigger the keep-alive", () => {
+  assert.equal(isAuthorisedCron("Bearer s3cret", "s3cret"), true);
+  assert.equal(isAuthorisedCron("Bearer wrong", "s3cret"), false);
+  assert.equal(isAuthorisedCron("s3cret", "s3cret"), false);
+  assert.equal(isAuthorisedCron(null, "s3cret"), false);
+  assert.equal(isAuthorisedCron("Bearer s3cret", undefined), false); // no secret configured = closed
+  assert.equal(isAuthorisedCron("Bearer s3cret", ""), false);
+  assert.equal(isAuthorisedCron("Bearer ", ""), false);
 });

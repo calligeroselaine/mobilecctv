@@ -42,6 +42,12 @@ Code: `src/lib/brevo.ts`, `src/lib/processEnquiry.ts`, `src/lib/enquiryEmails.ts
 wired in `src/app/api/contact/route.ts`. Tests: `npm run test:contact`.
 Account check (read-only): `BREVO_API_KEY=… npm run brevo:check`.
 
+Key keep-alive: Brevo expires an API key after 90 days without use, so
+`vercel.json` schedules a weekly call to `/api/brevo-keepalive` (one read-only
+Brevo request). It needs a `CRON_SECRET` environment variable in Vercel (any
+long random string, e.g. from `openssl rand -hex 24`); without it the endpoint
+refuses every request.
+
 
 Sending is done via [Resend](https://resend.com).
 

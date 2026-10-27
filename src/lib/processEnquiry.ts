@@ -17,6 +17,7 @@ import {
   createDealWithNote,
   enquiryRef,
   isDuplicateDeal,
+  isSenderDomainAuthenticated,
   lookupContactId,
   resolvePipelineTarget,
   sendTransactionalEmail,
@@ -157,23 +158,34 @@ export async function processEnquiry(
     company: input.company,
     crmWarning: crm === "skipped-failed",
   });
-  const sent = await sendTransactionalEmail(
-    cfg.apiKey,
-    {
-      sender: cfg.sender,
-      to: [{ email: cfg.notifyTo }],
-      replyTo: { email: input.email, name: input.name },
-      subject: note.subject,
-      htmlContent: note.html,
-      textContent: note.text,
-      tags: ["website-enquiry", "team-notification"],
-    },
-    cfg.brevo
-  );
+
+  // Brevo says "accepted" even for a sender it will then reject, so confirm
+  // the sender's domain is authenticated BEFORE trusting Brevo to deliver.
+  const senderOk = await isSenderDomainAuthenticated(cfg.apiKey, cfg.sender.email, cfg.brevo);
 
   let notifiedVia: "brevo" | "fallback" = "brevo";
-  if (!sent.ok) {
-    log(`team notification via Brevo failed: ${sent.reason}`);
+  let sentViaBrevo = false;
+  if (senderOk) {
+    const sent = await sendTransactionalEmail(
+      cfg.apiKey,
+      {
+        sender: cfg.sender,
+        to: [{ email: cfg.notifyTo }],
+        replyTo: { email: input.email, name: input.name },
+        subject: note.subject,
+        htmlContent: note.html,
+        textContent: note.text,
+        tags: ["website-enquiry", "team-notification"],
+      },
+      cfg.brevo
+    );
+    sentViaBrevo = sent.ok;
+    if (!sent.ok) log(`team notification via Brevo failed: ${sent.reason}`);
+  } else {
+    log("Brevo sender domain is not authenticated (or could not be checked): using the fallback for the team notification");
+  }
+
+  if (!sentViaBrevo) {
     const ok = fallbackNotify
       ? await fallbackNotify({ subject: note.subject, text: note.text, replyTo: input.email }).catch(() => false)
       : false;
@@ -184,26 +196,29 @@ export async function processEnquiry(
     notifiedVia = "fallback";
   }
 
-  // 3. Acknowledgement to the customer — best effort.
+  // 3. Acknowledgement to the customer — best effort, and only when Brevo can
+  // really send as this sender (otherwise it would be silently rejected).
   let acknowledged = false;
-  try {
-    const ack = buildAcknowledgementEmail({ firstName: splitName(input.name).first, site: cfg.site });
-    const r = await sendTransactionalEmail(
-      cfg.apiKey,
-      {
-        sender: cfg.sender,
-        to: [{ email: input.email, name: input.name }],
-        subject: ack.subject,
-        htmlContent: ack.html,
-        textContent: ack.text,
-        tags: ["website-enquiry", "customer-acknowledgement"],
-      },
-      cfg.brevo
-    );
-    acknowledged = r.ok;
-    if (!r.ok) log(`acknowledgement email failed: ${r.reason}`);
-  } catch (err) {
-    log(`acknowledgement error (${err instanceof Error ? err.name : "unknown"})`);
+  if (senderOk) {
+    try {
+      const ack = buildAcknowledgementEmail({ firstName: splitName(input.name).first, site: cfg.site });
+      const r = await sendTransactionalEmail(
+        cfg.apiKey,
+        {
+          sender: cfg.sender,
+          to: [{ email: input.email, name: input.name }],
+          subject: ack.subject,
+          htmlContent: ack.html,
+          textContent: ack.text,
+          tags: ["website-enquiry", "customer-acknowledgement"],
+        },
+        cfg.brevo
+      );
+      acknowledged = r.ok;
+      if (!r.ok) log(`acknowledgement email failed: ${r.reason}`);
+    } catch (err) {
+      log(`acknowledgement error (${err instanceof Error ? err.name : "unknown"})`);
+    }
   }
 
   return { ok: true, notifiedVia, crm, acknowledged };

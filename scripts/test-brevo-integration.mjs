@@ -10,6 +10,8 @@ import {
   enquiryRef,
   resolvePipelineTarget,
   pingBrevo,
+  isSenderDomainAuthenticated,
+  _resetAuthCache,
   _resetPipelineCache,
 } from "../src/lib/brevo.ts";
 import { isAuthorisedCron } from "../src/lib/cronAuth.ts";
@@ -72,6 +74,11 @@ function fakeBrevo(opts = {}) {
     if (method === "GET" && path.startsWith("/contacts/")) {
       const c = s.contacts.get(decodeURIComponent(path.slice("/contacts/".length)).toLowerCase());
       return c ? json(200, { id: c.id }) : json(404, { code: "document_not_found" });
+    }
+    if (method === "GET" && path === "/senders/domains") {
+      s.domainLookups = (s.domainLookups ?? 0) + 1;
+      if (opts.domainLookupFails) return json(500, { code: "internal_error" });
+      return json(200, { domains: [{ domain_name: "mobilecctvsolutions.com.au", authenticated: opts.domainAuthenticated !== false }] });
     }
     if (method === "GET" && path === "/crm/pipeline/details/all") return json(200, s.pipelines);
     if (method === "GET" && path === "/crm/deals") {
@@ -153,6 +160,7 @@ function run(input, { fake, fallback, cfg = {} } = {}) {
 }
 
 test.beforeEach(() => {
+  _resetAuthCache();
   _resetPipelineCache();
   _resetRecentRefs();
 });
@@ -281,7 +289,7 @@ test("if the whole CRM is down the enquiry is still emailed to the team, with an
   const fake = fakeBrevo();
   const impl = fake.impl;
   const patched = async (url, init) =>
-    /\/smtp\/email/.test(url) ? impl(url, init) : new Response(JSON.stringify({ code: "internal_error" }), { status: 500 });
+    /\/(smtp\/email|senders\/domains)/.test(url) ? impl(url, init) : new Response(JSON.stringify({ code: "internal_error" }), { status: 500 });
   const { result, s } = await run({}, { fake: { s: fake.s, impl: patched } });
   assert.equal(result.ok, true);
   assert.equal(result.crm, "skipped-failed");
@@ -477,4 +485,38 @@ test("only a request carrying the CRON_SECRET may trigger the keep-alive", () =>
   assert.equal(isAuthorisedCron("Bearer s3cret", undefined), false); // no secret configured = closed
   assert.equal(isAuthorisedCron("Bearer s3cret", ""), false);
   assert.equal(isAuthorisedCron("Bearer ", ""), false);
+});
+
+// ------------------------------------------------- unauthenticated sender (real bug) --
+
+test("if the sender domain isn't authenticated in Brevo, the team email goes through the fallback and no acknowledgement is attempted", async () => {
+  const fake = fakeBrevo({ domainAuthenticated: false });
+  let fallbackUsed = 0;
+  const { result, s } = await run({}, { fake, fallback: async () => { fallbackUsed++; return true; } });
+  assert.equal(result.ok, true);
+  assert.equal(result.notifiedVia, "fallback");
+  assert.equal(result.acknowledged, false);
+  assert.equal(fallbackUsed, 1);
+  assert.equal(s.emails.length, 0, "Brevo must not be asked to send as an unauthenticated sender");
+  assert.equal(result.crm, "created", "the CRM record is still made");
+});
+
+test("unauthenticated sender and no fallback: the enquiry is reported as NOT sent, never silently lost", async () => {
+  const { result } = await run({}, { fake: fakeBrevo({ domainAuthenticated: false }) });
+  assert.deepEqual(result, { ok: false });
+});
+
+test("if the authentication lookup itself fails, it is treated as not authenticated", async () => {
+  const { result, s } = await run({}, { fake: fakeBrevo({ domainLookupFails: true }), fallback: async () => true });
+  assert.equal(result.notifiedVia, "fallback");
+  assert.equal(s.emails.length, 0);
+});
+
+test("the authentication answer is cached so a burst of enquiries makes one lookup", async () => {
+  const fake = fakeBrevo();
+  const opts = { fetchImpl: fake.impl };
+  assert.equal(await isSenderDomainAuthenticated(KEY, "enquiries@mobilecctvsolutions.com.au", opts), true);
+  assert.equal(await isSenderDomainAuthenticated(KEY, "Enquiries@MobileCCTVSolutions.com.au", opts), true);
+  assert.equal(fake.s.domainLookups, 1);
+  assert.equal(await isSenderDomainAuthenticated(KEY, "someone@other.example", opts), false);
 });

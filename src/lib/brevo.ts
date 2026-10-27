@@ -402,3 +402,44 @@ export async function pingBrevo(
   const r = await call(apiKey, "/account", {}, opts);
   return r.ok ? { ok: true } : { ok: false, status: r.status, code: r.code };
 }
+
+// ------------------------------------------------------- sender authentication --
+
+/**
+ * Brevo ACCEPTS a send request from a sender whose domain isn't authenticated
+ * yet (HTTP 201 + a message id) and then REJECTS it a moment later, so the
+ * email never arrives and nothing on our side can tell. This checks, before
+ * sending, that the sender's domain really is authenticated in Brevo (the
+ * DKIM records Dom adds). With this site's strict DMARC policy an
+ * unauthenticated sender would be quarantined even if Brevo did send it.
+ *
+ * If the check can't be completed it answers "not authenticated", so the
+ * caller uses its fallback instead of trusting a send that may be rejected.
+ * The answer is cached briefly so a burst of enquiries makes one lookup.
+ */
+const AUTH_CACHE_MS = 5 * 60 * 1000;
+let authCache: { domain: string; ok: boolean; at: number } | null = null;
+export function _resetAuthCache() {
+  authCache = null;
+}
+
+export async function isSenderDomainAuthenticated(
+  apiKey: string,
+  senderEmail: string,
+  opts?: BrevoOptions
+): Promise<boolean> {
+  const domain = senderEmail.split("@")[1]?.trim().toLowerCase();
+  if (!domain) return false;
+  if (authCache && authCache.domain === domain && Date.now() - authCache.at < AUTH_CACHE_MS) return authCache.ok;
+
+  const r = await call(apiKey, "/senders/domains", {}, opts);
+  const list = (r.data as { domains?: { domain_name?: string; authenticated?: boolean }[] } | null)?.domains;
+  const ok =
+    r.ok &&
+    Array.isArray(list) &&
+    list.some((d) => d.domain_name?.trim().toLowerCase() === domain && d.authenticated === true);
+
+  // Only cache a definite answer; a failed lookup is retried next time.
+  if (r.ok) authCache = { domain, ok, at: Date.now() };
+  return ok;
+}

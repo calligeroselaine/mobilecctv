@@ -38,6 +38,13 @@ notification email and the customer gets an acknowledgement email — all from
 if Brevo cannot send the team email, Resend is used as a fallback while it is
 still configured. Nobody is added to any marketing list.
 
+Important: Brevo accepts a send from an unauthenticated sender and then rejects
+it a moment later, which cannot be detected afterwards. So before each send the
+site checks that the sender's domain is authenticated in Brevo (the DKIM
+records). If it is not, the team email goes through the Resend fallback instead
+and no Brevo email is attempted — so authenticate the domain before relying on
+Brevo emails, and keep Resend configured until you have.
+
 Code: `src/lib/brevo.ts`, `src/lib/processEnquiry.ts`, `src/lib/enquiryEmails.ts`,
 wired in `src/app/api/contact/route.ts`. Tests: `npm run test:contact`.
 Account check (read-only): `BREVO_API_KEY=… npm run brevo:check`.

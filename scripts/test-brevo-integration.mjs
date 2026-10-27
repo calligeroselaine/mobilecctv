@@ -81,13 +81,14 @@ function fakeBrevo(opts = {}) {
     }
     if (method === "POST" && path === "/crm/deals") {
       if (opts.dealFails) return json(400, { code: "deal_limit", message: "limit for x@y.z" });
+      if (opts.rejectDealAttrs && body.attributes) return json(400, { message: "Not valid data. : Invalid attribute: pipeline passed" });
       const id = `deal${s.deals.length + 1}`;
       s.deals.push({
         id,
         name: body.name,
         contactId: body.linkedContactsIds[0],
-        stage: body.attributes.deal_stage,
-        pipeline: body.attributes.pipeline,
+        stage: body.attributes?.deal_stage,
+        pipeline: body.attributes?.pipeline,
         createdAt: Date.now(),
       });
       return json(200, { id });
@@ -99,7 +100,8 @@ function fakeBrevo(opts = {}) {
     if (method === "GET" && path === "/crm/notes") {
       const id = u.searchParams.get("entityIds");
       if (opts.notesUnreadable) return json(500, { code: "internal_error" });
-      return json(200, { items: s.notes.filter((n) => n.dealId === id).map((n) => ({ text: n.text })) });
+      // Real Brevo returns a plain array here, not an {items} wrapper.
+      return json(200, s.notes.filter((n) => n.dealId === id).map((n) => ({ text: n.text })));
     }
     if (method === "POST" && path === "/smtp/email") {
       const to = body.to[0].email;
@@ -291,6 +293,15 @@ test("deal creation failing (e.g. the free plan's open-deal limit) does not lose
   assert.equal(result.ok, true);
   assert.equal(result.crm, "skipped-failed");
   assert.ok(s.emails.some((e) => !e.isAck));
+});
+
+test("if the account rejects explicit pipeline/stage attributes, the deal is still created (default stage) with its note", async () => {
+  const { result, s, logs } = await run({}, { fake: fakeBrevo({ rejectDealAttrs: true }) });
+  assert.equal(result.crm, "created");
+  assert.equal(s.deals.length, 1);
+  assert.equal(s.deals[0].stage, undefined); // no explicit stage: Brevo uses its default
+  assert.equal(s.notes.length, 1);
+  assert.ok(logs.some((l) => /default pipeline\/stage/.test(l)));
 });
 
 test("a missing starting stage or unclear pipeline is a CRM failure, not a lost enquiry", async () => {

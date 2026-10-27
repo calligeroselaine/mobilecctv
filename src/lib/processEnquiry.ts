@@ -127,6 +127,7 @@ async function runCrm(
   );
   if (!deal.ok) return fail(deal.reason);
   if (!deal.noteOk) log("CRM deal created but its note could not be saved");
+  if (deal.defaultStage) log("CRM deal created in Brevo's default pipeline/stage (the account rejected explicit pipeline attributes)");
   return "created";
 }
 

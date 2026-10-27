@@ -311,40 +311,52 @@ export async function isDuplicateDeal(
       const tight = await recentDeals(apiKey, contactId, 2 * 60 * 1000, opts);
       return (tight ?? []).some((t) => t.attributes?.deal_name === dealName);
     }
-    const notes = ((r.data as { items?: { text?: string }[] } | null)?.items ?? []) as { text?: string }[];
+    // Brevo's notes endpoint returns a plain array (verified against a real account);
+    // accept an {items: [...]} wrapper too in case that ever changes.
+    const raw = r.data as { text?: string }[] | { items?: { text?: string }[] } | null;
+    const notes: { text?: string }[] = Array.isArray(raw) ? raw : raw?.items ?? [];
     if (notes.some((n) => typeof n.text === "string" && n.text.includes(`Ref: ${ref}`))) return true;
   }
   return false;
 }
 
 export type DealResult =
-  | { ok: true; dealId: string; noteOk: boolean }
+  | { ok: true; dealId: string; noteOk: boolean; /** true when Brevo's default pipeline/stage was used */ defaultStage: boolean }
   | { ok: false; reason: string };
 
+/**
+ * Creates the deal, then attaches the enquiry as a note.
+ *
+ * First tries to place the deal in the resolved pipeline + starting stage.
+ * Some Brevo accounts reject those two attributes (their deal fields haven't
+ * been initialised yet — Brevo answers 400 "Invalid attribute"). In that case
+ * it retries without them, which puts the deal in the account's default
+ * pipeline, first stage ("New"). Either way the deal is created.
+ */
 export async function createDealWithNote(
   apiKey: string,
   params: { dealName: string; contactId: number; target: PipelineTarget; noteHtml: string },
   opts?: BrevoOptions
 ): Promise<DealResult> {
-  const d = await call(
+  const base = { name: params.dealName, linkedContactsIds: [params.contactId] };
+
+  let defaultStage = false;
+  let d = await call(
     apiKey,
     "/crm/deals",
-    {
-      method: "POST",
-      body: {
-        name: params.dealName,
-        attributes: { pipeline: params.target.pipelineId, deal_stage: params.target.stageId },
-        linkedContactsIds: [params.contactId],
-      },
-    },
+    { method: "POST", body: { ...base, attributes: { pipeline: params.target.pipelineId, deal_stage: params.target.stageId } } },
     opts
   );
+  if (!d.ok && d.status === 400) {
+    d = await call(apiKey, "/crm/deals", { method: "POST", body: base }, opts);
+    defaultStage = true;
+  }
   if (!d.ok) return { ok: false, reason: describeFailure("deal create", d) };
   const id = (d.data as { id?: unknown } | null)?.id;
   if (typeof id !== "string" || !id) return { ok: false, reason: "deal create returned no id" };
 
   const n = await call(apiKey, "/crm/notes", { method: "POST", body: { text: params.noteHtml, dealIds: [id] } }, opts);
-  return { ok: true, dealId: id, noteOk: n.ok };
+  return { ok: true, dealId: id, noteOk: n.ok, defaultStage };
 }
 
 // ------------------------------------------------------------ transactional --

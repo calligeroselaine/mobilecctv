@@ -73,9 +73,18 @@ export default function PrivacyPolicyPage() {
           <p className="mt-3 text-steel-600">
             Videos on our site are provided by YouTube. Preview images are
             loaded from YouTube&rsquo;s servers, and YouTube&rsquo;s video
-            player is only loaded when you press play. When you send an
-            enquiry through our website, your message is passed to an email
-            delivery service so it reaches our team.
+            player is only loaded when you press play.
+          </p>
+          <p className="mt-3 text-steel-600">
+            When you send an enquiry through our website, your name,
+            contact details and message are passed to an email delivery
+            service so it reaches our team, and are recorded in our
+            customer relationship management (CRM) system, provided by
+            Brevo, so we can follow up your enquiry. We will also send you
+            an automatic email confirming that we&rsquo;ve received it. This
+            information may be stored on servers outside Australia. We do
+            not add you to any marketing emails unless you have agreed to
+            receive them.
           </p>
           <h2 className="text-h2 mt-8">How We Use Your Information</h2>
           <p className="mt-3 text-steel-600">

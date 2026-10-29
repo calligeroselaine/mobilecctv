@@ -95,13 +95,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className="flex min-h-full flex-col">
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <GoogleAnalytics />
       </body>
     </html>
   );

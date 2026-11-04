@@ -28,14 +28,16 @@ export const metadata: Metadata = buildMetadata({
   },
 });
 
-const productJsonLd = {
+const serviceJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   name: "Mobile Operations Centre",
+  serviceType: "Mobile operations centre hire",
   description:
     "A secure, self-contained, towable operations room providing workspace, connectivity, bathroom facilities and water capability for event, security and council teams on sites with little existing infrastructure.",
   image: `${business.siteUrl}${mocImages.heroExterior}`,
-  brand: { "@type": "Brand", name: business.name },
+  provider: { "@type": "LocalBusiness", name: business.name, url: business.siteUrl },
+  areaServed: { "@type": "Country", name: "Australia" },
 };
 
 const faqJsonLd = {
@@ -51,7 +53,7 @@ const faqJsonLd = {
 export default function MobileOperationsCentrePage() {
   return (
     <div className={mocArchivo.className}>
-      <JsonLd data={productJsonLd} />
+      <JsonLd data={serviceJsonLd} />
       <JsonLd data={faqJsonLd} />
 
       <MocHero />

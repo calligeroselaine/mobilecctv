@@ -29,14 +29,16 @@ export const metadata: Metadata = buildMetadata({
 });
 
 
-const productJsonLd = {
+const serviceJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "Mobile CCTV Trailer Camera",
+  "@type": "Service",
+  name: "Mobile CCTV Trailers",
+  serviceType: "Mobile CCTV trailer sales and hire",
   description:
-    "Solar-powered, towable surveillance trailer with 360° camera coverage, PIR detection and remote live access.",
+    "Solar-powered, towable surveillance trailer with 360° camera coverage, PIR detection and remote live access, for sale or hire.",
   image: `${business.siteUrl}/images/mobile-cctv-trailers.jpg`,
-  brand: { "@type": "Brand", name: business.name },
+  provider: { "@type": "LocalBusiness", name: business.name, url: business.siteUrl },
+  areaServed: { "@type": "Country", name: "Australia" },
 };
 
 const faqJsonLd = {
@@ -52,7 +54,7 @@ const faqJsonLd = {
 export default function TrailersPage() {
   return (
     <div className={mocArchivo.className}>
-      <JsonLd data={productJsonLd} />
+      <JsonLd data={serviceJsonLd} />
       <JsonLd data={faqJsonLd} />
       <TrailerHero />
       <TrailerIntro />

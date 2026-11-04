@@ -29,14 +29,16 @@ export const metadata: Metadata = buildMetadata({
 });
 
 
-const productJsonLd = {
+const serviceJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   name: "Mobi Pole Cam",
+  serviceType: "Pole-mounted CCTV camera sales and hire",
   description:
-    "Standalone solar-powered pole camera for sites without power or network infrastructure, with cloud-based recording.",
+    "Standalone solar-powered pole camera for sites without power or network infrastructure, with cloud-based recording, for sale or hire.",
   image: `${business.siteUrl}/images/solar-cctv-pole-cam.jpg`,
-  brand: { "@type": "Brand", name: business.name },
+  provider: { "@type": "LocalBusiness", name: business.name, url: business.siteUrl },
+  areaServed: { "@type": "Country", name: "Australia" },
 };
 
 const faqJsonLd = {
@@ -52,7 +54,7 @@ const faqJsonLd = {
 export default function PoleCamerasPage() {
   return (
     <div className={mocArchivo.className}>
-      <JsonLd data={productJsonLd} />
+      <JsonLd data={serviceJsonLd} />
       <JsonLd data={faqJsonLd} />
       <PoleHero />
       <PoleIntro />

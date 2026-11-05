@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { ContactClickTracking } from "@/components/analytics/ContactClickTracking";
 
 // LocalBusiness is the correct, verifiable schema.org type for this
 // business (real address, phone, licence). "SecurityService" is not a
@@ -104,6 +105,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ContactClickTracking />
       </body>
     </html>
   );

@@ -151,7 +151,7 @@ export async function POST(request: Request) {
         console.error("[/api/contact] enquiry NOT sent: Brevo notification failed and no fallback delivered it.");
         return NextResponse.json({ ok: false, error: CONTACT_SEND_FAILURE_MESSAGE }, { status: 502 });
       }
-      return NextResponse.json({ ok: true });
+      return NextResponse.json({ ok: true, sent: true });
     }
   }
 
@@ -203,5 +203,5 @@ export async function POST(request: Request) {
     );
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, sent: true });
 }

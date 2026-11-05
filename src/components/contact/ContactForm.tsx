@@ -11,6 +11,7 @@ import {
   CONTACT_PHONE_HREF,
   CONTACT_SEND_FAILURE_MESSAGE,
 } from "@/lib/contactMessages";
+import { trackEvent } from "@/lib/analytics";
 
 type Variant = "full" | "compact";
 
@@ -165,6 +166,15 @@ function ContactFormInner({ variant = "full" }: ContactFormProps) {
       // Success only when the server confirms Resend accepted the email.
       if (res.ok && data?.ok === true) {
         setStatus("success");
+        // Count the lead only when the server says it really processed the
+        // enquiry (`sent`) — spam traffic gets a plain { ok: true } instead.
+        if (data?.sent === true) {
+          trackEvent("generate_lead", {
+            form_location: window.location.pathname,
+            engagement: ENGAGEMENT_VALUES.includes(state.engagement) ? state.engagement : undefined,
+            solution: SOLUTION_VALUES.includes(state.solution) ? state.solution : undefined,
+          });
+        }
         return;
       }
 

@@ -42,9 +42,8 @@ export function MocFaq() {
                     <Plus className="h-[26px] w-[26px] shrink-0" aria-hidden="true" />
                   )}
                 </button>
-                {isOpen && (
-                  <p className="max-w-[720px] pb-7 pr-4 text-base leading-[1.65] text-[#2A2D31] sm:pr-12">{faq.a}</p>
-                )}
+                {/* Always in the HTML (so search engines read every answer); hidden until opened. */}
+                <p hidden={!isOpen} className="max-w-[720px] pb-7 pr-4 text-base leading-[1.65] text-[#2A2D31] sm:pr-12">{faq.a}</p>
               </div>
             );
           })}

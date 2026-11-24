@@ -17,3 +17,5 @@ The ease and flexibility of our units meant we could provide comprehensive cover
 Mobile CCTV Solutions is committed to backing community events with reliable, mobile security that fits any environment, from local festivals to large gatherings. With high-quality video, remote monitoring, and adaptability, our units offer peace of mind, allowing organisers and attendees to focus on what matters — celebrating community and tradition.
 
 If you're looking for a powerful security presence for your next event, contact our team today.
+
+See our [CCTV for events and temporary sites](/solutions/events-temporary-sites).

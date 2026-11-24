@@ -14,7 +14,13 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: business.name,
-  image: `${business.siteUrl}/images/logo.png`,
+  legalName: business.registeredName,
+  // Landscape photo for search-result thumbnails; the logo is kept under
+  // "logo" only (Google was squashing it into a square thumbnail).
+  image: `${business.siteUrl}/images/onsite-trailer-2018.jpg`,
+  logo: `${business.siteUrl}/images/logo.png`,
+  taxID: business.abn,
+  foundingDate: business.foundingDate,
   telephone: business.phone.display,
   email: business.email,
   url: business.siteUrl,
@@ -26,7 +32,13 @@ const organizationJsonLd = {
     postalCode: business.address.postcode,
     addressCountry: "AU",
   },
-  sameAs: [business.social.facebook, business.social.instagram],
+  sameAs: [
+    business.social.facebook,
+    business.social.instagram,
+    business.social.tiktok,
+    business.profiles.linkedin,
+    business.profiles.googleMaps,
+  ],
 };
 
 const websiteJsonLd = {

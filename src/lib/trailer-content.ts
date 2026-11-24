@@ -36,7 +36,7 @@ export const trailerCopy = {
   introEyebrow: "01 — The product",
   introHeading: "Deployable CCTV for sites that don't have any security infrastructure yet.",
   introBody: [
-    "A Mobile CCTV Solutions trailer is a self-contained camera system on a towable trailer. It can complement or replace static security guards, mobile patrols and fixed CCTV, and it is available for hire or purchase across Australia.",
+    "A Mobile CCTV Solutions trailer is a self-contained mobile CCTV unit on a towable trailer. It can complement or replace static security guards, mobile patrols and fixed CCTV, and CCTV trailer hire or purchase is available across Australia.",
     "It records and transmits live video over 4GX, with its own internet connection and network recorder, so footage can be viewed securely from any computer or mobile device.",
   ],
   introFacts: [

@@ -38,7 +38,7 @@ export const poleCopy = {
   introHeading: "A standalone, solar-powered camera for places with no power or network.",
   introBody: [
     "The Mobi Pole Cam is a remote-view-enabled surveillance system built for CCTV in locations without network or power infrastructure, including trouble-spot monitoring in almost any area.",
-    "It suits permanent sites such as parks, farms and streets, and temporary sites such as events or illegal rubbish dumping areas.",
+    "It suits permanent sites such as parks, farms and streets, and temporary sites such as events or illegal rubbish dumping areas. It mounts on a 50–60mm camera pole (pole not included), with various mounting options available.",
   ],
   capabilitiesEyebrow: "02 — What it does",
   capabilitiesHeading: "How a pole camera works.",

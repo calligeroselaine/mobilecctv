@@ -4,6 +4,23 @@ import { RentOrPurchase } from "@/components/home/RentOrPurchase";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { WhyUs } from "@/components/home/WhyUs";
 import { QuoteRequest } from "@/components/home/QuoteRequest";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { business } from "@/lib/business";
+
+// Tells Google which image represents the homepage (landscape photo, 2560px wide).
+const homePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${business.siteUrl}/#webpage`,
+  url: business.siteUrl,
+  name: business.name,
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${business.siteUrl}/images/onsite-trailer-2018.jpg`,
+    width: 2560,
+    height: 1920,
+  },
+};
 
 /**
  * Simplified homepage flow (content/structure clean-up — not a redesign):
@@ -26,6 +43,7 @@ import { QuoteRequest } from "@/components/home/QuoteRequest";
 export default function Home() {
   return (
     <>
+      <JsonLd data={homePageJsonLd} />
       <Hero />
       <TrustStrip />
       <PathwayCards />

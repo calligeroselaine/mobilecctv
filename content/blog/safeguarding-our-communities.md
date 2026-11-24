@@ -25,3 +25,5 @@ Alternatively, please call us at 1300 99 69 10 to discover how Mobile CCTV Solut
 And for those who prefer a more hands-on approach, we invite you to visit us at our offices in Sydney's Northern Beaches for a personalised demonstration.
 
 Already partnering with regional and metro councils and businesses across Australia, Mobile CCTV Solutions plays a vital role in combating this behaviour and providing a safer environment for its members.
+
+Councils can find out more about our [mobile CCTV trailer hire](/mobile-cctv-trailers) options, available for short, mid or long-term hire.

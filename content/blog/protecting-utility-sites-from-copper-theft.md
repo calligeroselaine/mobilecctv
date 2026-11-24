@@ -19,3 +19,5 @@ Mobile CCTV trailers can be easily moved with any towable vehicle and are set up
 Contact us for a quick online remote demonstration so we can show you the trailers live in action and how they can help your site.
 
 This month we have trailers available for immediate deployment for either short or long-term hire, starting at 1 day. Contact us today for same-week delivery.
+
+Find out more about our [mobile CCTV trailer hire](/mobile-cctv-trailers) options, available from a single day.

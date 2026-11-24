@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import { applications, copy } from "@/lib/moc-content";
 
@@ -25,6 +26,13 @@ export function MocApplications() {
         <a href="#ramadan" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[#141619] hover:text-[#387bb8]">
           {copy.applicationsLink} <ArrowDown className="h-4 w-4" aria-hidden="true" />
         </a>
+        <p className="mt-4 text-base text-[#2A2D31]">
+          Planning a festival or short-term site?{" "}
+          <Link href="/solutions/events-temporary-sites" className="font-semibold underline hover:text-[#387bb8]">
+            See our CCTV for events and temporary sites
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

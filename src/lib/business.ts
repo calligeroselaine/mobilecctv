@@ -23,11 +23,20 @@ export const business = {
   },
   additionalLocations: [] as string[],
   abn: "53 615 546 560",
+  // Registered company behind the ABN, and founding year — used in the
+  // site's structured data only (legalName above is what the Legals page shows).
+  registeredName: "MM & RL Ventures Pty Ltd",
+  foundingDate: "2016",
   licence: "Master Licence No 000103010",
   social: {
     facebook: "https://www.facebook.com/Mobile-CCTV-Solutions-743284015838170/",
     instagram: "https://www.instagram.com/mobile.cctv/",
     tiktok: "https://www.tiktok.com/@mobilecctvsolutions",
+  },
+  // Other profiles listed in the structured data (sameAs).
+  profiles: {
+    linkedin: "https://www.linkedin.com/company/mobile-cctv-solutions-australia/",
+    googleMaps: "https://maps.google.com/?cid=17625037309291686037",
   },
   support: {
     label: "Support",

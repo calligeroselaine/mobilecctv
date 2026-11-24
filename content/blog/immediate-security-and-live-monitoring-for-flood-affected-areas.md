@@ -18,3 +18,5 @@ Our mobile CCTV units are easily deployed by one person and robust enough to tra
 The CCTV cameras can be controlled and live-viewed remotely via any internet connection.
 
 Contact us today to hire a unit for immediate deployment for your local council.
+
+Find out more about [mobile CCTV trailer hire](/mobile-cctv-trailers) for your council.

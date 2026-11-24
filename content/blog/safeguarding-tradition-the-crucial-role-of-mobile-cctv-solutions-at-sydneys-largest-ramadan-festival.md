@@ -26,3 +26,5 @@ By harnessing the power of surveillance technology, the Lakemba Nights Festival 
 As we celebrate the success of the Lakemba Nights Ramadan Festival and already start planning for next year, we invite event organisers across all industries to partner with Mobile CCTV Solutions for their upcoming events. Whether you're planning a festival, concert, or outdoor event, our team is dedicated to providing tailored security solutions to meet your specific needs.
 
 Don't leave the safety of your event to chance. Consult with Mobile CCTV Solutions today and experience the peace of mind that comes with superior security technology and expert support.
+
+See our [CCTV for events and temporary sites](/solutions/events-temporary-sites).

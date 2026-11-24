@@ -225,7 +225,7 @@ export const solutions: Solution[] = [
     navLabel: "Events & Temporary Sites",
     metaTitle: "CCTV Security For Events & Temporary Sites",
     metaDescription:
-      "Flexible mobile CCTV surveillance for events, festivals and short-term security needs — deployed in minutes, no mains power required. Sale or hire, Australia-wide.",
+      "Mobile CCTV hire for events, festivals and temporary sites. Solar-powered cameras deployed in minutes, no mains power required. Australia-wide.",
     heroEyebrow: "For Events & Temporary Sites",
     heroTitle: "Flexible Surveillance For Events & Temporary Sites",
     heroDescription:

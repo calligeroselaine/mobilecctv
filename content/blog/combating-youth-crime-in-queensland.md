@@ -22,3 +22,5 @@ The benefits of mobile CCTV cameras for crime prevention include:
 - **Public reassurance** — the deployment of our mobile CCTV solutions reassures the public of the government's commitment to public safety.
 
 Already partnering with regional and metro councils and businesses across Queensland, Mobile CCTV Solutions plays a vital role in combating youth crime and building safer, more resilient communities in Queensland.
+
+To see how our trailers work, read more about [mobile CCTV trailer hire](/mobile-cctv-trailers).
